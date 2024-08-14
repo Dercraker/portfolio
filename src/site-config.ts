@@ -16,7 +16,6 @@ export const SiteConfig = {
     contact: "contact@nowts.app",
   },
   maker: {
-    image: "https://melvynx.com/images/me/twitter-en.jpg",
     website: "https://dercraker.fr",
     twitter: "https://twitter.com/melvyn_me",
     name: "Melvynx",

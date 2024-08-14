@@ -1,6 +1,6 @@
 "use client";
-
 import { animate } from "framer-motion";
+import moment from "moment";
 import { useEffect, useRef } from "react";
 import { SectionLayout } from "./SectionLayout";
 
@@ -12,28 +12,28 @@ type StatProps = {
 
 const stats: StatProps[] = [
   {
-    number: 476,
-    suffix: "K",
-    text: "Threads scheduled every month.",
+    number: moment().diff(moment("2018-12-22"), "seconds") / 1000000,
+    suffix: "M",
+    text: "Secondes depuis ma première ligne de code",
   },
   {
-    number: 1.44,
-    suffix: "K",
-    text: "Users that use our platform.",
+    number: 71,
+    suffix: "",
+    text: "Projet crées",
   },
   {
-    number: 1.5,
-    suffix: "M+",
-    text: "Interactions with posts created by our users.",
+    number: 2.1,
+    suffix: "M",
+    text: "Ligne écrites",
   },
   {
-    number: 192,
-    suffix: "K",
-    text: "Users impacted by our published posts.",
+    number: 1,
+    suffix: "",
+    text: "Clients recommandant mon travaille",
   },
 ];
 
-export function StatsSection() {
+export const StatsSection = () => {
   return (
     <SectionLayout size="sm">
       <div className="grid w-full items-center gap-12 sm:grid-cols-2 md:-mx-5 md:max-w-none md:grid-cols-4 md:gap-0">
@@ -50,9 +50,9 @@ export function StatsSection() {
       </div>
     </SectionLayout>
   );
-}
+};
 
-function Counter({
+const Counter = ({
   from,
   to,
   duration = 2,
@@ -60,7 +60,7 @@ function Counter({
   from: number;
   to: number;
   duration?: number;
-}) {
+}) => {
   const nodeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -72,7 +72,8 @@ function Counter({
       ease: "easeInOut",
 
       onUpdate(value) {
-        node.textContent = value.toFixed(2);
+        const decimals = Number.isInteger(to) ? 0 : 2;
+        node.textContent = value.toFixed(decimals);
       },
     });
 
@@ -80,4 +81,4 @@ function Counter({
   }, [from, to, duration]);
 
   return <span ref={nodeRef}>{from}</span>;
-}
+};

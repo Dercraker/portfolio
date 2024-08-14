@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
       "@email/*": ["./emails/*"]
     }
   },
@@ -29,7 +30,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.js"
+    "tailwind.config.js",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules", ".next"]
 }

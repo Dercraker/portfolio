@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Typography } from "@/components/ui/typography";
-import { ClientMarkdown } from "../markdown/ClientMarkdown";
 import { SectionLayout } from "./SectionLayout";
 
 type Faq = {
@@ -39,7 +38,7 @@ export const FAQSection = (props: FeaturesPreviewProps) => {
                   {e.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  <ClientMarkdown>{e.answer}</ClientMarkdown>
+                  {e.answer}
                 </AccordionContent>
               </AccordionItem>
             );

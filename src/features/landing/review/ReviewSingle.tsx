@@ -1,6 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Typography } from "@/components/ui/typography";
-import { ClientMarkdown } from "@/features/markdown/ClientMarkdown";
 import { Layout } from "@/features/page/layout";
 
 export type ReviewSingleProps = {
@@ -30,9 +29,7 @@ export const ReviewSingle = (props: ReviewSingleProps) => {
   return (
     <Layout className="flex flex-col items-center gap-8">
       <div className="flex flex-1 flex-col gap-4">
-        <ClientMarkdown className="citation prose-2xl text-center">
           {props.review}
-        </ClientMarkdown>
         <div className="m-auto flex gap-2">
           <Avatar className="size-16">
             <AvatarFallback>{props.name[0]}</AvatarFallback>

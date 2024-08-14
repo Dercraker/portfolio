@@ -1,4 +1,3 @@
-import { ContactSupportDialog } from "@/features/contact/support/ContactSupportDialog";
 import Link from "next/link";
 import { buttonVariants } from "../../components/ui/button";
 import { Typography } from "../../components/ui/typography";
@@ -17,7 +16,6 @@ export function Page404() {
         <Link href="/" className={buttonVariants({ variant: "invert" })}>
           Go back home
         </Link>
-        <ContactSupportDialog />
       </div>
     </main>
   );

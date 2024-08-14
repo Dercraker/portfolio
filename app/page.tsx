@@ -1,4 +1,3 @@
-import { EmailFormSection } from "@/features/email/EmailFormSection";
 import { BentoGridSection } from "@/features/landing/BentoSection";
 import { FAQSection } from "@/features/landing/FAQSection";
 import { FeaturesSection } from "@/features/landing/FeatureSection";
@@ -294,8 +293,6 @@ export default function HomePage() {
           },
         ]}
       />
-
-      <EmailFormSection />
 
       <SectionDivider />
 

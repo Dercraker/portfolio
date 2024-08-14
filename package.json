@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cls && next build",
     "start": "next start",
     "lint": "next lint --fix",
     "format": "prettier --write .",

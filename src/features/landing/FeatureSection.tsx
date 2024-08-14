@@ -3,7 +3,6 @@
 import { DotPattern } from "@/components/svg/DotPattern";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
-import { ClientMarkdown } from "@/features/markdown/ClientMarkdown";
 import type { ReactNode } from "react";
 import { SectionLayout } from "./SectionLayout";
 
@@ -61,9 +60,7 @@ export const FeatureLine = (props: FeatureLineProps) => {
         <Typography variant="h3" className="">
           {props.title}
         </Typography>
-        <ClientMarkdown className="prose-sm">
-          {props.description}
-        </ClientMarkdown>
+        {props.description}
       </div>
       <div className="w-full max-w-sm">
         <DotPattern>{props.component}</DotPattern>

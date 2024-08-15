@@ -1,11 +1,11 @@
+import { Hero } from "@/components/landing/Hero";
+import { StatsSection } from "@/components/landing/StatsSection";
 import { BentoGridSection } from "@/features/landing/BentoSection";
 import { FAQSection } from "@/features/landing/FAQSection";
 import { FeaturesSection } from "@/features/landing/FeatureSection";
-import { Hero } from "@/features/landing/Hero";
 import { LandingHeader } from "@/features/landing/LandingHeader";
 import { PainSection } from "@/features/landing/Pain";
 import { SectionDivider } from "@/features/landing/SectionDivider";
-import { StatsSection } from "@/features/landing/StatsSection";
 import { CTASectionCard } from "@/features/landing/cta/CTACardSection";
 import { CTAImageSection } from "@/features/landing/cta/CTAImageSection";
 import { CtaSection } from "@/features/landing/cta/CTASection";

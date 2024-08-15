@@ -1,8 +1,11 @@
 "use client";
+import { GetRepositoryCountAction } from "@/features/landing/getRepositoryCount.action";
+import { useQuery } from "@tanstack/react-query";
 import { animate } from "framer-motion";
 import moment from "moment";
 import { useEffect, useRef } from "react";
-import { SectionLayout } from "./SectionLayout";
+import { toast } from "sonner";
+import { SectionLayout } from "../../features/landing/SectionLayout";
 
 type StatProps = {
   number: number;
@@ -10,30 +13,47 @@ type StatProps = {
   text: string;
 };
 
-const stats: StatProps[] = [
-  {
-    number: moment().diff(moment("2018-12-22"), "seconds") / 1000000,
-    suffix: "M",
-    text: "Secondes depuis ma première ligne de code",
-  },
-  {
-    number: 71,
-    suffix: "",
-    text: "Projet crées",
-  },
-  {
-    number: 2.1,
-    suffix: "M",
-    text: "Ligne écrites",
-  },
-  {
-    number: 1,
-    suffix: "",
-    text: "Clients recommandant mon travaille",
-  },
-];
-
 export const StatsSection = () => {
+  const { data: repositoryCount } = useQuery({
+    queryKey: ["Repository", "Count", { userId: "46059868" }],
+    queryFn: async () => {
+      const res = await GetRepositoryCountAction({
+        // userId: env.DERCRAKER_GITHUB_ACCOUNT_ID,
+        userId: "46059868",
+      });
+
+      if (!res || res.serverError || !res.data) {
+        toast("An error occurred when fetching Dercraker profile");
+        return 0;
+      }
+
+      return res.data;
+    },
+  });
+
+  const stats: StatProps[] = [
+    {
+      number: moment().diff(moment("2018-12-22"), "seconds") / 1000000,
+      suffix: "M",
+      text: "Secondes depuis ma première ligne de code",
+    },
+    {
+      number: repositoryCount || 0,
+      suffix: "",
+      text: "Projet crées",
+    },
+    {
+      number: 2.1,
+      suffix: "M",
+      text: "Ligne écrites",
+    },
+    {
+      number: 1,
+      suffix: "",
+      text: "Clients recommandant mon travaille",
+    },
+  ];
+
   return (
     <SectionLayout size="sm">
       <div className="grid w-full items-center gap-12 sm:grid-cols-2 md:-mx-5 md:max-w-none md:grid-cols-4 md:gap-0">

@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 import { ProjectSchema } from "@/types/project/Project.type";
 import moment from "moment";
-import { SectionLayout } from "../layout/SectionLayout";
-import { Typography } from "../ui/typography";
-import { WobbleCard } from "../ui/wobble/wobble-card";
+import { SectionLayout } from "../../layout/SectionLayout";
+import { Typography } from "../../ui/typography";
+import { WobbleCard } from "../../ui/wobble/wobble-card";
+import { DateBadge } from "./DateBadge";
+import { ProjectBadge } from "./ProjectBadge";
 
 const projectList: ProjectSchema[] = [
   {
@@ -70,7 +72,7 @@ export const ProjectSection = () => {
       <div className="mx-auto grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
         {projectList.map(({ title, desc, link, size, date }, idx) => {
           return (
-            <WobbleCard key={idx} size={size}>
+            <WobbleCard key={idx} size={size} link={link}>
               <div
                 className={cn(
                   size === "small"
@@ -80,12 +82,17 @@ export const ProjectSection = () => {
                       : "max-w-5xl",
                 )}
               >
-                <Typography variant="h2" className="text-wrap text-left">
+                {date && <ProjectBadge isRunning={!!link} />}
+                <Typography
+                  variant="h2"
+                  className="select-none text-wrap text-left"
+                >
                   {title}
                 </Typography>
-                <p className="mt-4 line-clamp-6  text-left text-base/6 text-neutral-200">
+                <p className="mt-4 line-clamp-6  select-none text-left text-base/6 text-neutral-200">
                   {desc}
                 </p>
+                <DateBadge date={date} />
               </div>
             </WobbleCard>
           );

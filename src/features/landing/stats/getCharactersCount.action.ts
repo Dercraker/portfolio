@@ -5,7 +5,7 @@ import { action } from "@/lib/safeAction";
 import { GithubUser } from "@/types/github/GithubUser.type";
 import { githubUserOrganisation } from "@/types/github/UserOrgs.type";
 import ky from "ky";
-import { GetCharacterCountSchema } from "../getCharactersCount.schema";
+import { GetCharacterCountSchema } from "./getCharactersCount.schema";
 
 export const GetCharacterCountAction = action
   .schema(GetCharacterCountSchema)

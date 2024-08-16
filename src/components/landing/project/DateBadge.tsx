@@ -5,16 +5,9 @@ type DateBadgeProps = {
 };
 
 export const DateBadge = ({ date }: DateBadgeProps) => {
-  if (!date)
-    return (
-      <div className="flex w-fit items-center gap-1 rounded-xl border border-border/60 px-4 text-muted/60">
-        Coming Soon...
-      </div>
-    );
-  else
-    return (
-      <div className="flex w-fit items-center gap-1 rounded-xl border border-border px-4 text-muted">
-        {date.format("YYYY/MM")}
-      </div>
-    );
+  return (
+    <div className="flex w-fit items-center gap-1 rounded-xl border-2 border-border/60 px-4 text-base/6 text-neutral-200/70">
+      {date ? date.format("YYYY/MM") : "Coming Soon..."}
+    </div>
+  );
 };

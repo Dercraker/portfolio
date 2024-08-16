@@ -3,6 +3,7 @@ import { z } from "zod";
 import { ProjectSize } from "./ProjectSize";
 
 export const ProjectSchema = z.object({
+  isRunning: z.boolean(),
   title: z.string(),
   desc: z.string(),
   link: z.string().url().optional(),

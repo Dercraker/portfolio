@@ -3,7 +3,7 @@ import { Typography } from "../../components/ui/typography";
 
 export const Hero = () => {
   return (
-    <main className="relative m-auto flex min-h-[700px] w-full max-w-7xl items-center gap-4 px-8 max-lg:flex-col">
+    <main className="relative m-auto flex h-screen w-full max-w-7xl items-center gap-4 px-8 max-lg:flex-col">
       <div className="relative flex flex-1 flex-col items-start gap-4 lg:gap-6 xl:gap-8">
         <Typography variant="h1" className="select-all text-primary">
           Antoine Capitain

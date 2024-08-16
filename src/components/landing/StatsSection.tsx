@@ -35,28 +35,28 @@ export const StatsSection = () => {
     {
       number: moment().diff(moment("2018-12-22"), "seconds") / 1000000,
       suffix: "M",
-      text: "Secondes depuis ma première ligne de code",
-    },
-    {
-      number: repositoryCount || 0,
-      suffix: "",
-      text: "Projet crées",
-    },
-    {
-      number: 2.1,
-      suffix: "M",
-      text: "Ligne écrites",
+      text: "Secondes depuis mon premier HelloWorld",
     },
     {
       number: 1,
       suffix: "",
-      text: "Clients recommandant mon travaille",
+      text: "Clients recommandant mon travaille (pro)",
     },
+    {
+      number: repositoryCount || 0,
+      suffix: "",
+      text: "Projet crées (Pro & Perso)",
+    },
+    // {
+    //   number: 300.5,
+    //   suffix: "M",
+    //   text: "Caractères écris",
+    // },
   ];
 
   return (
-    <SectionLayout size="sm">
-      <div className="grid w-full items-center gap-12 sm:grid-cols-2 md:-mx-5 md:max-w-none md:grid-cols-4 md:gap-0">
+    <SectionLayout size="base" variant="card">
+      <div className="flex flex-col flex-wrap items-center justify-around gap-12 sm:flex-row sm:gap-0 ">
         {stats.map((stat, index) => (
           <div key={index} className="relative text-center md:px-5">
             <h4 className="mb-2 text-2xl font-bold tabular-nums md:text-3xl">

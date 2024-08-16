@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import { usePlausible } from "next-plausible";
 import Link from "next/link";
-import { SectionLayout } from "../SectionLayout";
+import { SectionLayout } from "../layout/SectionLayout";
 
 export function CTASectionCard() {
   const plausible = usePlausible();

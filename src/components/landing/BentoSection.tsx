@@ -15,7 +15,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { SectionLayout } from "./SectionLayout";
+import { SectionLayout } from "../layout/SectionLayout";
 
 export function BentoGridSection() {
   return (

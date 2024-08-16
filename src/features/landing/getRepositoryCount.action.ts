@@ -2,8 +2,8 @@
 
 import { env } from "@/lib/env/server";
 import { action } from "@/lib/safeAction";
-import { GithubUser } from "@/types/githubUser.type";
-import { githubUserOrganisation } from "@/types/userOrgs.type";
+import { GithubUser } from "@/types/github/GithubUser.type";
+import { githubUserOrganisation } from "@/types/github/UserOrgs.type";
 import ky from "ky";
 import { GetRepositoryCountSchema } from "./getRepositoryCount.schema";
 

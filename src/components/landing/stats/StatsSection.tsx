@@ -1,6 +1,6 @@
 "use client";
+import { SectionLayout } from "@/components/layout/SectionLayout";
 import { GetRepositoryCountAction } from "@/features/landing/getRepositoryCount.action";
-import { SectionLayout } from "@/features/landing/SectionLayout";
 import { useQuery } from "@tanstack/react-query";
 import moment from "moment";
 import { toast } from "sonner";

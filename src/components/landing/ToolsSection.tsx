@@ -1,4 +1,4 @@
-import { SectionLayout } from "@/features/landing/SectionLayout";
+import { SectionLayout } from "@/components/layout/SectionLayout";
 import IconCloud from "../magicui/icon-cloud";
 import { Typography } from "../ui/typography";
 

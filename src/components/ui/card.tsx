@@ -12,9 +12,6 @@ const cardVariants = cva("rounded-lg shadow-sm", {
       error: "border border-destructive bg-background text-foreground",
     },
   },
-  defaultVariants: {
-    variant: "default",
-  },
 });
 
 const Card = React.forwardRef<

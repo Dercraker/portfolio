@@ -1,7 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
-import { SectionLayout } from "../SectionLayout";
+import { SectionLayout } from "../layout/SectionLayout";
 
 export function CtaSection() {
   return (

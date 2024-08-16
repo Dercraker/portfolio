@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Typography } from "../../components/ui/typography";
 
 export const Hero = () => {
@@ -25,6 +25,7 @@ export const Hero = () => {
       <div className="flex flex-1 justify-end">
         <Avatar className="size-48">
           <AvatarFallback>AC</AvatarFallback>
+          <AvatarImage src="/images/me.jpg" />
         </Avatar>
       </div>
     </main>

@@ -2,8 +2,8 @@ import { SiteConfig } from "@/site-config";
 import Image from "next/image";
 import Link from "next/link";
 import type { PropsWithChildren } from "react";
-import { Layout } from "../page/layout";
-import { ThemeToggle } from "../theme/ThemeToggle";
+import { Layout } from "../../features/page/layout";
+import { ThemeToggle } from "../../features/theme/ThemeToggle";
 
 export function HeaderBase({ children }: PropsWithChildren) {
   return (

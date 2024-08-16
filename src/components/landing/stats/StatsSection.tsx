@@ -1,6 +1,7 @@
 "use client";
 import { SectionLayout } from "@/components/layout/SectionLayout";
-import { GetRepositoryCountAction } from "@/features/landing/getRepositoryCount.action";
+import { GetFeedbackCountAction } from "@/features/landing/stats/GetFeedBackCount.action";
+import { GetRepositoryCountAction } from "@/features/landing/stats/getRepositoryCount.action";
 import { useQuery } from "@tanstack/react-query";
 import moment from "moment";
 import { toast } from "sonner";
@@ -29,6 +30,19 @@ export const StatsSection = () => {
       return res.data;
     },
   });
+  const { data: feedbackCount } = useQuery({
+    queryKey: ["Testimonial", "Count"],
+    queryFn: async () => {
+      const res = await GetFeedbackCountAction({});
+
+      if (!res || res.serverError || !res.data) {
+        toast("An error occurred when fetching data");
+        return 0;
+      }
+
+      return res.data;
+    },
+  });
 
   const stats: StatProps[] = [
     {
@@ -37,7 +51,7 @@ export const StatsSection = () => {
       text: "Secondes depuis mon premier HelloWorld",
     },
     {
-      number: 1,
+      number: feedbackCount || 0,
       suffix: "",
       text: "Clients recommandant mon travaille (pro)",
     },
@@ -46,11 +60,6 @@ export const StatsSection = () => {
       suffix: "",
       text: "Projet crées (Pro & Perso)",
     },
-    // {
-    //   number: 300.5,
-    //   suffix: "M",
-    //   text: "Caractères écris",
-    // },
   ];
 
   return (

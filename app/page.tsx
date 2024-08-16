@@ -5,7 +5,7 @@ import { ToolsSection } from "@/components/landing/ToolsSection";
 import { StatsSection } from "@/components/landing/stats/StatsSection";
 import { TestimonialsSection } from "@/components/landing/testimonials/TestimonialsSection";
 import { SectionDivider } from "@/components/layout/SectionDivider";
-import { Footer } from "@/features/layout/Footer";
+import { Footer } from "@/components/layout/footer/Footer";
 
 export default function HomePage() {
   return (

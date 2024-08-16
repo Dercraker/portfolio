@@ -66,7 +66,7 @@ const projectList: ProjectSchema[] = [
 
 export const ProjectSection = () => {
   return (
-    <SectionLayout size="lg">
+    <SectionLayout size="lg" id="Projects">
       <div className="mx-auto grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
         {projectList.map(({ title, desc, link, size, date }, idx) => {
           return (

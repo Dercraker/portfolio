@@ -1,4 +1,5 @@
 import Marquee from "@/components/magicui/marquee";
+import { prisma } from "@/lib/prisma";
 import { TestimonialCard } from "./testimonialCard";
 
 const reviews = [
@@ -34,12 +35,22 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+export const TestimonialsSection = async () => {
+  const testimonials = await prisma.feedback.findManyRandom(50, {
+    select: {
+      id: true,
+      message: true,
+      username: true,
+    },
+  });
 
-export const TestimonialsSection = () => {
+  const firstRow = testimonials.slice(0, reviews.length / 2);
+  const secondRow = testimonials.slice(reviews.length / 2);
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden ">
+    <div
+      className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden"
+      id="Testimonials"
+    >
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <TestimonialCard key={review.username} {...review} />

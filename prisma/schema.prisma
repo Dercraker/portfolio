@@ -12,10 +12,17 @@ datasource db {
 
 model Feedback {
   id      String  @id @default(nanoid(11))
-  review  Int
   message String
-  email   String
+  username   String
 
   createdAt DateTime @default(now())
 }
 
+model Project {
+  id    String  @id @default(nanoid(11))
+  title String
+  desc  String
+  size  String
+  link  String?
+  date  DateTime?
+  }

@@ -32,14 +32,13 @@ export const ToolsSection = () => {
   return (
     <SectionLayout
       size="lg"
-      className="flex flex-col items-center justify-center "
+      className="flex flex-col items-center justify-center"
+      id="Tools"
     >
       <Typography
         variant="h2"
         className="cursor-default select-none text-primary underline"
-      >
-        My tools
-      </Typography>
+      ></Typography>
       <div className="max-w-lg">
         <IconCloud iconSlugs={slugs} />
       </div>

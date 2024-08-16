@@ -3,17 +3,15 @@ import { useGenerateAvatar } from "@/hooks/useGenerateAvatar";
 import { cn } from "@/lib/utils";
 
 type TestimonialCardProps = {
-  name: string;
   username: string;
-  body: string;
+  message: string;
 };
 
 export const TestimonialCard = ({
-  name,
   username,
-  body,
+  message,
 }: TestimonialCardProps) => {
-  const avatarData = useGenerateAvatar(name);
+  const avatarData = useGenerateAvatar(username);
 
   return (
     <figure
@@ -27,16 +25,13 @@ export const TestimonialCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         <Avatar>
-          <AvatarImage alt={`${name}'s picture`} src={avatarData} />
+          <AvatarImage alt={`${username}'s picture`} src={avatarData} />
         </Avatar>
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
+        <figcaption className="text-sm font-medium dark:text-white">
+          {username}
+        </figcaption>
       </div>
-      <blockquote className="mt-2 line-clamp-4 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 line-clamp-4 text-sm">{message}</blockquote>
     </figure>
   );
 };

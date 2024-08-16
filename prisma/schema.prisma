@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Feedback {
-  id      String  @id @default(nanoid(11))
+  id      String  @id @default(cuid())
   message String
   username   String
 
@@ -19,10 +19,17 @@ model Feedback {
 }
 
 model Project {
-  id    String  @id @default(nanoid(11))
-  title String
-  desc  String
-  size  String
-  link  String?
-  date  DateTime?
+  id        String  @id @default(cuid())
+  isRunning Boolean @default(false)
+  title     String
+  desc      String
+  size      ProjectSize
+  link      String?
+  date      DateTime?
   }
+
+enum ProjectSize {
+  small
+  medium
+  large
+}

@@ -5,9 +5,9 @@ export const WobbleCardVariants = cva(
   {
     variants: {
       size: {
-        small: ["bg-indigo-800"],
-        medium: ["h-full bg-pink-800 lg:col-span-2"],
-        large: ["h-full bg-green-800 lg:col-span-3"],
+        small: ["bg-muted/10"],
+        medium: ["h-full bg-muted lg:col-span-2"],
+        large: ["h-full bg-background lg:col-span-3"],
       },
     },
     defaultVariants: {

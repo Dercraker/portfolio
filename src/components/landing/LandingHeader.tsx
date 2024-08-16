@@ -4,7 +4,6 @@ import { LogoSvg } from "@/components/svg/LogoSvg";
 import { SiteConfig } from "@/site-config";
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { useEffect } from "react";
-import { ThemeToggle } from "../../features/theme/ThemeToggle";
 
 function useBoundedScroll(threshold: number) {
   const { scrollY } = useScroll();
@@ -86,7 +85,6 @@ export function LandingHeader() {
           <a href="#Tools">Technos</a>
           <a href="#Projects">Projets</a>
           <a href="#Testimonials">Témoignages</a>
-          <ThemeToggle />
         </motion.nav>
       </div>
     </motion.header>

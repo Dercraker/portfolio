@@ -20,7 +20,6 @@ export const WobbleCard = ({
   size,
   link,
 }: WobbleCardProps) => {
-  console.log("🚀 ~ link:", link);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 

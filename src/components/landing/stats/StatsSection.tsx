@@ -1,11 +1,10 @@
 "use client";
 import { GetRepositoryCountAction } from "@/features/landing/getRepositoryCount.action";
+import { SectionLayout } from "@/features/landing/SectionLayout";
 import { useQuery } from "@tanstack/react-query";
-import { animate } from "framer-motion";
 import moment from "moment";
-import { useEffect, useRef } from "react";
 import { toast } from "sonner";
-import { SectionLayout } from "../../features/landing/SectionLayout";
+import { Counter } from "./Counter";
 
 type StatProps = {
   number: number;
@@ -70,35 +69,4 @@ export const StatsSection = () => {
       </div>
     </SectionLayout>
   );
-};
-
-const Counter = ({
-  from,
-  to,
-  duration = 2,
-}: {
-  from: number;
-  to: number;
-  duration?: number;
-}) => {
-  const nodeRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!nodeRef.current) return;
-    const node = nodeRef.current;
-
-    const controls = animate(from, to, {
-      duration,
-      ease: "easeInOut",
-
-      onUpdate(value) {
-        const decimals = Number.isInteger(to) ? 0 : 2;
-        node.textContent = value.toFixed(decimals);
-      },
-    });
-
-    return () => controls.stop();
-  }, [from, to, duration]);
-
-  return <span ref={nodeRef}>{from}</span>;
 };

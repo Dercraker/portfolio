@@ -1,5 +1,6 @@
 import { Hero } from "@/components/landing/Hero";
-import { StatsSection } from "@/components/landing/StatsSection";
+import { ToolsSection } from "@/components/landing/ToolsSection";
+import { StatsSection } from "@/components/landing/stats/StatsSection";
 import { BentoGridSection } from "@/features/landing/BentoSection";
 import { FAQSection } from "@/features/landing/FAQSection";
 import { FeaturesSection } from "@/features/landing/FeatureSection";
@@ -23,9 +24,9 @@ export default function HomePage() {
 
       <Hero />
 
-      <SectionDivider />
-
       <StatsSection />
+
+      <ToolsSection />
 
       <BentoGridSection />
 

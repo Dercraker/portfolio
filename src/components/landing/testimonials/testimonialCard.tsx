@@ -3,7 +3,6 @@ import { useGenerateAvatar } from "@/hooks/useGenerateAvatar";
 import { cn } from "@/lib/utils";
 
 type TestimonialCardProps = {
-  img: string;
   name: string;
   username: string;
   body: string;

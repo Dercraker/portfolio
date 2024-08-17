@@ -51,6 +51,7 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onClick: (e: any) => e.preventDefault(),
     },
   });

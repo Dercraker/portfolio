@@ -38,7 +38,7 @@ export const typographyVariants = cva("", {
     variant: "default",
   },
 });
-type TypographyCvaProps = VariantProps<typeof typographyVariants>;
+export type TypographyCvaProps = VariantProps<typeof typographyVariants>;
 
 const defaultElementMapping = {
   h1: "h1",

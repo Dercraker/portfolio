@@ -18,7 +18,6 @@ export const StatsSection = () => {
     queryKey: ["Repository", "Count", { userId: "46059868" }],
     queryFn: async () => {
       const res = await GetRepositoryCountAction({
-        // userId: env.DERCRAKER_GITHUB_ACCOUNT_ID,
         userId: "46059868",
       });
 

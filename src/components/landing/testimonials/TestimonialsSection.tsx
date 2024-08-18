@@ -2,39 +2,6 @@ import Marquee from "@/components/magicui/marquee";
 import { prisma } from "@/lib/prisma";
 import { TestimonialCard } from "./testimonialCard";
 
-const reviews = [
-  {
-    name: "Mayme",
-    username: "@Mayme",
-    body: "Irure eiusmod eiusmod laborum sunt occaecat excepteur anim ex enim occaecat ipsum ad nisi aliqua.",
-  },
-  {
-    name: "Beatrice",
-    username: "@Beatrice",
-    body: "Aliqua minim ut magna duis aliqua sit.",
-  },
-  {
-    name: "Christina",
-    username: "@Christina",
-    body: "Non sint non cillum esse.",
-  },
-  {
-    name: "Vincent",
-    username: "@Vincent",
-    body: "Dolor sunt voluptate qui culpa sunt excepteur labore excepteur incididunt eiusmod veniam laboris.",
-  },
-  {
-    name: "Teresa",
-    username: "@Teresa",
-    body: "Ut ex occaecat mollit dolor Lorem ea.",
-  },
-  {
-    name: "Wesley",
-    username: "@Wesley",
-    body: "Elit dolor irure dolor aliqua amet reprehenderit nulla sunt adipisicing sit duis.",
-  },
-];
-
 export const TestimonialsSection = async () => {
   const testimonials = await prisma.feedback.findManyRandom(50, {
     select: {
@@ -44,8 +11,8 @@ export const TestimonialsSection = async () => {
     },
   });
 
-  const firstRow = testimonials.slice(0, reviews.length / 2);
-  const secondRow = testimonials.slice(reviews.length / 2);
+  const firstRow = testimonials.slice(0, testimonials.length / 2);
+  const secondRow = testimonials.slice(testimonials.length / 2);
   return (
     <div
       className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden"

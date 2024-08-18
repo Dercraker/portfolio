@@ -1,3 +1,4 @@
+import { ContactForm } from "@/features/ContactForm/ContactForm";
 import { SectionLayout } from "../layout/SectionLayout";
 import { Typography } from "../ui/typography";
 
@@ -13,7 +14,9 @@ export const ContactSection = () => {
           me réserve.
         </Typography>
       </SectionLayout>
-      <SectionLayout className="bg-green-400/20">contact me</SectionLayout>
+      <SectionLayout>
+        <ContactForm />
+      </SectionLayout>
     </>
   );
 };

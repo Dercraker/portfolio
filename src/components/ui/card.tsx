@@ -14,6 +14,8 @@ const cardVariants = cva("rounded-lg shadow-sm", {
   },
 });
 
+export type cardVariants = VariantProps<typeof cardVariants>;
+
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardVariants>

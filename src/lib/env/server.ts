@@ -7,6 +7,7 @@ export const env = createEnv({
     NODE_ENV: z.enum(["development", "production", "test"]),
     GITHUB_TOKEN: z.string().min(1),
     DERCRAKER_GITHUB_ACCOUNT_ID: z.string().min(1),
+    RESEND_API_KEY: z.string(),
   },
   experimental__runtimeEnv: process.env,
 });

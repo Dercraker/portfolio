@@ -12,13 +12,13 @@ export const SiteConfig = {
     primary: "#007291",
   },
   email: {
-    from: "NowTS <nowts@resend.dev>", // Replace this with your domaine email
-    contact: "contact@nowts.app",
+    from: "Dercraker <contact@portfolio.dercraker.fr>", // Replace this with your domaine email
+    contact: "contact@portfolio.dercraker.fr",
   },
   maker: {
     website: "https://dercraker.fr",
     twitter: "https://twitter.com/melvyn_me",
-    name: "Melvynx",
+    name: "Dercraker",
   },
   auth: {
     password: false as boolean,

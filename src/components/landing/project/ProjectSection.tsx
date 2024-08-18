@@ -15,11 +15,11 @@ export const ProjectSection = async () => {
       <SectionLayout variant="card">
         <Typography className="leading-relaxed">
           L'un des projets dont je suis le plus fier est GuanajuatoRP que j'ai
-          développée avec du React, .NET et Discord.JS. Ce projet m'a permis de
-          relever des défis techniques importants, comme l'intégration d'une
-          expérience utilisateur fluide entre un jeu et discord. Chaque
-          fonctionnalité développée a renforcé ma passion pour la création
-          d'applications robustes et intuitives.
+          développée avec du .NET et Discord.JS. Ce projet m'a permis de relever
+          des défis techniques importants, comme l'intégration d'une expérience
+          utilisateur fluide entre un jeu et discord. Chaque fonctionnalité
+          développée a renforcé ma passion pour la création d'applications
+          robustes et intuitives.
         </Typography>
       </SectionLayout>
       <SectionLayout

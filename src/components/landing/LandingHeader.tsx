@@ -3,6 +3,7 @@
 import { LogoSvg } from "@/components/svg/LogoSvg";
 import { SiteConfig } from "@/site-config";
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { useEffect } from "react";
 
 function useBoundedScroll(threshold: number) {
@@ -80,11 +81,17 @@ export function LandingHeader() {
               [1, 0],
             ),
           }}
-          className="flex items-center gap-4 text-sm font-medium text-muted-foreground"
+          className="flex items-center gap-6 text-sm font-medium text-muted-foreground"
         >
-          <a href="#Tools">Technos</a>
-          <a href="#Projects">Projets</a>
-          <a href="#Testimonials">Témoignages</a>
+          <Link href="#Tools" className="hover:underline">
+            Technos
+          </Link>
+          <Link href="#Projects" className="hover:underline">
+            Projets
+          </Link>
+          <Link href="#Testimonials" className="hover:underline">
+            Témoignages
+          </Link>
         </motion.nav>
       </div>
     </motion.header>

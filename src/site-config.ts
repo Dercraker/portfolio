@@ -13,7 +13,7 @@ export const SiteConfig = {
   },
   email: {
     from: "Dercraker <contact@portfolio.dercraker.fr>", // Replace this with your domaine email
-    contact: "contact@portfolio.dercraker.fr",
+    contact: "contact@dercraker.fr",
   },
   maker: {
     website: "https://dercraker.fr",

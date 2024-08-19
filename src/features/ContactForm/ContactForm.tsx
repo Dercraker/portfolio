@@ -1,10 +1,13 @@
 "use client";
 
-import AutoForm, { AutoFormSubmit } from "@/components/ui/auto-form";
+import AutoForm from "@/components/ui/auto-form";
+import { Button } from "@/components/ui/button";
 import { Card, cardVariants } from "@/components/ui/card";
+import { Loader } from "@/components/ui/loader";
 import { Typography } from "@/components/ui/typography";
 import { useMutation } from "@tanstack/react-query";
-import type { ComponentPropsWithoutRef } from "react";
+import { useRouter } from "next/navigation";
+import { type ComponentPropsWithoutRef } from "react";
 import { toast } from "sonner";
 import { ContactFormAction } from "./ContactForm.action";
 import { ContactFormSchema } from "./ContactForm.schema";
@@ -13,19 +16,19 @@ export type ContactFormProps =
   ComponentPropsWithoutRef<"div"> & {} & cardVariants;
 
 export const ContactForm = ({ ...props }: ContactFormProps) => {
+  const router = useRouter();
+
   const { isPending, mutateAsync } = useMutation({
     mutationKey: ["SendMail"],
     mutationFn: async (values: ContactFormSchema) => {
       const result = await ContactFormAction(values);
-
-      console.log("🚀 ~ mutationFn: ~ serverError:", result?.serverError);
-
       if (!result || result.serverError)
         return toast.error(
           "Une erreur est survenue merci de réessayer plus tard.",
         );
 
-      return toast.success("Votre message à bien été envoyé");
+      toast.success("Votre message à bien été envoyé");
+      return router.refresh();
     },
   });
 
@@ -59,9 +62,15 @@ export const ContactForm = ({ ...props }: ContactFormProps) => {
           },
         }}
       >
-        <AutoFormSubmit className="hover:translate-y-0.5">
-          Envoyer
-        </AutoFormSubmit>
+        {isPending ? (
+          <Button disabled>
+            <Loader className="mx-2" />
+          </Button>
+        ) : (
+          <Button type="submit" className="hover:translate-y-0.5">
+            Envoyer
+          </Button>
+        )}
       </AutoForm>
     </Card>
   );

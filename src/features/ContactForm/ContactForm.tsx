@@ -6,9 +6,9 @@ import { Card, cardVariants } from "@/components/ui/card";
 import { Loader } from "@/components/ui/loader";
 import { Typography } from "@/components/ui/typography";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import { type ComponentPropsWithoutRef } from "react";
+import { useState, type ComponentPropsWithoutRef } from "react";
 import { toast } from "sonner";
+import { z } from "zod";
 import { ContactFormAction } from "./ContactForm.action";
 import { ContactFormSchema } from "./ContactForm.schema";
 
@@ -16,19 +16,28 @@ export type ContactFormProps =
   ComponentPropsWithoutRef<"div"> & {} & cardVariants;
 
 export const ContactForm = ({ ...props }: ContactFormProps) => {
-  const router = useRouter();
+  const [formValues, setValues] = useState<
+    Partial<z.infer<typeof ContactFormSchema>>
+  >({});
 
   const { isPending, mutateAsync } = useMutation({
     mutationKey: ["SendMail"],
-    mutationFn: async (values: ContactFormSchema) => {
-      const result = await ContactFormAction(values);
+    mutationFn: async () => {
+      const result = await ContactFormAction(
+        ContactFormSchema.parse(formValues),
+      );
       if (!result || result.serverError)
         return toast.error(
           "Une erreur est survenue merci de réessayer plus tard.",
         );
 
-      toast.success("Votre message à bien été envoyé");
-      return router.refresh();
+      setValues({
+        email: "",
+        subject: "",
+        message: "",
+        copy: true,
+      });
+      return toast.success("Votre message à bien été envoyé");
     },
   });
 
@@ -42,7 +51,9 @@ export const ContactForm = ({ ...props }: ContactFormProps) => {
       </Typography>
       <AutoForm
         formSchema={ContactFormSchema}
-        onSubmit={async (v) => await mutateAsync(v)}
+        values={formValues}
+        onValuesChange={setValues}
+        onSubmit={async () => await mutateAsync()}
         fieldConfig={{
           email: {
             inputProps: {

@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { cn } from "@/lib/utils";
+import { IconLink, IconUnlink } from "@tabler/icons-react";
 import moment from "moment";
 import { SectionLayout } from "../../layout/SectionLayout";
 import { Typography } from "../../ui/typography";
@@ -8,7 +9,11 @@ import { DateBadge } from "./DateBadge";
 import { ProjectBadge } from "./ProjectBadge";
 
 export const ProjectSection = async () => {
-  const projectList = await prisma.project.findMany();
+  const projectList = await prisma.project.findMany({
+    orderBy: {
+      order: "asc",
+    },
+  });
 
   return (
     <>
@@ -31,7 +36,12 @@ export const ProjectSection = async () => {
           {projectList.map(
             ({ title, desc, link, size, date, isRunning }, idx) => {
               return (
-                <WobbleCard key={idx} size={size} link={link || undefined}>
+                <WobbleCard
+                  key={idx}
+                  size={size}
+                  link={link || undefined}
+                  className={cn(link ?? "cursor-default")}
+                >
                   <div
                     className={cn(
                       size === "small"
@@ -43,6 +53,9 @@ export const ProjectSection = async () => {
                   >
                     <div className="flex gap-2">
                       {date && <ProjectBadge isRunning={isRunning} />}
+                      {!isRunning &&
+                        date &&
+                        (link ? <IconLink /> : <IconUnlink />)}
                       <DateBadge date={date ? moment(date) : undefined} />
                     </div>
                     <Typography

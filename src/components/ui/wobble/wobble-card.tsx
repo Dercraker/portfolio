@@ -57,7 +57,7 @@ export const WobbleCard = ({
           <motion.div
             style={{
               transform: isHovering
-                ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`
+                ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1) transform-gpu`
                 : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
               transition: "transform 0.1s ease-out",
             }}

@@ -20,6 +20,7 @@ model Feedback {
 
 model Project {
   id        String  @id @default(cuid())
+  order     Int     @default(0)
   isRunning Boolean @default(false)
   title     String
   desc      String

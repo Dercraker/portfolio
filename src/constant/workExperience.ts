@@ -28,7 +28,6 @@ export const workExperience = [
     ],
     technologies: ["C#", ".Net", "SQL Server", "React", "Azure", "CI/CD"],
     location: "Brignais, France",
-    image: "/images/logo/elciaLogo.svg",
   },
   {
     company: "TechMotion",

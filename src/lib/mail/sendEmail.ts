@@ -1,6 +1,6 @@
-import { SiteConfig } from "@/site-config";
-import { env } from "../env/server";
+import { logger } from "@lib/logger";
 import { resend } from "./resend";
+import { env } from "@lib/env/server";
 
 type ResendSendType = typeof resend.emails.send;
 type ResendParamsType = Parameters<ResendSendType>;
@@ -26,10 +26,17 @@ export const sendEmail = async (
   const resendParams = [
     {
       ...params[0],
-      from: params[0].from ?? SiteConfig.email.from,
+      from: env.RESEND_EMAIL_FROM,
     } as ResendParamsType[0],
     params[1],
   ] satisfies ResendParamsType;
 
-  return resend.emails.send(...resendParams);
+  const result = await resend.emails.send(...resendParams);
+
+  if (result.error) {
+    logger.error("[sendEmail] Error", { result, subject: params[0].subject });
+    throw new Error("[sendEmail] Error");
+  }
+
+  return result;
 };

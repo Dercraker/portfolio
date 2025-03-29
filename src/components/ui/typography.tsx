@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import type { ComponentPropsWithRef, ElementType, ForwardedRef } from "react";
@@ -13,7 +12,7 @@ type FixedForwardRef = <T, P = {}>(
 
 const fixedForwardRef = forwardRef as FixedForwardRef;
 
-type DistributiveOmit<T, TOmitted extends PropertyKey> = T extends any
+type DistributiveOmit<T, TOmitted extends PropertyKey> = T extends unknown
   ? Omit<T, TOmitted>
   : never;
 
@@ -38,7 +37,7 @@ export const typographyVariants = cva("", {
     variant: "default",
   },
 });
-export type TypographyCvaProps = VariantProps<typeof typographyVariants>;
+type TypographyCvaProps = VariantProps<typeof typographyVariants>;
 
 const defaultElementMapping = {
   h1: "h1",
@@ -98,9 +97,9 @@ const InnerTypography = <
     >,
     "as"
   >,
-  ref: ForwardedRef<any>,
+  ref: ForwardedRef<unknown>,
 ) => {
-  const Comp = as ?? defaultElementMapping[variant ?? "default"];
+  const Comp: ElementType = as ?? defaultElementMapping[variant ?? "default"];
   return (
     <Comp
       {...props}

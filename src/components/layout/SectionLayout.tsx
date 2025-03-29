@@ -1,14 +1,16 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 import type { ComponentPropsWithoutRef } from "react";
 
-export type SectionLayoutProps = {
+type SectionLayoutProps = {
   /**
    * The section size.
    * sm = 896px
    * base = 1024px
    * lg = 1152px
+   * full = 100% of the container
+   * screen = 100% of the screen
    */
-  size?: "sm" | "base" | "lg";
+  size?: "sm" | "base" | "lg" | "full" | "screen";
   /**
    * The variant of the section.
    * default = default background and foreground
@@ -54,6 +56,8 @@ export const SectionLayout = ({
             "max-w-4xl": size === "sm",
             "max-w-5xl": size === "base",
             "max-w-6xl": size === "lg",
+            "max-w-full": size === "full",
+            "max-w-screen": size === "screen",
           },
           className,
         )}

@@ -74,7 +74,8 @@ export const workExperience = [
   {
     company: "From-A2B",
     role: "Freelance Full Stack",
-    startDate: new Date("2024-12"),
+    startDate: new Date("2025-01"),
+    endDate: null,
     description: ["Creation of a travel planning application"],
     technologies: [
       "Next.js",

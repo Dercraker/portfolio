@@ -1,8 +1,8 @@
+import { Footer } from "@components/layout/footer";
 import { Layout, LayoutContent } from "@components/layout/layout";
 import type { PageParams } from "@type/next";
 import { Experience } from "./_component/experience";
 import { Hero } from "./_component/hero";
-import { LandingFooter } from "./_component/landingFooter";
 
 const RoutePage = (props: PageParams) => {
   return (
@@ -13,7 +13,7 @@ const RoutePage = (props: PageParams) => {
           <Experience />
         </LayoutContent>
       </Layout>
-      <LandingFooter />
+      <Footer />
     </>
   );
 };

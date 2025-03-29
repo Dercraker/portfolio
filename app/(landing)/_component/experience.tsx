@@ -2,6 +2,7 @@
 
 import Beam from "@components/Beam/Beam";
 import { LinkPreview } from "@ui/link-preview";
+import { InlineTooltip } from "@ui/tooltip";
 import clsx from "clsx";
 import type { workExperienceType } from "constant/workExperience";
 import { workExperience } from "constant/workExperience";
@@ -15,6 +16,7 @@ export const Experience = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeWorkExperience, setActiveWorkExperience] =
     useState<workExperienceType>(workExperience[0]);
+
   return (
     <div className=" mx-auto max-w-5xl px-8">
       <h1 className="mx-auto mt-20 max-w-5xl text-2xl font-bold text-white md:mt-40 md:text-3xl">
@@ -62,17 +64,6 @@ export const Experience = () => {
                     : null,
                 )}
               >
-                {exp.image && (
-                  <div className="flex size-6 items-center justify-center rounded-full bg-red-500 bg-gradient-to-br from-zinc-700 to-zinc-800 p-1">
-                    <Image
-                      src={exp.image}
-                      width={12}
-                      height={12}
-                      alt={exp.company}
-                      className="shrink-0 transition duration-200"
-                    />
-                  </div>
-                )}
                 <span>{exp.company}</span>
               </button>
             </div>
@@ -108,7 +99,6 @@ export const Experience = () => {
                     </span>
                   )}
                 </h1>
-
                 <div className="text-sm tracking-widest text-zinc-400">
                   {format(activeWorkExperience?.startDate, "MMM yyyy")}
                   {activeWorkExperience?.endDate !== undefined ? " - " : null}
@@ -123,7 +113,6 @@ export const Experience = () => {
                     ? activeWorkExperience?.location
                     : "Full Remote"}
                 </p>
-
                 <div>
                   {activeWorkExperience?.description.map((bullet, idx) => (
                     <div
@@ -133,6 +122,18 @@ export const Experience = () => {
                       <Check className="mt-[3px] shrink-0 text-cyan-500" />
                       <span className="text-sm text-zinc-400">{bullet}</span>
                     </div>
+                  ))}
+                </div>
+                <div className="flex flex-row flex-wrap gap-2">
+                  {activeWorkExperience.technologies.map((t) => (
+                    <InlineTooltip key={t} title={t}>
+                      <Image
+                        src={`https://cdn.simpleicons.org/${t}`}
+                        alt={t}
+                        width={24}
+                        height={24}
+                      />
+                    </InlineTooltip>
                   ))}
                 </div>
               </motion.div>

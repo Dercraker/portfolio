@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         hostname: "assets.aceternity.com",
@@ -14,6 +15,9 @@ const nextConfig = {
       },
       {
         hostname: "api.microlink.io",
+      },
+      {
+        hostname: "cdn.simpleicons.org",
       },
     ],
   },

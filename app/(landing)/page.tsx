@@ -1,13 +1,8 @@
 import { Layout, LayoutContent } from "@components/layout/layout";
 import type { PageParams } from "@type/next";
-import { BentoSection } from "./_component/bentoSection";
-import { CTASection } from "./_component/ctaSection";
-import { FAQSection } from "./_component/faqSection";
-import { FeatureSection } from "./_component/featureSection";
+import { Experience } from "./_component/experience";
 import { Hero } from "./_component/hero";
 import { LandingFooter } from "./_component/landingFooter";
-import { PricingSection } from "./_component/pricingSection";
-import { TestimonialSection } from "./_component/testimonialSection";
 
 const RoutePage = (props: PageParams) => {
   return (
@@ -15,12 +10,7 @@ const RoutePage = (props: PageParams) => {
       <Hero />
       <Layout size="lg">
         <LayoutContent>
-          <FeatureSection />
-          <CTASection />
-          <BentoSection />
-          <PricingSection />
-          <TestimonialSection />
-          <FAQSection />
+          <Experience />
         </LayoutContent>
       </Layout>
       <LandingFooter />

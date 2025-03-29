@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@lib/utils";
+import { LinkPreview } from "@ui/link-preview";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
@@ -16,7 +17,7 @@ const Content = () => {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden px-8 pb-4  md:px-8 ">
       <div className="relative mt-20 flex flex-col items-center  justify-center ">
-        <h1 className="mb-8relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-zinc-700 dark:text-white md:text-4xl lg:text-7xl ">
+        <h1 className="relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-7xl ">
           I'm a{" "}
           <span className="relative z-10 bg-gradient-to-b from-indigo-700 to-indigo-600 bg-clip-text text-transparent">
             full stack
@@ -59,30 +60,30 @@ const Content = () => {
             </svg>
           </span>
         </h1>
-        <p className="mt-8 max-w-2xl text-sm leading-loose tracking-wide text-zinc-400 md:text-base">
+        <p className="mt-8 max-w-4xl text-sm tracking-wide text-zinc-400 md:text-lg">
           Meet Antoine Capitain, the self-proclaimed code wizard who can turn
           idea into beautiful websites, tools or other solution with caffeine.
           His passion for web and software programming has equalled only by your
           ideas.
         </p>
-        <div className="mt-8 text-zinc-400 text-sm md:text-base max-w-2xl leading-loose tracking-wide">
+        <div className="mt-4 w-full max-w-4xl text-sm tracking-wide text-zinc-400 md:text-lg">
           Building{" "}
           <LinkPreview
             className={
-              "text-zinc-200 font-bold hover:text-cyan-500 transition duration-150 outline-none"
+              "font-bold text-zinc-200 outline-none transition duration-150 hover:text-cyan-500"
             }
-            url="https://algochurn.com"
+            url="https://from-a2b.com"
           >
-            Algochurn
+            From A2B
           </LinkPreview>{" "}
           and{" "}
           <LinkPreview
             className={
-              "text-zinc-200 font-bold hover:text-cyan-500 transition duration-150"
+              "font-bold text-zinc-200 transition duration-150 hover:text-cyan-500"
             }
-            url="https://aceternity.com"
+            url="https://techmotion.io"
           >
-            Aceternity
+            Techmotion
           </LinkPreview>{" "}
           when I'm not working on my day job.
         </div>

@@ -1,7 +1,5 @@
-import { AuthError } from "@lib/auth/helper";
 import { logger } from "@lib/logger";
 import { createSafeActionClient } from "next-safe-action";
-import { AuthMiddleware } from "./actionMiddleware";
 
 export class ActionError extends Error {}
 
@@ -13,11 +11,6 @@ const handleServerError: handleServerError = (e) => {
     return e.message;
   }
 
-  if (e instanceof AuthError) {
-    logger.info("[DEV] - Auth Error", e.message);
-    return e.message;
-  }
-
   logger.info("[DEV] - Unknown Error", e);
 
   return "An unexpected error occurred.";
@@ -26,7 +19,3 @@ const handleServerError: handleServerError = (e) => {
 export const action = createSafeActionClient({
   handleServerError,
 });
-
-export const authAction = createSafeActionClient({ handleServerError }).use(
-  AuthMiddleware,
-);

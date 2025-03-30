@@ -1,5 +1,6 @@
 /* eslint-disable no-await-in-loop */
 import type { Repository } from "@type/repository.type";
+import { cache } from "react";
 import { githubClient } from "./apiBaseClient";
 
 export const getAllGithubRepos = async () => {
@@ -87,8 +88,6 @@ export const getAllGithubRepos = async () => {
     getForkedRepos(),
   ]);
 
-  console.log(Array.from(allRepos.values()));
-
   return Array.from(allRepos.values()).filter(
     (r) =>
       !r.name.includes("now.ts") ||
@@ -97,3 +96,5 @@ export const getAllGithubRepos = async () => {
       r.full_name.includes("Dercraker"),
   );
 };
+
+export const getAllGithubReposCached = cache(getAllGithubRepos);

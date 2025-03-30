@@ -12,6 +12,9 @@ export const env = createEnv({
     GITHUB_TOKEN: z.string().min(1),
 
     NODE_ENV: z.enum(["development", "production"]),
+
+    LINKEDIN_CLIENT_ID: z.string().min(1),
+    LINKEDIN_CLIENT_SECRET: z.string().min(1),
   },
   experimental__runtimeEnv: {
     ...process.env,

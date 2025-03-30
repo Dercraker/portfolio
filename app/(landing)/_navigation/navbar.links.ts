@@ -8,7 +8,6 @@ export const NAVBAR_LINKS = [
   LINKS.About,
   LINKS.Projects,
   LINKS.Contributions,
-  LINKS.Blog,
   LINKS.Events,
 ] satisfies NavigationLinks;
 

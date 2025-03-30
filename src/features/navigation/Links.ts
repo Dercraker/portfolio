@@ -55,7 +55,6 @@ export const LINKS = {
   About: createLink("/about", "About"),
   Projects: createLink("/projects", "Projects"),
   Contributions: createLink("/contributions", "Contributions"),
-  Blog: createLink("/blog", "Blog"),
   Events: createLink("/events", "Events"),
 
   Maintenance: createLink("/maintenance", "Maintenance", {

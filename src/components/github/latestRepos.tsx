@@ -2,29 +2,26 @@
 
 import { motion } from "motion/react";
 
-import { GetRepositoriesActionAction } from "@feat/github/getRepositories.action";
-import { useQuery } from "@tanstack/react-query";
+import { cn } from "@lib/utils";
 import type { Repository } from "@type/repository.type";
+import { InlineTooltip } from "@ui/tooltip";
 import { AnimatePresence } from "framer-motion";
-import { GitFork, Star } from "lucide-react";
+import { GitFork, LockKeyhole, Star } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 export type latestReposProps = {
+  repos: Repository[];
   take?: number;
   showMore?: boolean;
 };
 
-export const LatestRepos = ({ take, showMore = false }: latestReposProps) => {
+export const LatestRepos = ({
+  take,
+  showMore = false,
+  repos,
+}: latestReposProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const { data: repos } = useQuery({
-    queryKey: ["latestRepos"],
-    queryFn: async () => {
-      const repos = await GetRepositoriesActionAction({});
-      return repos?.data;
-    },
-  });
 
   return (
     <div className="relative mx-auto mb-20 max-w-5xl overflow-hidden px-8">
@@ -32,7 +29,7 @@ export const LatestRepos = ({ take, showMore = false }: latestReposProps) => {
         {repos
           ?.slice(0, take ?? undefined)
           .map((repo: Repository, idx: number) => (
-            <a
+            <Link
               href={repo.html_url}
               onMouseEnter={() => setHoveredIndex(idx)}
               key={repo?.html_url}
@@ -58,9 +55,22 @@ export const LatestRepos = ({ take, showMore = false }: latestReposProps) => {
               </AnimatePresence>
               <div className="relative z-50 flex h-full flex-col justify-between">
                 <div>
-                  <h2 className="text-base font-bold text-zinc-100">
-                    {repo.name}
-                  </h2>
+                  <div className="flex items-center">
+                    {repo.private && (
+                      <InlineTooltip title="Private repository">
+                        <LockKeyhole className="mr-2 size-4 text-red-400" />
+                      </InlineTooltip>
+                    )}
+                    <h2
+                      className={cn(
+                        "text-base font-bold text-zinc-100",
+                        !repo.private && "group-hover:underline",
+                        repo.private && "group-hover:text-red-400",
+                      )}
+                    >
+                      {repo.name}
+                    </h2>
+                  </div>
                   {/* TODO: Truncate text */}
                   <p className=" mt-4 text-sm font-normal leading-loose tracking-wide text-zinc-400">
                     {repo?.description}
@@ -80,7 +90,7 @@ export const LatestRepos = ({ take, showMore = false }: latestReposProps) => {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
       </div>
       {showMore && (

@@ -16,7 +16,6 @@ export const Footer = () => {
     LINKS.About,
     LINKS.Projects,
     LINKS.Contributions,
-    LINKS.Blog,
     LINKS.Events,
   ] satisfies NavigationLinks;
 

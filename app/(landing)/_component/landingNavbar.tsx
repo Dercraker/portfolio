@@ -67,7 +67,7 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "hidden md:flex flex-row  self-start bg-transparent dark:bg-transparent items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full",
+        "hidden md:flex flex-row  self-start bg-transparent dark:bg-transparent items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[100] w-full",
         visible && "bg-white/80 dark:bg-neutral-950/80",
       )}
     >

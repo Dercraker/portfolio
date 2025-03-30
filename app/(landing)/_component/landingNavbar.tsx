@@ -3,7 +3,7 @@
 import { Logo } from "@components/logo/logo";
 import type { GeneratedNavigationLink } from "@feat/navigation/navigation.type";
 import { cn } from "@lib/utils";
-import { Button } from "@ui/button";
+import { buttonVariants } from "@ui/button";
 import {
   AnimatePresence,
   motion,
@@ -90,7 +90,16 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
           </Link>
         ))}
       </motion.div>
-      <Button>Download CV</Button>
+      <div className="relative flex items-center gap-4">
+        <Link
+          className={cn(buttonVariants({}), "hidden md:block")}
+          href="/cv.pdf"
+          download
+          target="_blank"
+        >
+          Download CV
+        </Link>
+      </div>
     </motion.div>
   );
 };

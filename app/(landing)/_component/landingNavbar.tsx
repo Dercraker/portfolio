@@ -1,5 +1,6 @@
 "use client";
 
+import { GetNavbarLinks } from "@app/(landing)/_navigation/navbar.links";
 import { Logo } from "@components/logo/logo";
 import type { GeneratedNavigationLink } from "@feat/navigation/navigation.type";
 import { cn } from "@lib/utils";
@@ -13,7 +14,6 @@ import {
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { GetNavbarLinks } from "../_navigation/navbar.links";
 
 type NavbarProps = {
   isVisible: boolean;

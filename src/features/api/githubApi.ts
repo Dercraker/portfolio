@@ -18,6 +18,7 @@ export const getAllGithubRepos = async () => {
         sort: "updated",
       });
       if (data.length === 0) break;
+      //@ts-expect-error TODO: fix repo type
       data.forEach((repo) => allRepos.set(repo.id, repo));
       page++;
     }
@@ -40,6 +41,7 @@ export const getAllGithubRepos = async () => {
           sort: "updated",
         });
         if (data.length === 0) break;
+        //@ts-expect-error TODO: fix repo type
         data.forEach((repo) => allRepos.set(repo.id, repo));
         page++;
       }
@@ -58,6 +60,7 @@ export const getAllGithubRepos = async () => {
         sort: "updated",
       });
       if (data.length === 0) break;
+      //@ts-expect-error TODO: fix repo type
       data.forEach((repo) => allRepos.set(repo.id, repo));
       page++;
     }
@@ -75,6 +78,7 @@ export const getAllGithubRepos = async () => {
         sort: "updated",
       });
       if (data.length === 0) break;
+      //@ts-expect-error TODO: fix repo type
       data.forEach((repo) => allRepos.set(repo.id, repo));
       page++;
     }

@@ -63,6 +63,7 @@ const IconCloud = ({ iconSlugs }: DynamicCloudProps) => {
   const { theme } = useTheme();
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
   }, [iconSlugs]);
 

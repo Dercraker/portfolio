@@ -1,12 +1,13 @@
+import { ContactDialog } from "@components/contact/contactDialog";
 import { NextTopLoader } from "@components/page/nextTopLoader";
 import { TailwindIndicator } from "@components/utils/tailwindDevIndicator";
 import { cn } from "@lib/utils";
 import type { LayoutParams } from "@type/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { Providers } from "./providers";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,9 +35,11 @@ const RootLayout = ({ children }: LayoutParams) => {
         )}
       >
         <Providers>
+          <Toaster />
           {children}
           <TailwindIndicator />
           <NextTopLoader />
+          <ContactDialog />
         </Providers>
       </body>
     </html>

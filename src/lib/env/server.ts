@@ -6,8 +6,8 @@ export const env = createEnv({
     VERCEL_URL: z.string().optional(),
 
     RESEND_API_KEY: z.string().min(1),
-    RESEND_AUDIENCE_ID: z.string().optional(),
     RESEND_EMAIL_FROM: z.string().min(1).email(),
+    RESEND_EMAIL_TO: z.string().min(1).email(),
 
     GITHUB_TOKEN: z.string().min(1),
 

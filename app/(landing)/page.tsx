@@ -1,3 +1,4 @@
+import { LatestEvent } from "@components/events/latestEvent";
 import { LatestReposLoader } from "@components/github/latestRepos.loader";
 import { Footer } from "@components/layout/footer";
 import { Layout, LayoutContent } from "@components/layout/layout";
@@ -21,7 +22,9 @@ const RoutePage = async (props: PageParams) => {
             <LatestRepoSection />
           </Suspense>
           <div className="mx-auto mt-40 grid max-w-5xl grid-cols-1 gap-10 px-8 lg:grid-cols-3 ">
-            <div className="col-span-2">{/* <AllBlogs blogs={blogs} /> */}</div>
+            <div className="col-span-2">
+              <LatestEvent />
+            </div>
             <Hardware />
           </div>
         </LayoutContent>

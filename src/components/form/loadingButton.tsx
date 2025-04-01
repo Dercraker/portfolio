@@ -41,7 +41,7 @@ export const LoadingButton = ({
         }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Loader size={20} />
+        <Loader size={20} className="animate-spin" />
       </motion.span>
     </Button>
   );

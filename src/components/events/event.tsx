@@ -35,7 +35,7 @@ export const Event = ({ setHoveredIndex, idx, hoveredIndex }: EventProps) => {
           />
         )}
       </AnimatePresence>
-      <div className="relative z-50">
+      <div className="relative ">
         <small className="block text-zinc-500 md:border-l  md:border-zinc-700 md:pl-4">
           formatDate(article.date)
         </small>

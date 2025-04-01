@@ -11,7 +11,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { Menu } from "lucide-react";
+import { Menu, XCircle } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
@@ -107,6 +107,30 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
 const MobileNav = ({ isVisible: visible }: NavbarProps) => {
   const [open, setOpen] = useState(false);
 
+  const item = {
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.1,
+      },
+    },
+    show: {
+      height: "100vh",
+      opacity: 1,
+      transition: { duration: 0.1, staggerChildren: 0.1 },
+    },
+    hidden: {
+      opacity: 0,
+      height: 0,
+    },
+  };
+
+  const childItems = {
+    hidden: { x: "-2vw", opacity: 0 },
+    show: { x: 0, opacity: 1 },
+  };
+
   return (
     <>
       <motion.div
@@ -134,13 +158,48 @@ const MobileNav = ({ isVisible: visible }: NavbarProps) => {
         <div className="flex w-full flex-row items-center justify-between">
           <Logo />
           <Menu
-            className="text-black dark:text-white"
+            className="cursor-pointer text-white"
             onClick={() => setOpen(!open)}
           />
         </div>
-
-        <AnimatePresence></AnimatePresence>
       </motion.div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={item}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-10 bg-zinc-800  text-xl font-bold text-zinc-600  transition duration-200 hover:text-zinc-800"
+          >
+            <XCircle
+              className="absolute right-8 top-6 size-5 text-zinc-100"
+              onClick={() => setOpen(!open)}
+            />
+            {GetNavbarLinks().map(
+              (link: GeneratedNavigationLink, idx: number) => (
+                <Link
+                  key={`link=${idx}`}
+                  href={link.href}
+                  className="text-zinc-200 hover:underline"
+                >
+                  <motion.span variants={childItems} className="block">
+                    {link.label}
+                  </motion.span>
+                </Link>
+              ),
+            )}
+            <motion.a
+              variants={childItems}
+              href="/cv.pdf"
+              target="__blank"
+              className="inline-flex items-center justify-center rounded-[10px] bg-gradient-to-b from-[#464d55] to-[#25292e] px-4 py-2 text-sm text-white shadow-[0_10px_20px_rgba(0,_0,_0,_.1),0_3px_6px_rgba(0,_0,_0,_.05)] hover:opacity-80 hover:shadow-[rgba(0,_1,_0,_.2)_0_2px_8px] active:outline-none "
+            >
+              Download CV
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

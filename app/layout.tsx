@@ -1,4 +1,6 @@
 import { ContactDialog } from "@components/contact/contactDialog";
+import { Footer } from "@components/layout/footer";
+import { Navbar } from "@components/layout/navbar";
 import { NextTopLoader } from "@components/page/nextTopLoader";
 import { TailwindIndicator } from "@components/utils/tailwindDevIndicator";
 import { cn } from "@lib/utils";
@@ -26,6 +28,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: LayoutParams) => {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
+      <header>
+        <Navbar />
+      </header>
       <body
         suppressHydrationWarning
         className={cn(
@@ -42,6 +47,9 @@ const RootLayout = ({ children }: LayoutParams) => {
           <ContactDialog />
         </Providers>
       </body>
+      <footer>
+        <Footer />
+      </footer>
     </html>
   );
 };

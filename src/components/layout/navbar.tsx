@@ -19,7 +19,7 @@ type NavbarProps = {
   isVisible: boolean;
 };
 
-export const LandingNavbar = () => {
+export const Navbar = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
     target: ref,
@@ -173,7 +173,7 @@ const MobileNav = ({ isVisible: visible }: NavbarProps) => {
             className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-10 bg-zinc-800  text-xl font-bold text-zinc-600  transition duration-200 hover:text-zinc-800"
           >
             <XCircle
-              className="absolute right-8 top-6 size-5 text-zinc-100"
+              className="absolute right-8 top-6 size-5 cursor-pointer text-zinc-100"
               onClick={() => setOpen(!open)}
             />
             {GetNavbarLinks().map(

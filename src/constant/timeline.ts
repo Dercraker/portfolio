@@ -10,70 +10,134 @@ export const TimelineSchema = z.array(TimelinePointSchema);
 export type TimelinePointType = z.infer<typeof TimelinePointSchema>;
 export type TimelineType = z.infer<typeof TimelineSchema>;
 
+// export const timeline = [
+//   {
+//     year: 2025,
+//     points: [
+//       "Lancement de mon projet de fin d'étude : From-A2B, une application de planification de voyage.",
+//       "Association avec un autre étudiant Next.js pour créer un Boilerplate Next.js performant et optimisé.",
+//     ],
+//   },
+//   {
+//     year: 2024,
+//     points: [
+//       "Grâce à mon alternance, je perfectionne ma maîtrise du C# et des concepts avancés de clean code.",
+//       "Initiation à React par le biais de mon alternance, une révélation qui me pousse à approfondir et aller plus loin avec Next.js.",
+//     ],
+//   },
+//   {
+//     year: 2023,
+//     points: [
+//       "Premiers pas en front-end sur un projet : une tâche que je redoutais mais qui me mène à Vue.js.",
+//       "Apprentissage autodidacte de Docker et approfondissement des concepts DevOps.",
+//       "Début de mon alternance chez Elcia sur ma technologie de prédilection : le C#.",
+//     ],
+//   },
+//   {
+//     year: 2022,
+//     points: [
+//       "Exploration de nouveaux langages : Python, C, C++ et Java.",
+//       "Multiplication de projets qui enrichissent ma compréhension des concepts avancés en programmation.",
+//       "Découverte du C# et de la programmation orientée objet, qui deviendra un des piliers de ma stack technique.",
+//     ],
+//   },
+//   {
+//     year: 2021,
+//     points: [
+//       "Plongée dans le développement avec la découverte du Golang lors d'une piscine intensive.",
+//       "Enchaînement d'exercices en Golang pour maîtriser l'algorithmie.",
+//       "Transition vers JavaScript avec l'objectif de le maîtriser en profondeur.",
+//     ],
+//   },
+//   {
+//     year: 2020,
+//     points: [
+//       "Défi lancé par mon professeur d'informatique : créer un intranet pour la gestion des rendus numériques. Défi relevé !",
+//       "Année marquée par la pandémie de Covid, mais validation de mon Bac Pro Systèmes Numériques.",
+//       "Choix d'une formation privée en programmation pour poursuivre mon ambition.",
+//     ],
+//   },
+//   {
+//     year: 2019,
+//     points: [
+//       "Premiers pas dans le code avec HTML et CSS : création de ma première page web.",
+//       "Prise de conscience du pouvoir du code : transformer une idée en projet concret.",
+//       "Soif d'apprentissage grandissante : les cours ne suffisent plus, je me forme en autodidacte.",
+//       "Lancement de mes premiers side projects.",
+//     ],
+//   },
+//   {
+//     year: 2018,
+//     points: [
+//       "Début de mes études en Bac Pro Systèmes Numériques : premier contact avec l'informatique et coup de foudre immédiat.",
+//       "Passion grandissante pour l'informatique, qui devient rapidement une vocation.",
+//       "Dès ma première année, avant même d'avoir écrit une ligne de code, je savais que ce serait mon métier.",
+//     ],
+//   },
+// ] satisfies TimelineType;
+
 export const timeline = [
   {
     year: 2025,
     points: [
-      "Building a new startup, this time it's going to be a big one",
-      "Started writing blogs as a daily habit. Won the nobel prize for literature",
-      "My brother went on to pursue a career in music, he's now a famous singer",
+      "Launch of my final year project: From-A2B, a travel planning application.",
+      "Collaboration with another Next.js student to create a high-performance and optimized Next.js Boilerplate.",
     ],
   },
   {
     year: 2024,
     points: [
-      "Building a new startup, this time it's going to be a big one",
-      "Started writing blogs as a daily habit. Won the nobel prize for literature",
-      "My brother went on to pursue a career in music, he's now a famous singer",
+      "Thanks to my apprenticeship, I perfected my mastery of C# and advanced clean code concepts.",
+      "Introduction to React through my apprenticeship, a revelation that pushed me to explore and go further with Next.js.",
     ],
   },
   {
     year: 2023,
     points: [
-      "Building a new startup, this time it's going to be a big one",
-      "Started writing blogs as a daily habit. Won the nobel prize for literature",
-      "My brother went on to pursue a career in music, he's now a famous singer",
+      "First steps in front-end development on a project: a task I initially dreaded but which led me to Vue.js.",
+      "Self-taught learning of Docker and deepening my understanding of DevOps concepts.",
+      "Start of my apprenticeship at Elcia, working on my favorite technology: C#.",
     ],
   },
   {
     year: 2022,
     points: [
-      "Bought a new M2 chip macbook pro wow this is crazy!",
-      "Broke the chip as soon as I got it, had to buy a new one",
-      "Bought a new M2 chip macbook pro and started living on the streets.",
+      "Exploration of new languages: Python, C, C++, and Java.",
+      "Multiple projects that enriched my understanding of advanced programming concepts.",
+      "Discovery of C# and object-oriented programming, which would become a key pillar of my tech stack.",
     ],
   },
   {
     year: 2021,
     points: [
-      "Won the interstate merathon, died 4 times on the way.",
-      "Built a side project to help the people of my country win the war against covid",
-      "Started a podcast with my brother, we talk about the latest tech news",
+      "Immersion in development with the discovery of Golang during an intensive bootcamp.",
+      "Series of Golang exercises to master algorithms.",
+      "Transition to JavaScript with the goal of mastering it in depth.",
     ],
   },
   {
     year: 2020,
     points: [
-      "Mon professeur d'informatique me challenge, de crée un intranet pour les rendu numérique, défis relevé",
-      "Le covid arrive et fait des ravages, néamoins je valide mon bac professionnel Système Numérique",
-      "Après mon bac, je m'oriente sur une formation privée dans la programmation",
+      "Challenge set by my computer science teacher: create an intranet for managing digital submissions. Challenge accepted!",
+      "Year marked by the Covid pandemic, but I successfully obtained my Bac Pro Systèmes Numériques.",
+      "Decision to pursue a private training program in programming to follow my ambition.",
     ],
   },
   {
     year: 2019,
     points: [
-      "Je découvre mes premières lignes de code, HTML et CSS, je m'en sers pour créer ma première page web",
-      "Très vite je me rend compte que je peut crée ce que je veut a partir d'une simple idée et quelques lignes de code",
-      "Si au début les exercices de dev lors de mes cours me convenais, j'en ai vite demander plus au point que les cours de l'école ne suffisent plus à mes attentes, je décide de me former en autodidacte",
-      "Je commence mes premier side projects.",
+      "First steps in coding with HTML and CSS: creation of my first web page.",
+      "Realization of the power of coding: turning an idea into a concrete project.",
+      "Growing thirst for knowledge: school courses were no longer enough, so I started learning independently.",
+      "Launch of my first side projects.",
     ],
   },
   {
     year: 2018,
     points: [
-      "Je commence mes première études qui ce rapproche de l'informatique, j'arrive au lycée pour un bac professionnel Système Numérique et je tombe sous le charme de l'informatique",
-      "Très rapidement je confirme mon admiration pour l'informatique, plus que tout j'en fait ma passion",
-      "Dès ma première année, sans même encore avoir découvert le code, je veut en faire mon métier",
+      "Start of my studies in Bac Pro Systèmes Numériques: first encounter with IT and immediate fascination.",
+      "Growing passion for IT, which quickly became a true vocation.",
+      "From my first year, even before writing a single line of code, I knew this was my future career.",
     ],
   },
 ] satisfies TimelineType;

@@ -29,7 +29,6 @@ const RoutePage = async (props: PageParams) => {
           </div>
         </LayoutContent>
       </Layout>
-      <Footer />
     </>
   );
 };

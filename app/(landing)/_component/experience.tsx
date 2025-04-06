@@ -89,12 +89,12 @@ export const Experience = () => {
                   {activeWorkExperience?.role}{" "}
                   {activeWorkExperience.link ? (
                     <LinkPreview url={activeWorkExperience.link}>
-                      <span className="text-cyan-500">
+                      <span className="text-secondary">
                         @ {activeWorkExperience?.company}
                       </span>
                     </LinkPreview>
                   ) : (
-                    <span className="text-cyan-500">
+                    <span className="text-secondary">
                       @ {activeWorkExperience?.company}
                     </span>
                   )}
@@ -119,7 +119,7 @@ export const Experience = () => {
                       key={`bullet-${idx}`}
                       className="my-2 flex flex-row flex-nowrap items-start space-x-2"
                     >
-                      <Check className="mt-[3px] shrink-0 text-cyan-500" />
+                      <Check className="text-secondary mt-[3px] shrink-0" />
                       <span className="text-sm text-zinc-400">{bullet}</span>
                     </div>
                   ))}

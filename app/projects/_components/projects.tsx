@@ -40,10 +40,10 @@ export const Projects = () => {
                 />
               )}
             </AnimatePresence>
-            <div className=" relative z-50 overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
-              <div className="relative z-50">
+            <div className=" relative z-20 overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
+              <div className="relative z-20">
                 <div className="relative h-44 w-full bg-black/10 transition  duration-500 group-hover:bg-transparent sm:h-60 md:h-44">
-                  <div className=" absolute bottom-0 z-20 h-20 w-full bg-zinc-900 transition duration-500 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] group-hover:bg-zinc-800" />
+                  <div className=" absolute bottom-0 z-10 h-20 w-full bg-zinc-900 transition duration-500 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] group-hover:bg-zinc-800" />
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -52,7 +52,7 @@ export const Projects = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <Typography className="mt-4 font-bold tracking-wide text-zinc-100">
+                  <Typography className="group-hover:text-secondary mt-4 font-bold tracking-wide text-zinc-100">
                     {project.title}
                   </Typography>
                   <Typography className="mt-8 text-sm leading-relaxed tracking-wide text-zinc-400">
@@ -65,8 +65,8 @@ export const Projects = () => {
                     className="mt-8"
                   />
                   <div className="mt-4 flex flex-row items-center space-x-2 px-0.5">
-                    <SquareTerminal className="stroke-1.5 size-3 text-zinc-500 group-hover:text-cyan-500" />
-                    <Typography className="text-xs text-zinc-500 group-hover:text-cyan-500">
+                    <SquareTerminal className="stroke-1.5 group-hover:text-secondary size-3 text-zinc-500" />
+                    <Typography className="group-hover:text-secondary text-xs text-zinc-500">
                       View Source
                     </Typography>
                   </div>

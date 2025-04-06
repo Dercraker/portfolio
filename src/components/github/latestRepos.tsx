@@ -38,12 +38,12 @@ export const LatestRepos = ({
               {!repo.private ? (
                 <LinkPreview
                   url={repo.html_url}
-                  className="group relative flex h-full flex-col justify-between rounded-2xl border border-zinc-800 bg-gradient-to-b from-zinc-800 to-zinc-900 p-4 shadow-sm"
+                  className="group relative flex h-full flex-col justify-between rounded-2xl border border-zinc-800 bg-linear-to-b from-zinc-800 to-zinc-900 p-4 shadow-xs"
                 >
                   <RepoCard repo={repo} hoveredIndex={hoveredIndex} idx={idx} />
                 </LinkPreview>
               ) : (
-                <div className="group relative flex h-full flex-col justify-between rounded-2xl border border-zinc-800 bg-gradient-to-b from-zinc-800 to-zinc-900 p-4 shadow-sm">
+                <div className="group relative flex h-full flex-col justify-between rounded-2xl border border-zinc-800 bg-linear-to-b from-zinc-800 to-zinc-900 p-4 shadow-xs">
                   <RepoCard repo={repo} hoveredIndex={hoveredIndex} idx={idx} />
                 </div>
               )}

@@ -8,7 +8,7 @@ import { CheckCircle } from "lucide-react";
 export const Timeline = () => {
   return (
     <div className="relative mx-auto   max-w-3xl divide-zinc-800">
-      <div className="to:transparent absolute -left-4 h-full w-[4px] bg-gradient-to-b from-transparent  via-cyan-500 md:-left-10">
+      <div className="to:transparent absolute -left-4 h-full w-[4px] bg-linear-to-b from-transparent  via-cyan-500 md:-left-10">
         <Beam showBeam={true} className={`left-1`} />
       </div>
       {timeline.map((item: TimelinePointType, idx: number) => (

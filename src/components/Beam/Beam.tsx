@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from "clsx";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import styles from "./style.module.css";
 
@@ -33,8 +33,8 @@ const Beam = ({ showBeam, className }: any) => {
       if (showBeam) {
         const meteor = meteorRef.current;
         if (meteor) {
-          meteor.removeEventListener("animationend", () => void 0);
-          meteor.removeEventListener("animationstart", () => void 0);
+          meteor.removeEventListener("animationend", () => {});
+          meteor.removeEventListener("animationstart", () => {});
         }
       }
     };
@@ -51,7 +51,7 @@ const Beam = ({ showBeam, className }: any) => {
       <span
         ref={meteorRef}
         className={twMerge(
-          "absolute z-20  left-4  h-[0.1rem] w-[0.1rem] rounded-[9999px] bg-blue-700 shadow-[0_0_0_1px_#ffffff10] rotate-[180deg] before:bg-gradient-to-l before:from-transparent before:via-blue-500 before:to-cyan-500",
+          "absolute z-20 left-4 h-[0.1rem] w-[0.1rem] rounded-[9999px] bg-secondary shadow-[0_0_0_1px_#ffffff10] before:bg-gradient-to-l before:from-transparent before:via-secondary before:to-secondary",
           styles.meteor,
           className,
         )}

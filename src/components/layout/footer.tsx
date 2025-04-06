@@ -23,14 +23,14 @@ export const Footer = () => {
     FooterLinks.map((l) => ({ ...l, href: l.href({}) }));
 
   return (
-    <div className="relative mt-16 w-full overflow-hidden border-t border-neutral-100 bg-white px-8 py-20 dark:border-white/[0.1] dark:bg-neutral-950">
+    <div className="relative mt-16 w-full overflow-hidden border-t border-white/[0.1] bg-neutral-950 px-8 py-20">
       <div className="mx-auto max-w-7xl items-start justify-between  text-sm text-neutral-500  md:px-8">
         <div className="relative flex w-full flex-col items-center justify-center">
           <div className="mb-4 mr-0  md:mr-4 md:flex">
             <Logo />
           </div>
 
-          <ul className="hover:text-text-neutral-800 flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300 sm:flex-row">
+          <ul className="hover:text-text-neutral-800 flex list-none flex-col gap-4  text-neutral-300 transition-colors sm:flex-row">
             {GetFooterLinks().map((page, idx) => (
               <li key={`pages${idx}`} className="list-none">
                 <Link
@@ -46,15 +46,15 @@ export const Footer = () => {
           <GridLineHorizontal className="mx-auto mt-8 max-w-7xl" />
         </div>
         <div className="mt-8 flex w-full flex-col items-center justify-between sm:flex-row">
-          <p className="mb-8 text-neutral-500 dark:text-neutral-400 sm:mb-0">
+          <p className="mb-8 text-neutral-400 sm:mb-0">
             &copy; {new Date().getFullYear()} {GLOBAL_CONFIG.company.name}
           </p>
           <div className="flex gap-4">
             <LinkPreview url={GLOBAL_CONFIG.social.linkedin}>
-              <Linkedin className="size-6 text-neutral-500 dark:text-neutral-300" />
+              <Linkedin className="hover:text-secondary size-6 text-neutral-300" />
             </LinkPreview>
             <LinkPreview url={GLOBAL_CONFIG.social.github}>
-              <Github className="size-6 text-neutral-500 dark:text-neutral-300" />
+              <Github className="hover:text-secondary size-6 text-neutral-300" />
             </LinkPreview>
           </div>
         </div>

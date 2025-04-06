@@ -67,8 +67,8 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "hidden md:flex flex-row  self-start bg-transparent dark:bg-transparent items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[100] w-full",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        "hidden md:flex flex-row  self-start bg-transparent items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-100 w-full",
+        visible && "bg-card/80",
       )}
     >
       <Logo />
@@ -76,14 +76,14 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
         {GetNavbarLinks().map((link: GeneratedNavigationLink, idx: number) => (
           <Link
             onMouseEnter={() => setHovered(idx)}
-            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            className="relative px-4 py-2 text-neutral-300"
             key={`link=${idx}`}
             href={link.href}
           >
             {hovered === idx && (
               <motion.div
                 layoutId="hovered"
-                className="absolute inset-0 size-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                className="bg-accent absolute inset-0 size-full rounded-full"
               />
             )}
             <span className="relative z-20">{link.label}</span>
@@ -152,7 +152,7 @@ const MobileNav = ({ isVisible: visible }: NavbarProps) => {
         }}
         className={cn(
           "flex relative flex-col md:hidden w-full justify-between items-center bg-transparent max-w-[calc(100vw-2rem)] mx-auto px-0 py-2 z-50",
-          visible && "bg-white/80 dark:bg-neutral-950/80",
+          visible && "bg-card/80",
         )}
       >
         <div className="flex w-full flex-row items-center justify-between">
@@ -193,7 +193,7 @@ const MobileNav = ({ isVisible: visible }: NavbarProps) => {
               variants={childItems}
               href="/cv.pdf"
               target="__blank"
-              className="inline-flex items-center justify-center rounded-[10px] bg-gradient-to-b from-[#464d55] to-[#25292e] px-4 py-2 text-sm text-white shadow-[0_10px_20px_rgba(0,_0,_0,_.1),0_3px_6px_rgba(0,_0,_0,_.05)] hover:opacity-80 hover:shadow-[rgba(0,_1,_0,_.2)_0_2px_8px] active:outline-none "
+              className="bg-linear-to-b active:outline-hidden inline-flex items-center justify-center rounded-[10px] from-[#464d55] to-[#25292e] px-4 py-2 text-sm text-white shadow-[0_10px_20px_rgba(0,_0,_0,_.1),0_3px_6px_rgba(0,_0,_0,_.05)] hover:opacity-80 hover:shadow-[rgba(0,_1,_0,_.2)_0_2px_8px] "
             >
               Download CV
             </motion.a>

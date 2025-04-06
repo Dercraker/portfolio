@@ -15,9 +15,7 @@ export const Logo = () => {
         height={30}
         className="rounded-full"
       />
-      <span className="font-medium text-black dark:text-white">
-        Antoine Capitain
-      </span>
+      <span className="font-medium text-white">Antoine Capitain</span>
     </Link>
   );
 };

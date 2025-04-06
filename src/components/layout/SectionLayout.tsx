@@ -42,7 +42,7 @@ export const SectionLayout = ({
           "bg-card text-card-foreground": variant === "card",
           "bg-primary text-primary-foreground": variant === "primary",
           "bg-foreground text-background": variant === "invert",
-          "text-foreground backdrop-blur-sm backdrop-brightness-75":
+          "text-foreground backdrop-blur-xs backdrop-brightness-75":
             variant === "image",
         },
         containerClassName,

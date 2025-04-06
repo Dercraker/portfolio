@@ -50,7 +50,7 @@ const IconCloud = ({ iconSlugs }: DynamicCloudProps) => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      RenderCustomIcon(icon, theme ?? "light"),
+      RenderCustomIcon({ icon, theme: theme ?? "light" }),
     );
   }, [data, theme]);
 

@@ -1,16 +1,24 @@
 "use client";
 
-import { LinkPreview } from "@ui/link-preview";
+import { LinkedinPostType } from "@type/linkedinPost.type";
+import { Typography } from "@ui/typography";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import type { Dispatch, SetStateAction } from "react";
 
 export type EventProps = {
   setHoveredIndex: Dispatch<SetStateAction<number | null>>;
   idx: number;
   hoveredIndex: number | null;
+  post: LinkedinPostType;
 };
 
-export const Event = ({ setHoveredIndex, idx, hoveredIndex }: EventProps) => {
+export const Event = ({
+  setHoveredIndex,
+  idx,
+  hoveredIndex,
+  post,
+}: EventProps) => {
   return (
     <div
       className="relative md:p-8"
@@ -36,19 +44,19 @@ export const Event = ({ setHoveredIndex, idx, hoveredIndex }: EventProps) => {
         )}
       </AnimatePresence>
       <div className="relative ">
-        <small className="block text-zinc-500 md:border-l  md:border-zinc-700 md:pl-4">
-          formatDate(article.date)
-        </small>
-        <h2 className="mt-4 text-lg font-bold text-zinc-200">article.title</h2>
-        <p className="mt-4 max-w-4xl text-sm font-normal leading-loose text-zinc-200">
-          article.description
-        </p>
-        <LinkPreview
-          url="/"
-          className="cursor-pointer  text-cyan-500 hover:underline"
+        <Typography className="block text-zinc-500 md:border-l  md:border-zinc-700 md:pl-4">
+          {new Date(post.date).toLocaleDateString()}
+        </Typography>
+        <Typography className="mt-4 max-w-4xl text-sm font-normal leading-loose text-zinc-200">
+          {post.content}
+        </Typography>
+
+        <Link
+          href={post.url}
+          className="cursor-pointer  text-secondary hover:underline"
         >
-          <p className="mt-6 block text-sm text-cyan-500">Read More</p>
-        </LinkPreview>
+          Read More
+        </Link>
       </div>
     </div>
   );

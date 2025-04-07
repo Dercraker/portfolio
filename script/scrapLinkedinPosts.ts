@@ -43,12 +43,16 @@ async function run() {
       const likes = text.match(/(\d+[,.]?\d*)\s+jaime|like/i)?.[1] ?? null;
       const comments = text.match(/(\d+[,.]?\d*)\s+commentaire/i)?.[1] ?? null;
 
+      const urn = el.getAttribute("data-urn");
+      const url = `https://www.linkedin.com/feed/update/${urn}`;
+
       data.push({
         date,
         content: text.slice(0, 300),
         impressions,
         likes,
         comments,
+        url,
       });
     });
 

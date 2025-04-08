@@ -5,6 +5,7 @@ export const LinkedinPostTypeSchema = z.object({
   content: z.string(),
   impressions: z.number().nullable(),
   likes: z.number().nullable(),
+  shares: z.number().nullable(),
   comments: z.number().nullable(),
   url: z.string(),
 });

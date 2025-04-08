@@ -41,6 +41,8 @@ async function run() {
         el.querySelector('span[aria-hidden="true"]')?.textContent ?? "";
       const impressions = text.match(/(\d+[,.]?\d*)\s+vues?/i)?.[1] ?? null;
       const likes = text.match(/(\d+[,.]?\d*)\s+jaime|like/i)?.[1] ?? null;
+      const shares =
+        text.match(/(\d+[,.]?\d*)\s+republication|republication/i)?.[1] ?? null;
       const comments = text.match(/(\d+[,.]?\d*)\s+commentaire/i)?.[1] ?? null;
 
       const urn = el.getAttribute("data-urn");
@@ -51,6 +53,7 @@ async function run() {
         content: text.slice(0, 300),
         impressions,
         likes,
+        shares,
         comments,
         url,
       });

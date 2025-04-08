@@ -1,3 +1,5 @@
+import { HoverGithubIcon } from "@components/animatedIcon/hoverGithub.icon";
+import { HoverLinkedinIcon } from "@components/animatedIcon/hoverLinkedin.icon";
 import { Logo } from "@components/logo/logo";
 import { LINKS } from "@feat/navigation/Links";
 import type {
@@ -7,7 +9,6 @@ import type {
 import { cn } from "@lib/utils";
 import { LinkPreview } from "@ui/link-preview";
 import { GLOBAL_CONFIG } from "globalConfig";
-import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -51,10 +52,10 @@ export const Footer = () => {
           </p>
           <div className="flex gap-4">
             <LinkPreview url={GLOBAL_CONFIG.social.linkedin}>
-              <Linkedin className="hover:text-secondary size-6 text-neutral-300" />
+              <HoverLinkedinIcon size={48} loop />
             </LinkPreview>
             <LinkPreview url={GLOBAL_CONFIG.social.github}>
-              <Github className="hover:text-secondary size-6 text-neutral-300" />
+              <HoverGithubIcon size={48} loop />
             </LinkPreview>
           </div>
         </div>

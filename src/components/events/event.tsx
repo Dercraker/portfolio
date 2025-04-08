@@ -1,10 +1,13 @@
 "use client";
 
+import { EyeIcon } from "@components/animatedIcon/eye.icon";
+import { HearthIcon } from "@components/animatedIcon/hearth.icon";
+import { ShareIcon } from "@components/animatedIcon/share.icon";
+import { WeChatIcon } from "@components/animatedIcon/weChat.icon";
 import { LinkedinPostType } from "@type/linkedinPost.type";
 import { InlineTooltip } from "@ui/tooltip";
 import { Typography } from "@ui/typography";
 import { AnimatePresence, motion } from "framer-motion";
-import { Eye, MessagesSquare, Share2, ThumbsUp } from "lucide-react";
 import Link from "next/link";
 import type { Dispatch, SetStateAction } from "react";
 
@@ -56,23 +59,56 @@ export const Event = ({
         <div className="flex items-center gap-2 ml-auto w-fit text-muted-foreground cursor-pointer">
           <InlineTooltip title="Likes">
             <Typography className="flex items-center gap-1 ">
-              {post.likes} <ThumbsUp className="size-4 text-blue-400" />
+              {post.likes}
+              <HearthIcon
+                colorize={
+                  hoveredIndex === idx ? "#51a2ff" : "var(--muted-foreground)"
+                }
+                isHover={hoveredIndex === idx}
+                size={32}
+              />
             </Typography>
           </InlineTooltip>
           <InlineTooltip title="Comments">
             <Typography className="flex items-center gap-1">
               {post.comments}{" "}
-              <MessagesSquare className="size-4 text-green-400" />
+              <WeChatIcon
+                colorize={
+                  hoveredIndex === idx
+                    ? "var(--color-green-400)"
+                    : "var(--muted-foreground)"
+                }
+                isHover={hoveredIndex === idx}
+                size={32}
+              />
             </Typography>
           </InlineTooltip>
           <InlineTooltip title="Shares">
             <Typography className="flex items-center gap-1">
-              {post.shares} <Share2 className="size-4 text-yellow-400" />
+              {post.shares}
+              <ShareIcon
+                colorize={
+                  hoveredIndex === idx
+                    ? "var(--color-yellow-400)"
+                    : "var(--muted-foreground)"
+                }
+                isHover={hoveredIndex === idx}
+                size={32}
+              />
             </Typography>
           </InlineTooltip>
           <InlineTooltip title="Imprint">
             <Typography className="flex items-center gap-1">
-              {post.impressions} <Eye className="size-4 text-red-400" />
+              {post.impressions}{" "}
+              <EyeIcon
+                colorize={
+                  hoveredIndex === idx
+                    ? "var(--color-red-400)"
+                    : "var(--muted-foreground)"
+                }
+                isHover={hoveredIndex === idx}
+                size={32}
+              />
             </Typography>
           </InlineTooltip>
         </div>

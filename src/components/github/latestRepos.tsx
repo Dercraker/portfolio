@@ -120,10 +120,10 @@ const RepoCard = ({
           </p>
         </div>
 
-        <div className="mt-4 flex flex-row items-center space-x-4 text-zinc-500 group-hover:text-cyan-500">
+        <div className="mt-4 flex flex-row items-center space-x-4 text-zinc-500 group-hover:text-secondary">
           <div className=" flex flex-row items-center space-x-1 text-sm font-normal ">
             <GitFork className="size-4 stroke-1 " />
-            <span className=" group-hover:text-cyan-500">
+            <span className=" group-hover:text-secondary">
               {repo.forks_count}
             </span>
           </div>

@@ -30,7 +30,8 @@
       "@utils/*": ["utils/*"],
       "@type/*": ["types/*"],
       "@api/*": ["../app/api/*"],
-      "@app/*": ["../app/*"]
+      "@app/*": ["../app/*"],
+      "@assets/*": ["../public/assets/*"]
     }
   },
   "include": [

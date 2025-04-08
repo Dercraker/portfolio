@@ -1,5 +1,6 @@
 "use client";
 
+import { HoverCheckIcon } from "@components/animatedIcon/hoverCheck.icon";
 import Beam from "@components/Beam/Beam";
 import { LinkPreview } from "@ui/link-preview";
 import { InlineTooltip } from "@ui/tooltip";
@@ -8,7 +9,6 @@ import type { workExperienceType } from "constant/workExperience";
 import { workExperience } from "constant/workExperience";
 import { format } from "date-fns";
 import { AnimatePresence, motion } from "framer-motion";
-import { Check } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -117,9 +117,9 @@ export const Experience = () => {
                   {activeWorkExperience?.description.map((bullet, idx) => (
                     <div
                       key={`bullet-${idx}`}
-                      className="my-2 flex flex-row flex-nowrap items-start space-x-2"
+                      className="my-2 flex flex-row flex-nowrap items-center gap-2"
                     >
-                      <Check className="text-secondary mt-[3px] shrink-0" />
+                      <HoverCheckIcon colorize="var(--secondary)" size={32} />
                       <span className="text-sm text-zinc-400">{bullet}</span>
                     </div>
                   ))}

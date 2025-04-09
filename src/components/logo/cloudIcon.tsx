@@ -3,40 +3,47 @@ import { useEffect, useMemo, useState } from "react";
 import type { ICloud } from "react-icon-cloud";
 import { Cloud, fetchSimpleIcons } from "react-icon-cloud";
 import { RenderCustomIcon } from "./renderCustomIcon";
-export const cloudProps: Omit<ICloud, "children"> = {
-  containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      paddingTop: 40,
-    },
-  },
-  options: {
-    reverse: true,
-    depth: 1,
-    wheelZoom: false,
-    imageScale: 2,
-    activeCursor: "default",
-    tooltip: "native",
-    initial: [0.1, -0.1],
-    clickToFront: 500,
-    tooltipDelay: 0,
-    outlineColour: "#0000",
-    maxSpeed: 0.02,
-    minSpeed: 0.001,
-    dragControl: false,
-  },
-};
 
 export type DynamicCloudProps = {
   iconSlugs: string[];
+  cloudProps?: Omit<ICloud, "children">;
 };
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-const IconCloud = ({ iconSlugs }: DynamicCloudProps) => {
+const IconCloud = ({
+  iconSlugs,
+  cloudProps = {
+    containerProps: {
+      style: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        paddingTop: 40,
+      },
+    },
+    options: {
+      activeCursor: "default",
+      animTiming: "Smooth",
+      clickToFront: 1000,
+      decel: 0.98,
+      depth: 1,
+      dragControl: true,
+      frontSelect: false,
+      hideTags: true,
+      outlineColour: "#0aa375",
+      outlineMethod: "colour",
+      pinchZoom: false,
+      tooltip: "native",
+
+      wheelZoom: false,
+      initial: [0.05, -0.05],
+      maxSpeed: 0.02,
+      minSpeed: 0.001,
+    },
+  },
+}: DynamicCloudProps) => {
   const [data, setData] = useState<IconData | null>(null);
 
   useEffect(() => {

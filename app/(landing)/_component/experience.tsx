@@ -127,6 +127,7 @@ export const Experience = () => {
                           colorize="var(--secondary)"
                           size={32}
                           isHover={hoveredBullet === bulletIdx}
+                          loop
                         />
                         <span className="text-sm text-zinc-400">{bullet}</span>
                       </div>
@@ -137,11 +138,14 @@ export const Experience = () => {
                   {activeWorkExperience.technologies.map((t) => (
                     <InlineTooltip key={t} title={t}>
                       <Image
-                        src={`https://cdn.simpleicons.org/${t}`}
+                        src={`https://cdn.simpleicons.org/${t}/3d3d43`}
                         alt={t}
                         width={24}
                         height={24}
                       />
+                      {/* <GroupIcon
+                        iconSlugs={activeWorkExperience.technologies}
+                      /> */}
                     </InlineTooltip>
                   ))}
                 </div>

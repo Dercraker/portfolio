@@ -1,5 +1,4 @@
 "use client";
-import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
 import type { ICloud } from "react-icon-cloud";
 import { Cloud, fetchSimpleIcons } from "react-icon-cloud";
@@ -26,7 +25,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
     tooltipDelay: 0,
     outlineColour: "#0000",
     maxSpeed: 0.02,
-    minSpeed: 0.02,
+    minSpeed: 0.001,
     dragControl: false,
   },
 };
@@ -39,7 +38,6 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 const IconCloud = ({ iconSlugs }: DynamicCloudProps) => {
   const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -50,9 +48,9 @@ const IconCloud = ({ iconSlugs }: DynamicCloudProps) => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      RenderCustomIcon({ icon, theme: theme ?? "light" }),
+      RenderCustomIcon({ icon }),
     );
-  }, [data, theme]);
+  }, [data]);
 
   return (
     <Cloud {...cloudProps} id="Tools-Cloud-Icons">

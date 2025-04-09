@@ -1,5 +1,6 @@
 "use client";
 
+import { ConversationConsultationIcon } from "@components/animatedIcon/conversationConsultation.icon";
 import { SubmitButton } from "@components/form/submitButton";
 import { ContactAction } from "@feat/contact/contact.action";
 import { ContactFormSchema } from "@feat/contact/contactForm.schema";
@@ -23,7 +24,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@ui/popover";
 import { Textarea } from "@ui/textarea";
 import { InlineTooltip } from "@ui/tooltip";
 import { Typography } from "@ui/typography";
-import { MessageSquareShare } from "lucide-react";
 import { toast } from "sonner";
 
 export const ContactDialog = () => {
@@ -32,8 +32,6 @@ export const ContactDialog = () => {
   const form = useZodForm({
     schema: ContactFormSchema,
     defaultValues: {
-      email: "antoine.capitain+test@gmail.com",
-      message: "Hello, how are you?",
       messageCopy: false,
     },
     mode: "onBlur",
@@ -61,8 +59,11 @@ export const ContactDialog = () => {
     <Popover open={isOpen} onOpenChange={toggle}>
       <InlineTooltip title="Contact Us">
         <PopoverTrigger asChild>
-          <Button className="fixed bottom-4 right-16 z-50 rounded-full cursor-pointer">
-            <MessageSquareShare className="size-5" />
+          <Button className="fixed bottom-4 right-16 z-50 rounded-full size-12 cursor-pointer cursor-pointer">
+            <ConversationConsultationIcon
+              size={32}
+              colorize="var(--secondary)"
+            />
           </Button>
         </PopoverTrigger>
       </InlineTooltip>

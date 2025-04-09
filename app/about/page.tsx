@@ -1,6 +1,7 @@
+import { HoverGithubIcon } from "@components/animatedIcon/hoverGithub.icon";
+import { HoverLinkedinIcon } from "@components/animatedIcon/hoverLinkedin.icon";
 import { LinkPreview } from "@ui/link-preview";
 import { GLOBAL_CONFIG } from "globalConfig";
-import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { Timeline } from "./_component/timeline";
 
@@ -10,7 +11,7 @@ const RoutePage = () => {
       <div className="relative mx-auto flex max-w-5xl flex-col justify-between space-y-10 px-8 md:mt-20 md:flex-row md:space-x-10 md:space-y-0">
         <div>
           <h1 className="max-w-3xl text-3xl font-bold text-zinc-50 md:text-5xl md:leading-tight">
-            Hey ! I'm <span className="text-cyan-500">Antoine Capitain</span>{" "}
+            Hey ! I'm <span className="text-secondary">Antoine Capitain</span>{" "}
             and I'm a full stack software developer.
           </h1>
           <p className="mt-8 max-w-2xl text-sm tracking-wide text-zinc-400 md:text-base md:leading-loose">
@@ -29,18 +30,12 @@ const RoutePage = () => {
             alt="Avatar"
             className="rounded-2xl"
           />
-          <div className="mt-2 flex flex-row justify-start space-x-2 md:justify-center">
-            <LinkPreview
-              url={GLOBAL_CONFIG.social.linkedin}
-              className="relative text-sm text-zinc-500"
-            >
-              <Linkedin className="relative z-10 inline-block p-2 hover:text-cyan-500" />
+          <div className="flex justify-center gap-2">
+            <LinkPreview url={GLOBAL_CONFIG.social.linkedin}>
+              <HoverLinkedinIcon size={32} loop />
             </LinkPreview>
-            <LinkPreview
-              url={GLOBAL_CONFIG.social.github}
-              className="relative text-sm text-zinc-500"
-            >
-              <Github className="relative z-10 inline-block p-2 hover:text-cyan-500" />
+            <LinkPreview url={GLOBAL_CONFIG.social.github}>
+              <HoverGithubIcon size={32} loop />
             </LinkPreview>
           </div>
         </div>

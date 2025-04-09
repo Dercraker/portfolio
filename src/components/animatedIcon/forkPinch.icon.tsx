@@ -1,6 +1,6 @@
 "use client";
 
-import ICON from "@assets/system-regular-31-check-hover-check.json";
+import ICON from "@assets/wired-outline-1325-code-fork-hover-pinch.json";
 import { useDisclosure } from "@hooks/useDisclosure";
 
 import { type Player as PlayerType } from "@lordicon/react";
@@ -9,7 +9,7 @@ import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
-type HoverCheckIconProps = {
+type ForkPinchIconProps = {
   onClick?: () => void;
 
   isHover?: boolean;
@@ -28,7 +28,8 @@ const Player = dynamic(
     loading: () => <Loader2 size={32} className="animate-spin" />,
   },
 );
-export const HoverCheckIcon = ({
+
+export const ForkPinchIcon = ({
   colorize = "var(--muted-foreground)",
   size = 64,
   disabled = false,
@@ -36,7 +37,7 @@ export const HoverCheckIcon = ({
   loop = false,
   stayLastFrame = false,
   onClick,
-}: HoverCheckIconProps) => {
+}: ForkPinchIconProps) => {
   const [hovered, { open: openHover, close: closeHover }] =
     useDisclosure(false);
   const playerRef = useRef<PlayerType>(null);

@@ -19,7 +19,7 @@ const Content = () => {
       <div className="relative mt-20 flex flex-col items-center  justify-center ">
         <h1 className="relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-7xl ">
           I'm a{" "}
-          <span className="bg-secondary relative z-10 bg-clip-text text-transparent">
+          <span className="bg-secondary relative bg-clip-text text-transparent">
             full stack
           </span>{" "}
           developer{" "}

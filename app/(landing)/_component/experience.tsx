@@ -14,6 +14,7 @@ import { useState } from "react";
 
 export const Experience = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredBullet, setHoveredBullet] = useState<number | null>(null);
   const [activeWorkExperience, setActiveWorkExperience] =
     useState<workExperienceType>(workExperience[0]);
 
@@ -31,15 +32,15 @@ export const Experience = () => {
             <Beam showBeam={true} className={`-left-0`} />
           </div>
 
-          {workExperience.map((exp, idx) => (
+          {workExperience.map((exp, workIdx) => (
             <div
-              key={`exp-${idx}`}
+              key={`exp-${workIdx}`}
               className="relative my-2"
-              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseEnter={() => setHoveredIndex(workIdx)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <AnimatePresence>
-                {hoveredIndex === idx && (
+                {hoveredIndex === workIdx && (
                   <motion.span
                     className="absolute inset-0 size-full rounded-md bg-zinc-800"
                     layoutId="hoverBackground"
@@ -114,15 +115,23 @@ export const Experience = () => {
                     : "Full Remote"}
                 </p>
                 <div>
-                  {activeWorkExperience?.description.map((bullet, idx) => (
-                    <div
-                      key={`bullet-${idx}`}
-                      className="my-2 flex flex-row flex-nowrap items-center gap-2"
-                    >
-                      <HoverCheckIcon colorize="var(--secondary)" size={32} />
-                      <span className="text-sm text-zinc-400">{bullet}</span>
-                    </div>
-                  ))}
+                  {activeWorkExperience?.description.map(
+                    (bullet, bulletIdx) => (
+                      <div
+                        key={`bullet-${bulletIdx}`}
+                        className="my-2 flex flex-row flex-nowrap items-center gap-2"
+                        onMouseEnter={() => setHoveredBullet(bulletIdx)}
+                        onMouseLeave={() => setHoveredBullet(null)}
+                      >
+                        <HoverCheckIcon
+                          colorize="var(--secondary)"
+                          size={32}
+                          isHover={hoveredBullet === bulletIdx}
+                        />
+                        <span className="text-sm text-zinc-400">{bullet}</span>
+                      </div>
+                    ),
+                  )}
                 </div>
                 <div className="flex flex-row flex-wrap gap-2">
                   {activeWorkExperience.technologies.map((t) => (

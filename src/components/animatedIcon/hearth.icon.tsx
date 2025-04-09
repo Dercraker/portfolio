@@ -3,8 +3,10 @@
 import ICON from "@assets/wired-outline-20-love-heart-morph-glitter.json";
 import { useDisclosure } from "@hooks/useDisclosure";
 
-import { Player } from "@lordicon/react";
+import { type Player as PlayerType } from "@lordicon/react";
 import { Button } from "@ui/button";
+import { Loader2 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
 type HearthIconProps = {
@@ -19,6 +21,13 @@ type HearthIconProps = {
   stayLastFrame?: boolean;
 };
 
+const Player = dynamic(
+  () => import("@lordicon/react").then((mod) => mod.Player),
+  {
+    ssr: false,
+    loading: () => <Loader2 size={32} className="animate-spin" />,
+  },
+);
 export const HearthIcon = ({
   colorize = "var(--muted-foreground)",
   size = 64,
@@ -30,7 +39,7 @@ export const HearthIcon = ({
 }: HearthIconProps) => {
   const [hovered, { open: openHover, close: closeHover }] =
     useDisclosure(false);
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<PlayerType>(null);
 
   useEffect(() => {
     if ((isHover || hovered) && !playerRef.current?.isPlaying)
@@ -62,6 +71,7 @@ export const HearthIcon = ({
         className="p-0 m-0"
       >
         <Player
+          // @ts-ignore
           ref={playerRef}
           icon={ICON}
           size={size}

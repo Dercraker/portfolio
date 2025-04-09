@@ -3,8 +3,10 @@
 import ICON from "@assets/system-regular-1-share-hover-share.json";
 import { useDisclosure } from "@hooks/useDisclosure";
 
-import { Player } from "@lordicon/react";
+import { type Player as PlayerType } from "@lordicon/react";
 import { Button } from "@ui/button";
+import { Loader2 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
 type ShareIconProps = {
@@ -19,6 +21,14 @@ type ShareIconProps = {
   stayLastFrame?: boolean;
 };
 
+const Player = dynamic(
+  () => import("@lordicon/react").then((mod) => mod.Player),
+  {
+    ssr: false,
+    loading: () => <Loader2 size={32} className="animate-spin" />,
+  },
+);
+
 export const ShareIcon = ({
   colorize = "var(--muted-foreground)",
   size = 64,
@@ -30,7 +40,7 @@ export const ShareIcon = ({
 }: ShareIconProps) => {
   const [hovered, { open: openHover, close: closeHover }] =
     useDisclosure(false);
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<PlayerType>(null);
 
   useEffect(() => {
     if ((isHover || hovered) && !playerRef.current?.isPlaying)
@@ -61,6 +71,7 @@ export const ShareIcon = ({
       className="p-0 m-0"
     >
       <Player
+        // @ts-ignore
         ref={playerRef}
         icon={ICON}
         size={size}

@@ -3,8 +3,10 @@
 import ICON from "@assets/wired-outline-2572-logo-github-hover-roll.json";
 import { useDisclosure } from "@hooks/useDisclosure";
 
-import { Player } from "@lordicon/react";
+import { type Player as PlayerType } from "@lordicon/react";
 import { Button } from "@ui/button";
+import { Loader2 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
 type HoverGithubIconProps = {
@@ -19,6 +21,14 @@ type HoverGithubIconProps = {
   stayLastFrame?: boolean;
 };
 
+const Player = dynamic(
+  () => import("@lordicon/react").then((mod) => mod.Player),
+  {
+    ssr: false,
+    loading: () => <Loader2 size={32} className="animate-spin" />,
+  },
+);
+
 export const HoverGithubIcon = ({
   colorize = "var(--secondary)",
   size = 64,
@@ -30,7 +40,7 @@ export const HoverGithubIcon = ({
 }: HoverGithubIconProps) => {
   const [hovered, { open: openHover, close: closeHover }] =
     useDisclosure(false);
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<PlayerType>(null);
 
   useEffect(() => {
     if (playerRef.current?.isPlaying) return;
@@ -62,6 +72,7 @@ export const HoverGithubIcon = ({
       className="p-0 m-0"
     >
       <Player
+        // @ts-ignore
         ref={playerRef}
         icon={ICON}
         size={size}

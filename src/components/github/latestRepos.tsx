@@ -2,12 +2,14 @@
 
 import { motion } from "motion/react";
 
+import { ForkPinchIcon } from "@components/animatedIcon/forkPinch.icon";
+import { HoverPinchStarIcon } from "@components/animatedIcon/hoverPinchStar.icon";
+import { LockeyLockIcon } from "@components/animatedIcon/lockeyLock.Icon";
 import { cn } from "@lib/utils";
 import type { Repository } from "@type/repository.type";
 import { LinkPreview } from "@ui/link-preview";
 import { InlineTooltip } from "@ui/tooltip";
 import { AnimatePresence } from "framer-motion";
-import { GitFork, LockKeyhole, Star } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -101,7 +103,12 @@ const RepoCard = ({
           <div className="flex items-center">
             {repo.private && (
               <InlineTooltip title="Private repository">
-                <LockKeyhole className="mr-2 size-4 text-red-400" />
+                <LockeyLockIcon
+                  size={24}
+                  colorize="var(--color-red-400)"
+                  isHover={hoveredIndex === idx}
+                  loop
+                />
               </InlineTooltip>
             )}
             <h2
@@ -121,14 +128,24 @@ const RepoCard = ({
         </div>
 
         <div className="mt-4 flex flex-row items-center space-x-4 text-zinc-500 group-hover:text-secondary">
-          <div className=" flex flex-row items-center space-x-1 text-sm font-normal ">
-            <GitFork className="size-4 stroke-1 " />
+          <div className="flex items-center gap-1 text-sm font-normal">
+            <ForkPinchIcon
+              size={24}
+              colorize="var(--secondary)"
+              isHover={hoveredIndex === idx}
+              loop
+            />
             <span className=" group-hover:text-secondary">
               {repo.forks_count}
             </span>
           </div>
-          <div className=" flex flex-row items-center space-x-1 text-sm font-normal">
-            <Star className="size-4 stroke-1 " />
+          <div className="flex items-center gap-1 text-sm font-normal">
+            <HoverPinchStarIcon
+              size={24}
+              colorize="var(--secondary)"
+              isHover={hoveredIndex === idx}
+              loop
+            />
             <span className="">{repo.stargazers_count}</span>
           </div>
         </div>

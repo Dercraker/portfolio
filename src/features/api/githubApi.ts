@@ -6,7 +6,6 @@ import { githubClient } from "./apiBaseClient";
 export const getAllGithubRepos = async () => {
   const allRepos = new Map<number, GithubRepository>();
 
-  // 1. Repos personnels (public + privé)
   const getPersonalRepos = async () => {
     let page = 1;
     while (true) {
@@ -22,9 +21,7 @@ export const getAllGithubRepos = async () => {
     }
   };
 
-  // 2. Repos des organisations
   const getOrgRepos = async () => {
-    // Récupère toutes les orgs
     const { data: orgs } = await githubClient.orgs.listForAuthenticatedUser();
 
     for (const org of orgs) {
@@ -44,45 +41,7 @@ export const getAllGithubRepos = async () => {
     }
   };
 
-  // 3. Repos où je suis collaborateur
-  const getCollaboratedRepos = async () => {
-    let page = 1;
-    while (true) {
-      const { data } = await githubClient.repos.listForAuthenticatedUser({
-        per_page: 100,
-        page,
-        affiliation: "collaborator",
-      });
-      if (data.length === 0) break;
-      //@ts-expect-error TODO: fix repo type
-      data.forEach((repo) => allRepos.set(repo.id, repo));
-      page++;
-    }
-  };
-
-  // 4. Repos forkés
-  const getForkedRepos = async () => {
-    let page = 1;
-    while (true) {
-      const { data } = await githubClient.repos.listForAuthenticatedUser({
-        per_page: 100,
-        page,
-        affiliation: "organization_member",
-      });
-      if (data.length === 0) break;
-      //@ts-expect-error TODO: fix repo type
-      data.forEach((repo) => allRepos.set(repo.id, repo));
-      page++;
-    }
-  };
-
-  // Exécute toutes les requêtes
-  await Promise.all([
-    getPersonalRepos(),
-    getOrgRepos(),
-    // getCollaboratedRepos(),
-    // getForkedRepos(),
-  ]);
+  await Promise.all([getPersonalRepos(), getOrgRepos()]);
 
   return Array.from(allRepos.values())
     .filter(

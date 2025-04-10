@@ -14,7 +14,7 @@ import { LatestRepoSection } from "./_component/latestRepoSection";
 import { Tools } from "./_component/tools";
 
 export const generateMetadata = combineWithParentMetadata({
-  title: "Dercraker",
+  title: "Dercraker | Full Stack Developer",
 });
 const RoutePage = async () => {
   const linkedinPosts = z

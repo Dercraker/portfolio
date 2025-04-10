@@ -1,10 +1,10 @@
 /* eslint-disable no-await-in-loop */
-import type { Repository } from "@type/repository.type";
+import type { GithubRepository } from "@type/githubEvent.type";
 import { cache } from "react";
 import { githubClient } from "./apiBaseClient";
 
 export const getAllGithubRepos = async () => {
-  const allRepos = new Map<number, Repository>();
+  const allRepos = new Map<number, GithubRepository>();
 
   // 1. Repos personnels (public + privé)
   const getPersonalRepos = async () => {
@@ -14,8 +14,6 @@ export const getAllGithubRepos = async () => {
         per_page: 100,
         page,
         affiliation: "owner",
-        direction: "desc",
-        sort: "updated",
       });
       if (data.length === 0) break;
       //@ts-expect-error TODO: fix repo type
@@ -37,8 +35,6 @@ export const getAllGithubRepos = async () => {
           per_page: 100,
           page,
           type: "all", // inclut public et privé
-          direction: "desc",
-          sort: "updated",
         });
         if (data.length === 0) break;
         //@ts-expect-error TODO: fix repo type
@@ -56,8 +52,6 @@ export const getAllGithubRepos = async () => {
         per_page: 100,
         page,
         affiliation: "collaborator",
-        direction: "desc",
-        sort: "updated",
       });
       if (data.length === 0) break;
       //@ts-expect-error TODO: fix repo type
@@ -74,8 +68,6 @@ export const getAllGithubRepos = async () => {
         per_page: 100,
         page,
         affiliation: "organization_member",
-        direction: "desc",
-        sort: "updated",
       });
       if (data.length === 0) break;
       //@ts-expect-error TODO: fix repo type
@@ -92,13 +84,18 @@ export const getAllGithubRepos = async () => {
     getForkedRepos(),
   ]);
 
-  return Array.from(allRepos.values()).filter(
-    (r) =>
-      !r.name.includes("now.ts") ||
-      r.full_name.includes("takadmin00") ||
-      r.full_name.includes("Melvynx") ||
-      r.full_name.includes("Dercraker"),
-  );
+  return Array.from(allRepos.values())
+    .filter(
+      (r) =>
+        !r.fork ||
+        (r.fork && r.owner.login.toLowerCase() === "dercraker") ||
+        (r.fork && r.owner.login.toLowerCase() === "takadmin00") ||
+        (r.fork && r.owner.login.toLowerCase() === "melvynx"),
+    )
+    .sort(
+      (a, b) =>
+        new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime(),
+    );
 };
 
 export const getAllGithubReposCached = cache(getAllGithubRepos);

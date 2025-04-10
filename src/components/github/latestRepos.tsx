@@ -6,7 +6,7 @@ import { ForkPinchIcon } from "@components/animatedIcon/forkPinch.icon";
 import { HoverPinchStarIcon } from "@components/animatedIcon/hoverPinchStar.icon";
 import { LockeyLockIcon } from "@components/animatedIcon/lockeyLock.Icon";
 import { cn } from "@lib/utils";
-import type { Repository } from "@type/repository.type";
+import type { GithubRepository } from "@type/githubEvent.type";
 import { LinkPreview } from "@ui/link-preview";
 import { InlineTooltip } from "@ui/tooltip";
 import { AnimatePresence } from "framer-motion";
@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export type latestReposProps = {
-  repos: Repository[];
+  repos: GithubRepository[];
   take?: number;
   showMore?: boolean;
 };
@@ -31,7 +31,7 @@ export const LatestRepos = ({
       <div className="mx-auto mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {repos
           ?.slice(0, take ?? undefined)
-          .map((repo: Repository, idx: number) => (
+          .map((repo: GithubRepository, idx: number) => (
             <div
               key={repo?.html_url}
               onMouseEnter={() => setHoveredIndex(idx)}
@@ -75,7 +75,7 @@ const RepoCard = ({
   hoveredIndex,
   idx,
 }: {
-  repo: Repository;
+  repo: GithubRepository;
   hoveredIndex: number | null;
   idx: number;
 }) => {

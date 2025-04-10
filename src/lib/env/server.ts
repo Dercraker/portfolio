@@ -1,13 +1,24 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
-
 export const env = createEnv({
   server: {
-    DATABASE_URL: z.string().url(),
-    NODE_ENV: z.enum(["development", "production", "test"]),
+    VERCEL_ENV: z.enum(["production", "preview"]).optional(),
+    VERCEL_URL: z.string().optional(),
+
+    RESEND_API_KEY: z.string().min(1),
+    RESEND_EMAIL_FROM: z.string().min(1).email(),
+    RESEND_EMAIL_TO: z.string().min(1).email(),
+
     GITHUB_TOKEN: z.string().min(1),
-    DERCRAKER_GITHUB_ACCOUNT_ID: z.string().min(1),
-    RESEND_API_KEY: z.string(),
+
+    NODE_ENV: z.enum(["development", "production"]),
+
+    LINKEDIN_CLIENT_ID: z.string().min(1),
+    LINKEDIN_CLIENT_SECRET: z.string().min(1),
+
+    PROD_URL: z.string().min(1),
   },
-  experimental__runtimeEnv: process.env,
+  experimental__runtimeEnv: {
+    ...process.env,
+  },
 });

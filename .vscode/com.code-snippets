@@ -1,9 +1,10 @@
 {
   "component": {
     "description": "Create base TypeScript component depending on the file name",
-    "scope": "javascriptreact,typescriptreact",
+    "scope": "typescriptreact",
+    "prefix": "com",
     "body": [
-      "export const ${1:${TM_FILENAME_BASE/([\\w]+)([-_])([\\w])/${1:/capitalize}${3:/capitalize}/g}} = () => {",
+      "export const ${1:${TM_FILENAME_BASE/([\\w]+)\\.([\\w]+)/${1:/capitalize}${2:/capitalize}/g}} = () => {",
       "  return $2",
       "}",
     ],

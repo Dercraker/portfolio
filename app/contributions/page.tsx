@@ -3,9 +3,15 @@ import { LatestReposContainer } from "@components/github/latestReposContainer";
 import { SectionLayout } from "@components/layout/SectionLayout";
 import { cn } from "@lib/utils";
 import { buttonVariants } from "@ui/button";
+import { combineWithParentMetadata } from "@utils/metadata";
 import { GLOBAL_CONFIG } from "globalConfig";
 import Link from "next/link";
 import { Suspense } from "react";
+
+export const generateMetadata = combineWithParentMetadata({
+  title: "My contributions",
+  description: "My contributions to the world of programming",
+});
 
 const RoutePage = async () => {
   return (

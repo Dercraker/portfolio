@@ -1,9 +1,14 @@
 import { HoverGithubIcon } from "@components/animatedIcon/hoverGithub.icon";
 import { HoverLinkedinIcon } from "@components/animatedIcon/hoverLinkedin.icon";
 import { LinkPreview } from "@ui/link-preview";
+import { combineWithParentMetadata } from "@utils/metadata";
 import { GLOBAL_CONFIG } from "globalConfig";
 import Image from "next/image";
 import { Timeline } from "./_component/timeline";
+
+export const generateMetadata = combineWithParentMetadata({
+  title: "About",
+});
 
 const RoutePage = () => {
   return (

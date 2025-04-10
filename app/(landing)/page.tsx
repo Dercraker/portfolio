@@ -4,6 +4,7 @@ import { LatestReposLoader } from "@components/github/latestRepos.loader";
 import { Layout, LayoutContent } from "@components/layout/layout";
 import type { LinkedinPostType } from "@type/linkedinPost.type";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
+import { combineWithParentMetadata } from "@utils/metadata";
 import { Suspense } from "react";
 import { z } from "zod";
 import { Experience } from "./_component/experience";
@@ -12,6 +13,9 @@ import { Hero } from "./_component/hero";
 import { LatestRepoSection } from "./_component/latestRepoSection";
 import { Tools } from "./_component/tools";
 
+export const generateMetadata = combineWithParentMetadata({
+  title: "Dercraker",
+});
 const RoutePage = async () => {
   const linkedinPosts = z
     .array(LinkedinPostTypeSchema)

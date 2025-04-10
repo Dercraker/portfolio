@@ -80,8 +80,8 @@ export const getAllGithubRepos = async () => {
   await Promise.all([
     getPersonalRepos(),
     getOrgRepos(),
-    getCollaboratedRepos(),
-    getForkedRepos(),
+    // getCollaboratedRepos(),
+    // getForkedRepos(),
   ]);
 
   return Array.from(allRepos.values())

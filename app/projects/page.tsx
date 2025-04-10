@@ -1,4 +1,9 @@
+import { combineWithParentMetadata } from "@utils/metadata";
 import { Projects } from "./_components/projects";
+
+export const generateMetadata = combineWithParentMetadata({
+  title: "My projects",
+});
 
 const RoutePage = () => {
   return (

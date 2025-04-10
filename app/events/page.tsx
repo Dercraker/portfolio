@@ -4,7 +4,13 @@ import { SectionLayout } from "@components/layout/SectionLayout";
 import type { LinkedinPostType } from "@type/linkedinPost.type";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import { Typography } from "@ui/typography";
+import { combineWithParentMetadata } from "@utils/metadata";
 import { z } from "zod";
+
+export const generateMetadata = combineWithParentMetadata({
+  title: "Linkedin posts",
+  description: "All my linkedin posts and more",
+});
 
 const RoutePage = () => {
   const linkedinPosts = z

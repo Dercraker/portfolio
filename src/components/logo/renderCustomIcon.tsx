@@ -21,7 +21,7 @@ export const RenderCustomIcon = ({
     minContrastRatio,
     size,
     aProps: {
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e) => e.preventDefault(),
     },
   });
 };

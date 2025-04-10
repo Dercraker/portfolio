@@ -1,7 +1,7 @@
 "use client";
 
 import { Event } from "@components/events/event";
-import { LinkedinPostType } from "@type/linkedinPost.type";
+import type { LinkedinPostType } from "@type/linkedinPost.type";
 import { useState } from "react";
 
 type LatestEventProps = {

@@ -54,9 +54,9 @@ export const LatestRepos = ({
       </div>
       {showMore && (
         <div>
-          <div className="absolute bottom-0 z-10 mx-auto flex h-56 w-full max-w-5xl items-center justify-center bg-zinc-900 transition duration-500 [mask-image:linear-gradient(to_bottom,transparent,white_10rem,white)]" />
+          <div className="absolute bottom-0 z-10 mx-auto flex h-56 w-full max-w-5xl items-center justify-center bg-zinc-900 [mask-image:linear-gradient(to_bottom,transparent,white_10rem,white)] transition duration-500" />
 
-          <div className="relative z-20 flex justify-center ">
+          <div className="relative z-20 flex justify-center">
             <Link
               href="/contributions"
               className="rounded-lg border border-zinc-600 bg-zinc-900 px-8 py-2 text-zinc-200 transition duration-200 hover:border-zinc-700 hover:bg-zinc-800/[0.8]"
@@ -122,12 +122,12 @@ const RepoCard = ({
             </h2>
           </div>
           {/* TODO: Truncate text */}
-          <p className=" mt-4 text-sm font-normal leading-loose tracking-wide text-zinc-400">
+          <p className="mt-4 text-sm leading-loose font-normal tracking-wide text-zinc-400">
             {repo?.description}
           </p>
         </div>
 
-        <div className="mt-4 flex flex-row items-center space-x-4 text-zinc-500 group-hover:text-secondary">
+        <div className="group-hover:text-secondary mt-4 flex flex-row items-center space-x-4 text-zinc-500">
           <div className="flex items-center gap-1 text-sm font-normal">
             <ForkPinchIcon
               size={24}
@@ -135,7 +135,7 @@ const RepoCard = ({
               isHover={hoveredIndex === idx}
               loop
             />
-            <span className=" group-hover:text-secondary">
+            <span className="group-hover:text-secondary">
               {repo.forks_count}
             </span>
           </div>

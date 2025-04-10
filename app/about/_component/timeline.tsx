@@ -10,8 +10,8 @@ export const Timeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
 
   return (
-    <div className="relative mx-auto   max-w-3xl divide-zinc-800">
-      <div className="to:transparent absolute -left-4 h-full w-[4px] bg-linear-to-b from-transparent  via-secondary md:-left-10">
+    <div className="relative mx-auto max-w-3xl divide-zinc-800">
+      <div className="to:transparent via-secondary absolute -left-4 h-full w-[4px] bg-linear-to-b from-transparent md:-left-10">
         <Beam showBeam={true} className={`left-1`} />
       </div>
       {timeline.map((item: TimelinePointType, idxYear: number) => (
@@ -20,7 +20,7 @@ export const Timeline = () => {
           className="border-b border-zinc-800"
         >
           <h1 className="relative my-8 text-xl font-bold text-zinc-200">
-            <div className="absolute -left-[20px] top-2 size-3 rounded-full border-2 border-secondary bg-zinc-800 md:-left-[46px] md:top-1 md:size-4" />
+            <div className="border-secondary absolute top-2 -left-[20px] size-3 rounded-full border-2 bg-zinc-800 md:top-1 md:-left-[46px] md:size-4" />
             {item.year}
           </h1>
 
@@ -28,7 +28,7 @@ export const Timeline = () => {
             {item.points.map((point: string, idx: number) => (
               <div
                 key={`timeline-year-${idxYear}-item-${idx}`}
-                className="my-2 flex items-center gap-2 cursor-default "
+                className="my-2 flex cursor-default items-center gap-2"
                 onMouseEnter={() => setHoveredIndex(`${idxYear}-${idx}`)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
@@ -38,7 +38,7 @@ export const Timeline = () => {
                   loop
                   isHover={hoveredIndex === `${idxYear}-${idx}`}
                 />
-                <span className="text-sm text-muted-foreground md:text-base">
+                <span className="text-muted-foreground text-sm md:text-base">
                   {point}
                 </span>
               </div>

@@ -1,10 +1,6 @@
 import { Skeleton } from "@ui/skeleton";
 
-export type LatestReposLoaderProps = {
-  showMore?: boolean;
-};
-
-export const LatestReposLoader = ({ showMore }: LatestReposLoaderProps) => {
+export const LatestReposLoader = () => {
   return (
     <div className="relative mx-auto mb-20 max-w-5xl overflow-hidden px-8">
       <div className="mx-auto mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">

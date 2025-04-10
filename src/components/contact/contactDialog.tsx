@@ -41,8 +41,6 @@ export const ContactDialog = () => {
     mutationFn: async () => {
       const result = await ContactAction(form.getValues());
 
-      console.log("🚀 ~ mutationFn: ~ toast:", toast);
-
       if (!isActionSuccessful(result)) {
         toast.error("Failed to send email", {
           description: "Please try again later or contact us directly",
@@ -59,7 +57,7 @@ export const ContactDialog = () => {
     <Popover open={isOpen} onOpenChange={toggle}>
       <InlineTooltip title="Contact Us">
         <PopoverTrigger asChild>
-          <Button className="fixed bottom-4 right-16 z-50 rounded-full size-12 cursor-pointer cursor-pointer">
+          <Button className="fixed right-16 bottom-4 z-50 size-12 cursor-pointer rounded-full">
             <ConversationConsultationIcon
               size={32}
               colorize="var(--secondary)"

@@ -4,7 +4,7 @@ import { EyeIcon } from "@components/animatedIcon/eye.icon";
 import { HearthIcon } from "@components/animatedIcon/hearth.icon";
 import { ShareIcon } from "@components/animatedIcon/share.icon";
 import { WeChatIcon } from "@components/animatedIcon/weChat.icon";
-import { LinkedinPostType } from "@type/linkedinPost.type";
+import type { LinkedinPostType } from "@type/linkedinPost.type";
 import { InlineTooltip } from "@ui/tooltip";
 import { Typography } from "@ui/typography";
 import { AnimatePresence, motion } from "framer-motion";
@@ -48,17 +48,17 @@ export const Event = ({
           />
         )}
       </AnimatePresence>
-      <div className="relative ">
-        <Typography className="block text-zinc-500 md:border-l font-bold md:border-zinc-700 md:pl-4">
+      <div className="relative">
+        <Typography className="block font-bold text-zinc-500 md:border-l md:border-zinc-700 md:pl-4">
           {new Date(post.date).toLocaleDateString()}
         </Typography>
-        <Typography className="mt-4 max-w-4xl text-sm font-normal leading-loose text-zinc-200">
+        <Typography className="mt-4 max-w-4xl text-sm leading-loose font-normal text-zinc-200">
           {post.content}
         </Typography>
 
-        <div className="flex items-center gap-2 ml-auto w-fit text-muted-foreground cursor-pointer">
+        <div className="text-muted-foreground ml-auto flex w-fit cursor-pointer items-center gap-2">
           <InlineTooltip title="Likes">
-            <Typography className="flex items-center gap-1 ">
+            <Typography className="flex items-center gap-1">
               {post.likes}
               <HearthIcon
                 colorize={
@@ -114,7 +114,7 @@ export const Event = ({
         </div>
         <Link
           href={post.url}
-          className="cursor-pointer  text-secondary hover:underline"
+          className="text-secondary cursor-pointer hover:underline"
         >
           Read More
         </Link>

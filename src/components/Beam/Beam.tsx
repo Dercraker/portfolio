@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import styles from "./style.module.css";
 
-const Beam = ({ showBeam, className }: any) => {
-  const cn = (...values: any) => clsx(twMerge(values));
+type BeamProps = {
+  showBeam: boolean;
+  className?: string;
+};
+
+const Beam = ({ showBeam, className }: BeamProps) => {
   const meteorRef = useRef<any>(null);
 
   useEffect(() => {
@@ -31,14 +34,15 @@ const Beam = ({ showBeam, className }: any) => {
 
     return () => {
       if (showBeam) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         const meteor = meteorRef.current;
         if (meteor) {
-          meteor.removeEventListener("animationend", () => {});
-          meteor.removeEventListener("animationstart", () => {});
+          meteor.removeEventListener("animationend", () => void 0);
+          meteor.removeEventListener("animationstart", () => void 0);
         }
       }
     };
-  }, []);
+  }, [showBeam]);
   const restartAnimation = () => {
     const meteor = meteorRef.current;
     meteor.style.animation = "none";
@@ -51,7 +55,7 @@ const Beam = ({ showBeam, className }: any) => {
       <span
         ref={meteorRef}
         className={twMerge(
-          "absolute z-20 left-4 h-[0.1rem] w-[0.1rem] rounded-[9999px] bg-secondary shadow-[0_0_0_1px_#ffffff10] before:bg-gradient-to-l before:from-transparent before:via-secondary before:to-secondary",
+          "bg-secondary before:via-secondary before:to-secondary absolute left-4 z-20 h-[0.1rem] w-[0.1rem] rounded-[9999px] shadow-[0_0_0_1px_#ffffff10] before:bg-gradient-to-l before:from-transparent",
           styles.meteor,
           className,
         )}

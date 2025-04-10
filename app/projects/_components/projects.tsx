@@ -14,12 +14,12 @@ export const Projects = () => {
 
   return (
     <div className="mx-auto max-w-5xl px-8">
-      <div className="mt-20 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, idx) => (
           <a
             href={project.link}
             key={project?.link}
-            className="group relative  block p-2"
+            className="group relative block p-2"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -40,15 +40,15 @@ export const Projects = () => {
                 />
               )}
             </AnimatePresence>
-            <div className=" relative z-20 overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
+            <div className="relative z-20 overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
               <div className="relative z-20">
-                <div className="relative h-44 w-full bg-black/10 transition  duration-500 group-hover:bg-transparent sm:h-60 md:h-44">
-                  <div className=" absolute bottom-0 z-10 h-20 w-full bg-zinc-900 transition duration-500 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] group-hover:bg-zinc-800" />
+                <div className="relative h-44 w-full bg-black/10 transition duration-500 group-hover:bg-transparent sm:h-60 md:h-44">
+                  <div className="absolute bottom-0 z-10 h-20 w-full bg-zinc-900 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] transition duration-500 group-hover:bg-zinc-800" />
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className=" absolute inset-0 object-cover object-center  mix-blend-multiply"
+                    className="absolute inset-0 object-cover object-center mix-blend-multiply"
                   />
                 </div>
                 <div className="p-4">

@@ -1,11 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import { z } from "zod";
-import {
-  EmptyLinkParamsSchema,
-  OrgLinkParamsSchema,
-  StepLinkParamsSchema,
-  TripLinkParamsSchema,
-} from "./Links";
 
 //#region Base Types
 
@@ -36,19 +30,7 @@ const BaseNavigationLinkSchema = z
 //#region Non Generated Schemas (Links with dynamic href function)
 
 const NavigationLinkSchema = BaseNavigationLinkSchema.extend({
-  href: z
-    .function()
-    .args(
-      z
-        .union([
-          EmptyLinkParamsSchema,
-          OrgLinkParamsSchema,
-          TripLinkParamsSchema,
-          StepLinkParamsSchema,
-        ])
-        .optional(),
-    )
-    .returns(z.string()),
+  href: z.function().returns(z.string()),
 });
 
 /**

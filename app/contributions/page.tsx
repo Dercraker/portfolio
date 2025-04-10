@@ -25,7 +25,7 @@ const RoutePage = async () => {
         <LatestReposContainer />
       </Suspense>
 
-      <div className="relative flex justify-center ">
+      <div className="relative flex justify-center">
         <Link
           href={GLOBAL_CONFIG.social.github}
           target="__blank"

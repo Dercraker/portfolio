@@ -25,17 +25,17 @@ export const Footer = () => {
 
   return (
     <div className="relative mt-16 w-full overflow-hidden border-t border-white/[0.1] bg-neutral-950 px-8 py-20">
-      <div className="mx-auto max-w-7xl items-start justify-between  text-sm text-neutral-500  md:px-8">
+      <div className="mx-auto max-w-7xl items-start justify-between text-sm text-neutral-500 md:px-8">
         <div className="relative flex w-full flex-col items-center justify-center">
-          <div className="mb-4 mr-0  md:mr-4 md:flex">
+          <div className="mr-0 mb-4 md:mr-4 md:flex">
             <Logo />
           </div>
 
-          <ul className="hover:text-text-neutral-800 flex list-none flex-col gap-4  text-neutral-300 transition-colors sm:flex-row">
+          <ul className="hover:text-text-neutral-800 flex list-none flex-col gap-4 text-neutral-300 transition-colors sm:flex-row">
             {GetFooterLinks().map((page, idx) => (
               <li key={`pages${idx}`} className="list-none">
                 <Link
-                  className="hover:text-text-neutral-800 transition-colors "
+                  className="hover:text-text-neutral-800 transition-colors"
                   href={page.href}
                 >
                   {page.label}
@@ -86,7 +86,7 @@ const GridLineHorizontal = ({
         } as React.CSSProperties
       }
       className={cn(
-        "w-[calc(100%+var(--offset))] h-[var(--height)]",
+        "h-[var(--height)] w-[calc(100%+var(--offset))]",
         "bg-[linear-gradient(to_right,var(--color),var(--color)_50%,transparent_0,transparent)]",
         "[background-size:var(--width)_var(--height)]",
         "[mask:linear-gradient(to_left,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_right,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",

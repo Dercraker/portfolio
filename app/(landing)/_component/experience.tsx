@@ -19,14 +19,14 @@ export const Experience = () => {
     useState<workExperienceType>(workExperience[0]);
 
   return (
-    <div className=" mx-auto max-w-5xl px-8">
+    <div className="mx-auto max-w-5xl px-8">
       <h1 className="mx-auto mt-20 max-w-5xl text-2xl font-bold text-white md:mt-40 md:text-3xl">
         Work Experience
       </h1>
-      <p className="mt-4 max-w-2xl text-sm leading-loose tracking-wide text-zinc-400 md:text-base ">
+      <p className="mt-4 max-w-2xl text-sm leading-loose tracking-wide text-zinc-400 md:text-base">
         I'm exploring the world of work to improve my skills and knowledge.
       </p>
-      <div className="mx-auto mt-20 flex max-w-2xl flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
+      <div className="mx-auto mt-20 flex max-w-2xl flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-2">
         <div className="relative flex flex-row overflow-x-auto md:flex-col md:overflow-x-visible">
           <div className="absolute -left-6 h-full w-px overflow-hidden bg-zinc-800">
             <Beam showBeam={true} className={`-left-0`} />
@@ -70,7 +70,7 @@ export const Experience = () => {
             </div>
           ))}
         </div>
-        <div className="flex-1  md:pl-10">
+        <div className="flex-1 md:pl-10">
           <div className="flex flex-col space-y-4">
             <AnimatePresence>
               <motion.div

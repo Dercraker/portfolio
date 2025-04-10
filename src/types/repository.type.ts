@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const repositorySchema = z.object({
+export const repositorySchema = z.object({
   id: z.number(),
   node_id: z.string(),
   name: z.string(),

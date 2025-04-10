@@ -2,10 +2,8 @@ import posts from "@app/../public/linkedin-posts.json";
 import { LatestEvent } from "@components/events/latestEvent";
 import { LatestReposLoader } from "@components/github/latestRepos.loader";
 import { Layout, LayoutContent } from "@components/layout/layout";
-import {
-  LinkedinPostType,
-  LinkedinPostTypeSchema,
-} from "@type/linkedinPost.type";
+import type { LinkedinPostType } from "@type/linkedinPost.type";
+import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import type { PageParams } from "@type/next";
 import { Suspense } from "react";
 import { z } from "zod";
@@ -33,7 +31,7 @@ const RoutePage = async (props: PageParams) => {
           <Suspense fallback={<LatestReposLoader />}>
             <LatestRepoSection />
           </Suspense>
-          <div className="mx-auto mt-40 grid max-w-5xl grid-cols-1 gap-10 px-8 lg:grid-cols-3 ">
+          <div className="mx-auto mt-40 grid max-w-5xl grid-cols-1 gap-10 px-8 lg:grid-cols-3">
             <div className="col-span-2">
               <LatestEvent posts={linkedinPosts.slice(0, 2)} />
             </div>

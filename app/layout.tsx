@@ -34,7 +34,7 @@ const RootLayout = ({ children }: LayoutParams) => {
       <body
         suppressHydrationWarning
         className={cn(
-          "h-full bg-background font-sans antialiased",
+          "bg-background h-full font-sans antialiased",
           geistMono.variable,
           geistSans.variable,
         )}

@@ -22,7 +22,7 @@ type WeChatIconProps = {
 };
 
 const Player = dynamic(
-  () => import("@lordicon/react").then((mod) => mod.Player),
+  async () => import("@lordicon/react").then((mod) => mod.Player),
   {
     ssr: false,
     loading: () => <Loader2 size={32} className="animate-spin" />,
@@ -47,18 +47,18 @@ export const WeChatIcon = ({
       playerRef.current?.playFromBeginning();
 
     if (!isHover && !hovered && !playerRef.current?.isPlaying)
-      stayLastFrame
+      void (stayLastFrame
         ? playerRef.current?.goToLastFrame()
-        : playerRef.current?.goToFirstFrame();
-  }, [isHover, hovered, playerRef.current?.isPlaying]);
+        : playerRef.current?.goToFirstFrame());
+  }, [isHover, hovered, playerRef.current?.isPlaying, stayLastFrame]);
 
   const onComplete = () => {
     if ((isHover || hovered) && loop) playerRef.current?.playFromBeginning();
 
     if (!isHover && !hovered)
-      stayLastFrame
+      void (stayLastFrame
         ? playerRef.current?.goToLastFrame()
-        : playerRef.current?.goToFirstFrame();
+        : playerRef.current?.goToFirstFrame());
   };
 
   return (
@@ -68,10 +68,10 @@ export const WeChatIcon = ({
       onMouseLeave={closeHover}
       onClick={onClick}
       disabled={disabled}
-      className="p-0 m-0"
+      className="m-0 p-0"
     >
       <Player
-        // @ts-ignore
+        // @ts-expect-error - Player is not typed
         ref={playerRef}
         icon={ICON}
         size={size}

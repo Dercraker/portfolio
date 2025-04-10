@@ -15,9 +15,9 @@ export const Hero = () => {
 
 const Content = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center overflow-hidden px-8 pb-4  md:px-8 ">
-      <div className="relative mt-20 flex flex-col items-center  justify-center ">
-        <h1 className="relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-7xl ">
+    <div className="relative flex flex-col items-center justify-center overflow-hidden px-8 pb-4 md:px-8">
+      <div className="relative mt-20 flex flex-col items-center justify-center">
+        <h1 className="relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-7xl">
           I'm a{" "}
           <span className="bg-secondary relative bg-clip-text text-transparent">
             full stack
@@ -69,7 +69,7 @@ const Content = () => {
           Building{" "}
           <LinkPreview
             className={
-              "outline-hidden font-bold text-zinc-200 transition duration-150 hover:text-cyan-500"
+              "font-bold text-zinc-200 outline-hidden transition duration-150 hover:text-cyan-500"
             }
             url="https://from-a2b.com"
           >

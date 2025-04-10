@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const githubEventSchema = z.object({
+export const githubEventSchema = z.object({
   id: z.string(),
   type: z.string().nullable(),
   repo: z.object({

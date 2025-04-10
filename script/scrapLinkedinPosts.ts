@@ -1,6 +1,20 @@
 import fs from "fs/promises";
 import { chromium } from "playwright";
 
+import { z } from "zod";
+
+export const LinkedinPostTypeSchema = z.object({
+  date: z.string(),
+  content: z.string(),
+  impressions: z.number().nullable(),
+  likes: z.number().nullable(),
+  shares: z.number().nullable(),
+  comments: z.number().nullable(),
+  url: z.string(),
+});
+
+export type LinkedinPostType = z.infer<typeof LinkedinPostTypeSchema>;
+
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/dercraker/detail/recent-activity/shares/";
 const LI_AT = process.env.LI_AT;
@@ -32,11 +46,11 @@ async function run() {
   await page.waitForTimeout(5000);
 
   const posts = await page.evaluate(() => {
-    const data = [];
+    const data: LinkedinPostType[] = [];
     const postEls = document.querySelectorAll('[data-urn^="urn:li:activity:"]');
 
     postEls.forEach((el) => {
-      const text = el.innerText;
+      const text = (el as HTMLElement).innerText;
       const date =
         el.querySelector('span[aria-hidden="true"]')?.textContent ?? "";
       const impressions = text.match(/(\d+[,.]?\d*)\s+vues?/i)?.[1] ?? null;
@@ -51,10 +65,10 @@ async function run() {
       data.push({
         date,
         content: text.slice(0, 300),
-        impressions,
-        likes,
-        shares,
-        comments,
+        impressions: Number(impressions),
+        likes: Number(likes),
+        shares: Number(shares),
+        comments: Number(comments),
         url,
       });
     });
@@ -69,4 +83,4 @@ async function run() {
   await browser.close();
 }
 
-run();
+void run();

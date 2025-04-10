@@ -8,7 +8,7 @@ import { Timeline } from "./_component/timeline";
 const RoutePage = () => {
   return (
     <>
-      <div className="relative mx-auto flex max-w-5xl flex-col justify-between space-y-10 px-8 md:mt-20 md:flex-row md:space-x-10 md:space-y-0">
+      <div className="relative mx-auto flex max-w-5xl flex-col justify-between space-y-10 px-8 md:mt-20 md:flex-row md:space-y-0 md:space-x-10">
         <div>
           <h1 className="max-w-3xl text-3xl font-bold text-zinc-50 md:text-5xl md:leading-tight">
             Hey ! I'm <span className="text-secondary">Antoine Capitain</span>{" "}

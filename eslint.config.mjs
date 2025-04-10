@@ -3,7 +3,6 @@ import { FlatCompat } from "@eslint/eslintrc";
 import pluginJs from "@eslint/js";
 import hooksPlugin from "eslint-plugin-react-hooks";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import tailwind from "eslint-plugin-tailwindcss";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -27,8 +26,6 @@ export default [
   // Typescript
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
-  // Tailwind
-  ...tailwind.configs["flat/recommended"],
   // React
   ...fixupConfigRules(pluginReactConfig),
   {
@@ -48,7 +45,6 @@ export default [
       "react/react-in-jsx-scope": 0,
       "react/prop-types": 0,
       "@typescript-eslint/ban-types": 0,
-      "tailwindcss/no-custom-classname": 0,
       "@typescript-eslint/no-unused-vars": [
         1,
         {
@@ -142,7 +138,6 @@ export default [
       ".react-email",
       ".vercel",
       ".vscode",
-      "tailwind.config.js",
       "next.config.js",
       "eslint.config.mjs",
       "**/worker.js",

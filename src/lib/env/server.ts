@@ -13,8 +13,7 @@ export const env = createEnv({
 
     NODE_ENV: z.enum(["development", "production"]),
 
-    LINKEDIN_CLIENT_ID: z.string().min(1),
-    LINKEDIN_CLIENT_SECRET: z.string().min(1),
+    LI_AT: z.string().min(1),
 
     PROD_URL: z.string().min(1),
   },

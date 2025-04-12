@@ -1,10 +1,9 @@
-import posts from "@app/../public/linkedin-posts.json";
 import { LatestEvent } from "@components/events/latestEvent";
 import { LatestReposLoader } from "@components/github/latestRepos.loader";
 import { Layout, LayoutContent } from "@components/layout/layout";
-import type { LinkedinPostType } from "@type/linkedinPost.type";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import { combineWithParentMetadata } from "@utils/metadata";
+import posts from "@constant/linkedin-posts.json";
 import { Suspense } from "react";
 import { z } from "zod";
 import { Experience } from "./_component/experience";
@@ -17,12 +16,7 @@ export const generateMetadata = combineWithParentMetadata({
   title: "Dercraker | Full Stack Developer",
 });
 const RoutePage = async () => {
-  const linkedinPosts = z
-    .array(LinkedinPostTypeSchema)
-    .parse(posts)
-    .sort((a: LinkedinPostType, b: LinkedinPostType) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
+  const linkedinPosts = z.array(LinkedinPostTypeSchema).parse(posts);
 
   return (
     <>

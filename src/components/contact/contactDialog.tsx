@@ -57,7 +57,7 @@ export const ContactDialog = () => {
     <Popover open={isOpen} onOpenChange={toggle}>
       <InlineTooltip title="Contact Us">
         <PopoverTrigger asChild>
-          <Button className="fixed right-16 bottom-4 z-50 size-12 cursor-pointer rounded-full">
+          <Button className="fixed right-3 bottom-3 z-50 size-12 cursor-pointer rounded-full">
             <ConversationConsultationIcon
               size={32}
               colorize="var(--secondary)"

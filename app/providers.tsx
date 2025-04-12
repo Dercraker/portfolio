@@ -15,7 +15,7 @@ export const Providers = ({ children }: ProvidersProps) => {
     <ThemeProvider attribute="class" defaultTheme="light">
       <NuqsAdapter>
         <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools />
+          <ReactQueryDevtools buttonPosition="top-right" />
           {children}
         </QueryClientProvider>
       </NuqsAdapter>

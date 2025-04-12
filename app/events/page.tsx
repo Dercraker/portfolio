@@ -1,7 +1,6 @@
-import posts from "@app/../public/linkedin-posts.json";
 import { LatestEvent } from "@components/events/latestEvent";
 import { SectionLayout } from "@components/layout/SectionLayout";
-import type { LinkedinPostType } from "@type/linkedinPost.type";
+import posts from "@constant/linkedin-posts.json";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import { Typography } from "@ui/typography";
 import { combineWithParentMetadata } from "@utils/metadata";
@@ -13,12 +12,7 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 const RoutePage = () => {
-  const linkedinPosts = z
-    .array(LinkedinPostTypeSchema)
-    .parse(posts)
-    .sort((a: LinkedinPostType, b: LinkedinPostType) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
+  const linkedinPosts = z.array(LinkedinPostTypeSchema).parse(posts);
 
   return (
     <SectionLayout>

@@ -50,7 +50,7 @@ export const Event = ({
       </AnimatePresence>
       <div className="relative">
         <Typography className="block font-bold text-zinc-500 md:border-l md:border-zinc-700 md:pl-4">
-          {new Date(post.date).toLocaleDateString()}
+          {post.date}
         </Typography>
         <Typography className="mt-4 max-w-4xl text-sm leading-loose font-normal text-zinc-200">
           {post.content}
@@ -97,27 +97,31 @@ export const Event = ({
               />
             </Typography>
           </InlineTooltip>
-          <InlineTooltip title="Imprint">
-            <Typography className="flex items-center gap-1">
-              {post.impressions}{" "}
-              <EyeIcon
-                colorize={
-                  hoveredIndex === idx
-                    ? "var(--color-red-400)"
-                    : "var(--muted-foreground)"
-                }
-                isHover={hoveredIndex === idx}
-                size={32}
-              />
-            </Typography>
-          </InlineTooltip>
+          {post?.impressions && post.impressions > 0 ? (
+            <InlineTooltip title="Imprint">
+              <Typography className="flex items-center gap-1">
+                {post.impressions}{" "}
+                <EyeIcon
+                  colorize={
+                    hoveredIndex === idx
+                      ? "var(--color-red-400)"
+                      : "var(--muted-foreground)"
+                  }
+                  isHover={hoveredIndex === idx}
+                  size={32}
+                />
+              </Typography>
+            </InlineTooltip>
+          ) : null}
         </div>
-        <Link
-          href={post.url}
-          className="text-secondary cursor-pointer hover:underline"
-        >
-          Read More
-        </Link>
+        {post.url && (
+          <Link
+            href={post.url}
+            className="text-secondary cursor-pointer hover:underline"
+          >
+            Read More
+          </Link>
+        )}
       </div>
     </div>
   );

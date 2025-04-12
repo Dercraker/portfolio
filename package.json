@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "ts": "tsc --noEmit",
     "clean": "prettier --write . && next lint --fix && tsc --noEmit && next build",
-    "knip": "knip"
+    "knip": "knip",
+    "scrap": "pnpm tsx script/scrapLinkedinPosts.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.2.5",
@@ -31,10 +32,12 @@
     "@tabler/icons-react": "^3.31.0",
     "@tanstack/react-query": "^5.69.0",
     "add": "^2.0.6",
+    "chrono-node": "^2.8.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.5.0",
     "lottie-react": "^2.4.1",
     "lottie-web": "^5.12.2",

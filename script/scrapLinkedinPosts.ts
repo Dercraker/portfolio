@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 
 import dotenv from "dotenv";
 import { mkdir, readFile, writeFile } from "fs/promises";
 import path, { dirname } from "path";
-import type { Locator } from "playwright";
+import type { Locator, Page } from "playwright";
 import { firefox } from "playwright";
 import { Logger } from "tslog";
 import { z } from "zod";
@@ -26,7 +27,7 @@ const main = async () => {
     name: "LinkedinScraper",
   });
 
-  const FILE_PATH = path.resolve("./public/linkedin-posts.json");
+  const FILE_PATH = path.resolve("./src/constant/linkedin-posts.json");
 
   const LK_PROFILE_POSTS_URL =
     "https://www.linkedin.com/in/dercraker/recent-activity/all/";
@@ -56,27 +57,7 @@ const main = async () => {
 
   await page.waitForTimeout(10000);
 
-  let previousHeight = 0;
-  let sameHeightCount = 0;
-
-  logger.info("🔑 Scroll to bottom of page");
-  while (sameHeightCount < 4) {
-    logger.info(`💻 Scroll to ${previousHeight}px`);
-
-    const currentHeight = await page.evaluate(() => {
-      window.scrollBy(0, 2000);
-      return document.body.scrollHeight;
-    });
-
-    if (currentHeight === previousHeight) {
-      sameHeightCount++;
-    } else {
-      sameHeightCount = 0;
-      previousHeight = currentHeight;
-    }
-
-    await page.waitForTimeout(1500);
-  }
+  await scrollToBottom(page);
 
   logger.info("🔑 Scrap posts");
 
@@ -137,6 +118,30 @@ const main = async () => {
 };
 void main();
 
+const scrollToBottom = async (page: Page) => {
+  console.log("🔑 Scroll to bottom of page");
+  let previousHeight = 0;
+  let sameHeightCount = 0;
+
+  while (sameHeightCount < 4) {
+    console.log(`💻 Scroll to ${previousHeight}px`);
+
+    const currentHeight = await page.evaluate(() => {
+      window.scrollBy(0, 2000);
+      return document.body.scrollHeight;
+    });
+
+    if (currentHeight === previousHeight) {
+      sameHeightCount++;
+    } else {
+      sameHeightCount = 0;
+      previousHeight = currentHeight;
+    }
+
+    await page.waitForTimeout(1500);
+  }
+};
+
 const getContent = async (node: Locator) => {
   try {
     const contentNode = await node
@@ -181,7 +186,10 @@ const getLikesCount = async (node: Locator) => {
     if (!likesNode) return 0;
 
     const likes =
-      (await likesNode?.textContent())?.replace("likes", "").trim() ?? 0;
+      (await likesNode?.textContent())
+        ?.replace("likes", "")
+        .replace(/\s+/g, "")
+        .trim() ?? 0;
 
     if (!likes) return 0;
 
@@ -200,8 +208,10 @@ const getCommentsCount = async (node: Locator) => {
     if (!commentsNode) return 0;
 
     const comments =
-      (await commentsNode?.textContent())?.replace("commentaires", "").trim() ??
-      0;
+      (await commentsNode?.textContent())
+        ?.replace("commentaires", "")
+        .replace(/\s+/g, "")
+        .trim() ?? 0;
 
     if (!comments) return 0;
 
@@ -221,6 +231,7 @@ const getShares = async (node: Locator) => {
       (await shareNode?.textContent())
         ?.replace("republications", "")
         .replace("republication", "")
+        .replace(/\s+/g, "")
         .trim() ?? 0;
 
     if (!shares) return 0;
@@ -240,6 +251,7 @@ const getImpressions = async (node: Locator) => {
     const impressions = impressionsNode
       ? ((await impressionsNode?.textContent())
           ?.replace("impressions", "")
+          .replace(/\s+/g, "")
           .trim() ?? 0)
       : 0;
 
@@ -252,7 +264,7 @@ const getImpressions = async (node: Locator) => {
 };
 
 const getUrl = async (node: Locator) => {
-  const BASE_POST_URL = "https://www.linkedin.com/posts/";
+  const BASE_POST_URL = "https://www.linkedin.com/feed/update/urn:li:activity:";
 
   const nodeAttribute = await node.evaluate((el) => {
     return Array.from(el.attributes).reduce((acc, attr) => {

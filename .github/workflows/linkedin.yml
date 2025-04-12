@@ -33,7 +33,7 @@ jobs:
 
 
       - name: Run script
-        run: pnpm tsx scripts/fetchLinkedinPosts.ts
+        run: pnpm tsx scripts/scrapLinkedinPosts.ts
 
       - name: Commit and push
         run: |

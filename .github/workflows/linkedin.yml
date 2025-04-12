@@ -1,37 +1,43 @@
-name: Scrape LinkedIn Posts
+name: Fetch LinkedIn Posts
 
 on:
   schedule:
-    - cron: "0 12 1/2 * *" # Un jour sur deux à 12h
+    - cron: "0 12 */2 * *"
   workflow_dispatch:
 
 jobs:
-  scrape:
+  fetch-posts:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "20"
 
-      - name: Install dependencies
+      - name: Install npm dependencies
+        run: npm install -g pnpm
+
+      - name: Install project deps
+        run: pnpm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Setup .env
         run: |
-          pnpm install
-          npx playwright install --with-deps
+          echo "LI_AT=${{ secrets.LI_AT }}" >> .env
 
-      - name: Run scraper
-        env:
-          LI_AT: ${{ secrets.LI_AT }}
-        run: pnpm tsx scripts/scrape-linkedin.ts
+      - name: Run script
+        run: pnpm tsx scripts/fetchLinkedinPosts.ts
 
-      - name: Commit and push results
+      - name: Commit and push
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add linkedin-posts.json
-          git commit -m "chore: update LinkedIn posts [bot]" || echo "No changes"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/linkedin-posts.json
+          git commit -m "Update LinkedIn posts [skip ci]" || echo "Nothing to commit"
           git push

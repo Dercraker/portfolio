@@ -57,5 +57,8 @@
     ["twc\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     ["twc\\([^`]*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "checkpoints.showActiveFileOnly": true
+  "checkpoints.showActiveFileOnly": true,
+  "i18n-ally.localesPaths": ["internationalization"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.extract.autoDetect": false
 }

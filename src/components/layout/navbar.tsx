@@ -93,7 +93,7 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
           </Link>
         ))}
       </motion.div>
-      <div className="relative flex items-center gap-4">
+      <div className="relative flex items-center gap-2">
         <LanguageSwitcher />
         <Link
           className={cn(buttonVariants({}), "hidden md:block")}

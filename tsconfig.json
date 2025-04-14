@@ -21,6 +21,7 @@
     ],
     "baseUrl": "src/",
     "paths": {
+      "@/*": ["*"],
       "@constant/*": ["constant/*"],
       "@auth/*": ["lib/auth/*"],
       "@lib/*": ["lib/*"],

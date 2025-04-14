@@ -21,18 +21,19 @@ export const LanguageSwitcher = () => {
       defaultValue={locale ?? "en"}
       onValueChange={(v) => {
         setLocale(v);
+
         router.refresh();
       }}
     >
       <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
-      <SelectContent position="popper">
-        <SelectItem value="en">
+      <SelectContent>
+        <SelectItem value="en" className="text-white">
           <FlagEnSvg />
           {"\ud83c\uddfa\ud83c\uddf8"}
         </SelectItem>
-        <SelectItem value="fr">
+        <SelectItem value="fr" className="text-white">
           <FlagFrSvg />
           {"\ud83c\uddeb\ud83c\uddf7"}
         </SelectItem>

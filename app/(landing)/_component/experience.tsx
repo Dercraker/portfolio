@@ -6,7 +6,7 @@ import { LinkPreview } from "@ui/link-preview";
 import { InlineTooltip } from "@ui/tooltip";
 import clsx from "clsx";
 import type { workExperienceType } from "constant/workExperience";
-import { workExperience } from "constant/workExperience";
+import { GetWorkExperience } from "constant/workExperience";
 import { format } from "date-fns";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -19,7 +19,7 @@ export const Experience = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredBullet, setHoveredBullet] = useState<number | null>(null);
   const [activeWorkExperience, setActiveWorkExperience] =
-    useState<workExperienceType>(workExperience[0]);
+    useState<workExperienceType>(GetWorkExperience()[0]);
 
   return (
     <div className="mx-auto max-w-5xl px-8">
@@ -35,7 +35,7 @@ export const Experience = () => {
             <Beam showBeam={true} className={`-left-0`} />
           </div>
 
-          {workExperience.map((exp, workIdx) => (
+          {GetWorkExperience().map((exp, workIdx) => (
             <div
               key={`exp-${workIdx}`}
               className="relative my-2"

@@ -7,6 +7,8 @@ import { cn } from "@lib/utils";
 import type { LayoutParams } from "@type/next";
 import { personJsonLd } from "constant/jsonLd";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -81,11 +83,6 @@ export const metadata: Metadata = {
       "Antoine Capitain's portfolio (Dercraker) - Passionate Full Stack developer specializing in Next.Js and .Net. Mastering modern technologies, I'm a versatile and innovative developer. Find out more about my projects and development skills",
     images: ["/og-image.jpg"], // Même image que pour OpenGraph
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   verification: {
     google: "google-site-verification-code", // À remplacer par votre code de vérification Google
   },
@@ -138,35 +135,39 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = ({ children }: LayoutParams) => {
+const RootLayout = async ({ children }: LayoutParams) => {
+  const locale = await getLocale();
+
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
-      <header>
-        <Navbar />
-      </header>
-      <body
-        suppressHydrationWarning
-        className={cn(
-          "bg-background h-full font-sans antialiased",
-          geistMono.variable,
-          geistSans.variable,
-        )}
-      >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <Providers>
-          <Toaster />
-          {children}
-          <TailwindIndicator />
-          <NextTopLoader />
-          <ContactDialog />
-        </Providers>
-      </body>
-      <footer>
-        <Footer />
-      </footer>
+    <html lang={locale} className="h-full" suppressHydrationWarning>
+      <NextIntlClientProvider>
+        <header>
+          <Navbar />
+        </header>
+        <body
+          suppressHydrationWarning
+          className={cn(
+            "bg-background h-full font-sans antialiased",
+            geistMono.variable,
+            geistSans.variable,
+          )}
+        >
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          />
+          <Providers>
+            <Toaster />
+            {children}
+            <TailwindIndicator />
+            <NextTopLoader />
+            <ContactDialog />
+          </Providers>
+        </body>
+        <footer>
+          <Footer />
+        </footer>
+      </NextIntlClientProvider>
     </html>
   );
 };

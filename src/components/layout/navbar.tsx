@@ -1,6 +1,7 @@
 "use client";
 
 import { GetNavbarLinks } from "@app/(landing)/_navigation/navbar.links";
+import { LanguageSwitcher } from "@components/internationalization/languageSwitcher";
 import { Logo } from "@components/logo/logo";
 import type { GeneratedNavigationLink } from "@feat/navigation/navigation.type";
 import { cn } from "@lib/utils";
@@ -12,6 +13,7 @@ import {
   useScroll,
 } from "framer-motion";
 import { Menu, XCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
@@ -44,6 +46,7 @@ export const Navbar = () => {
 };
 
 const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
+  const t = useTranslations("Navbar");
   const [hovered, setHovered] = useState<number | null>(null);
   return (
     <motion.div
@@ -91,13 +94,14 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
         ))}
       </motion.div>
       <div className="relative flex items-center gap-4">
+        <LanguageSwitcher />
         <Link
           className={cn(buttonVariants({}), "hidden md:block")}
           href="/cv.pdf"
           download
           target="_blank"
         >
-          Download CV
+          {t("DownloadCV")}
         </Link>
       </div>
     </motion.div>
@@ -105,6 +109,7 @@ const DesktopNav = ({ isVisible: visible }: NavbarProps) => {
 };
 
 const MobileNav = ({ isVisible: visible }: NavbarProps) => {
+  const t = useTranslations("Navbar");
   const [open, setOpen] = useState(false);
 
   const item = {
@@ -189,13 +194,14 @@ const MobileNav = ({ isVisible: visible }: NavbarProps) => {
                 </Link>
               ),
             )}
+            <LanguageSwitcher />
             <motion.a
               variants={childItems}
               href="/cv.pdf"
               target="__blank"
               className="inline-flex items-center justify-center rounded-[10px] bg-linear-to-b from-[#464d55] to-[#25292e] px-4 py-2 text-sm text-white shadow-[0_10px_20px_rgba(0,_0,_0,_.1),0_3px_6px_rgba(0,_0,_0,_.05)] hover:opacity-80 hover:shadow-[rgba(0,_1,_0,_.2)_0_2px_8px] active:outline-hidden"
             >
-              Download CV
+              {t("DownloadCV")}
             </motion.a>
           </motion.div>
         )}

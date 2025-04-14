@@ -5,6 +5,7 @@ import { cn } from "@lib/utils";
 import { buttonVariants } from "@ui/button";
 import { combineWithParentMetadata } from "@utils/metadata";
 import { GLOBAL_CONFIG } from "globalConfig";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -14,17 +15,16 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 const RoutePage = async () => {
+  const t = await getTranslations("Contributions");
   return (
     <SectionLayout>
       <div className="relative mx-auto mt-10 max-w-5xl px-8 md:mt-20">
         <h1 className="max-w-3xl text-3xl font-bold text-zinc-50 md:text-5xl md:leading-tight">
-          Committing Code and Crimes Against{" "}
-          <span className="text-secondary">Programming World</span>
+          {t("Title")}
+          <span className="text-secondary"> {t("Description")}</span>
         </h1>
         <p className="mt-8 max-w-2xl text-sm tracking-wide text-zinc-400 md:text-base md:leading-loose">
-          A place where you can witness my caffeinated coding adventures and see
-          just how much coffee it takes to fuel my commits. From my first "Hello
-          World" to my latest breakthrough, and everything in between.
+          {t("Content")}
         </p>
       </div>
       <Suspense fallback={<LatestReposLoader />}>
@@ -43,7 +43,7 @@ const RoutePage = async () => {
             }),
           )}
         >
-          View all on GitHub
+          {t("ViewAllOnGitHub")}
         </Link>
       </div>
     </SectionLayout>

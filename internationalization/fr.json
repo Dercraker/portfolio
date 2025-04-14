@@ -1,0 +1,60 @@
+{
+  "Navbar": {
+    "DownloadCV": "Télécharger CV"
+  },
+  "Hero": {
+    "Name1": "Je suis",
+    "Name2": "développeur",
+    "Name3": "full stack",
+    "Description": "Découvrez Antoine Capitain, l'auto-proclamé sorcier du code qui peut transformer vos idées en sites web, outils ou autres solutions à grand renfort de caféine. Sa passion pour la programmation web et logicielle n'a d'égale que vos idées.",
+    "Building": "Je développe",
+    "And": "et",
+    "When": "quand je ne travaille pas sur mon emploi principal."
+  },
+  "Experience": {
+    "Title": "Expérience Professionnelle",
+    "Description": "J'explore le monde du travail pour améliorer mes compétences et mes connaissances."
+  },
+  "Tools": {
+    "Title": "Tous mes outils",
+    "Description": "Au fil des années, j'ai exploré de nombreux langages et frameworks, évoluant de mes premiers scripts JavaScript à des projets full stack complexes en Next.js, Nuxt, Golang et .Net. Chaque projet m'a appris des leçons précieuses, de la gestion de l'authentification utilisateur, à l'optimisation des performances, en passant par la création d'interfaces utilisateur fluides et intuitives."
+  },
+  "LatestRepos": {
+    "Title": "Derniers Dépôts",
+    "Description": "Voici quelques-uns des derniers dépôts sur lesquels j'ai travaillé. De mon premier hello world à mes derniers projets, avec {repos} dépôts entre les deux. J'ai beaucoup appris de chacun d'entre eux."
+  },
+  "Hardware": {
+    "Title": "Équipement",
+    "Description": "Voici quelques-uns des équipements que j'ai utilisés pour construire mes projets."
+  },
+  "About": {
+    "Title1": "Salut ! Je suis",
+    "Title2": "Antoine Capitain",
+    "Title3": "et je suis développeur full stack.",
+    "Description": "Depuis mon enfance, je suis passionné par la technologie. Quand je ne démontais pas des manettes ou des consoles de jeux, j'apprenais à coder. Quelques années plus tard, je suis devenu un véritable ninja du code, avec une soif insatiable de créer des applications et des outils fonctionnels.",
+    "WhenNotBusy": "Quand je ne suis pas occupé à chasser les bugs et à écrire du code, je m'adonne généralement à mes passe-temps favoris : les jeux vidéo, les nouvelles technologies et la moto.",
+    "Timeline": "Voici une chronologie de ce que j'ai fait"
+  },
+  "Events": {
+    "Title": "Je partage sur LinkedIn",
+    "Description": "mes connaissances techniques",
+    "Content": "Je ne comprends pas pourquoi les gens s'intéressent encore à PHP alors que les nouvelles technologies comme React et .Net permettent de construire des applications clairement plus puissantes. J'ai construit beaucoup de choses, des petites expérimentations aux applications web complètes, et chaque projet témoigne de mon amour pour le code et la résolution de problèmes."
+  },
+  "Contributions": {
+    "Title": "Commettant du Code et des Crimes Contre le",
+    "Description": "Monde de la Programmation",
+    "Content": "Un endroit où vous pouvez observer mes aventures de codage caféinées et voir combien de café il faut pour alimenter mes commits. De mon premier \"Hello World\" à ma dernière innovation, et tout ce qu'il y a entre les deux.",
+    "ViewAllOnGitHub": "Voir tout sur GitHub"
+  },
+  "Contact": {
+    "Title": "Me Contacter",
+    "Description": "Je suis toujours à la recherche de nouveaux défis et d'opportunités pour grandir. Si vous avez un projet en tête ou si vous voulez simplement dire bonjour, n'hésitez pas à me contacter.",
+    "Button": "Me Contacter",
+    "Success": "Email envoyé avec succès",
+    "Error": "Échec de l'envoi de l'email",
+    "ErrorDescription": "Veuillez réessayer plus tard ou nous contacter directement",
+    "Email": "Email",
+    "Name": "Nom",
+    "Copy": "Envoyer une copie à mon email"
+  }
+}

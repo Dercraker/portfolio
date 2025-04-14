@@ -1,0 +1,60 @@
+{
+  "Navbar": {
+    "DownloadCV": "Download CV"
+  },
+  "Hero": {
+    "Name1": "I'm a",
+    "Name2": "full stack",
+    "Name3": "developer",
+    "Description": "Meet Antoine Capitain, the self-proclaimed code wizard who can turn idea into websites, tools or other solution with caffeine. His passion for web and software programming has equalled only by your ideas.",
+    "Building": "Building",
+    "And": "and",
+    "When": "when I'm not working on my day job."
+  },
+  "Experience": {
+    "Title": "Work Experience",
+    "Description": "I'm exploring the world of work to improve my skills and knowledge."
+  },
+  "Tools": {
+    "Title": "All my tools",
+    "Description": "Over the years, I've explored many languages and frameworks, evolving from my first JavaScript scripts to complex full stack projects in Next.js, Nuxt, Golang and .Net. Each project has taught me valuable lessons, from user authentication management user authentication, optimizing performance, and creating fluid, intuitive user interfaces."
+  },
+  "LatestRepos": {
+    "Title": "Latest Repositories",
+    "Description": "Here are some of the latest repositories I've worked on. From my first hello world to my latest projects, with {repos} repositories in between. I've learned a lot from each and every one of them."
+  },
+  "Hardware": {
+    "Title": "Uses",
+    "Description": "Here are some of the hardware I've used to build my projects."
+  },
+  "About": {
+    "Title1": "Hey ! I'm",
+    "Title2": "Antoine Capitain",
+    "Title3": "and I'm a full stack software developer.",
+    "Description": "Ever since I was a child, I've been obsessed with technology. When I wasn't disassembling joysticks or game consoles, I was learning to code. A few years later, I became a code ninja in my own right, with an insatiable thirst for creating applications and functional tools.",
+    "WhenNotBusy": "When I'm not busy slaying bugs and writing code. I'm usually busy indulging in my favorite hobbies: gaming, new technologies and motorbike.",
+    "Timeline": "Here's a timeline of what I've been upto"
+  },
+  "Events": {
+    "Title": "I share on linkedin",
+    "Description": "my technical knowledge",
+    "Content": "I don't understand why people are still interested in PHP when new technologies such as React and .Net are making it possible to build applications that are clearly more powerful. I've built a lot of things, from small experiments to complete web applications, and every project shows my love for coding and problem solving."
+  },
+  "Contributions": {
+    "Title": "Committing Code and Crimes Against",
+    "Description": "Programming World",
+    "Content": "A place where you can witness my caffeinated coding adventures and see just how much coffee it takes to fuel my commits. From my first \"Hello World\" to my latest breakthrough, and everything in between.",
+    "ViewAllOnGitHub": "View all on GitHub"
+  },
+  "Contact": {
+    "Title": "Contact Me",
+    "Description": "I'm always looking for new challenges and opportunities to grow. If you have a project in mind or just want to say hi, feel free to reach out.",
+    "Button": "Contact Me",
+    "Success": "Email sent successfully",
+    "Error": "Failed to send email",
+    "ErrorDescription": "Please try again later or contact us directly",
+    "Email": "Email",
+    "Name": "Name",
+    "Copy": "Send a copy to my email"
+  }
+}

@@ -1,9 +1,9 @@
 import { LatestEvent } from "@components/events/latestEvent";
 import { LatestReposLoader } from "@components/github/latestRepos.loader";
 import { Layout, LayoutContent } from "@components/layout/layout";
+import posts from "@constant/linkedin-posts.json";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import { combineWithParentMetadata } from "@utils/metadata";
-import posts from "@constant/linkedin-posts.json";
 import { Suspense } from "react";
 import { z } from "zod";
 import { Experience } from "./_component/experience";

@@ -1,6 +1,6 @@
 export const GLOBAL_CONFIG = {
   company: {
-    name: "Dercraker.inc",
+    name: "Dercraker.Inc",
     address: "Company Address",
   },
   social: {

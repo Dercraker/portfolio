@@ -24,9 +24,11 @@ import { Popover, PopoverContent, PopoverTrigger } from "@ui/popover";
 import { Textarea } from "@ui/textarea";
 import { InlineTooltip } from "@ui/tooltip";
 import { Typography } from "@ui/typography";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 export const ContactDialog = () => {
+  const t = useTranslations("Contact");
   const [isOpen, { close, toggle }] = useDisclosure(false);
 
   const form = useZodForm({
@@ -42,14 +44,14 @@ export const ContactDialog = () => {
       const result = await ContactAction(form.getValues());
 
       if (!isActionSuccessful(result)) {
-        toast.error("Failed to send email", {
-          description: "Please try again later or contact us directly",
+        toast.error(t("Error"), {
+          description: t("ErrorDescription"),
         });
         return;
       }
 
       close();
-      toast.success("Email sent successfully");
+      toast.success(t("Success"));
     },
   });
 
@@ -72,18 +74,15 @@ export const ContactDialog = () => {
           className="space-y-4"
         >
           <div>
-            <Typography variant="h2">Need to contact us?</Typography>
-            <Typography variant="muted">
-              Fill out the form below and we will get back to you as soon as
-              possible.
-            </Typography>
+            <Typography variant="h2">{t("Title")}</Typography>
+            <Typography variant="muted">{t("Description")}</Typography>
           </div>
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t("Email")}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="your@email.com" />
                 </FormControl>
@@ -96,7 +95,7 @@ export const ContactDialog = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel>{t("Message")}</FormLabel>
                 <FormControl>
                   <Textarea {...field} placeholder="Your message here" />
                 </FormControl>
@@ -109,7 +108,7 @@ export const ContactDialog = () => {
             name="messageCopy"
             render={({ field }) => (
               <FormItem className="flex items-center gap-2">
-                <FormLabel>Send a copy to my email</FormLabel>
+                <FormLabel>{t("Copy")}</FormLabel>
                 <FormControl>
                   <Checkbox
                     {...field}
@@ -125,7 +124,7 @@ export const ContactDialog = () => {
             className={cn("opacity-0", form.formState.isValid && "opacity-100")}
             isLoading={isPending}
           >
-            Send
+            {t("Button")}
           </SubmitButton>
         </Form>
       </PopoverContent>

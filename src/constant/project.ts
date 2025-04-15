@@ -19,6 +19,13 @@ export const GetProjects = () => {
 
   return [
     {
+      title: "MapTiles Cutter",
+      description: t("MapTilesCutter.Description"),
+      image: "/images/projects/algochurn.png",
+      stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
+      link: "https://github.com/Dercraker/MapTilesCutter",
+    },
+    {
       title: "EmojiGenerator",
       description: t("EmojiGenerator.Description"),
       image: "/images/projects/algochurn.png",

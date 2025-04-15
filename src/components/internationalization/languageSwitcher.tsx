@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@ui/select";
+import { Typography } from "@ui/typography";
 import { useRouter } from "next/navigation";
 import { useCookie } from "react-use";
 
@@ -31,11 +32,15 @@ export const LanguageSwitcher = () => {
       <SelectContent>
         <SelectItem value="en" className="text-white">
           <FlagEnSvg />
-          {"\ud83c\uddfa\ud83c\uddf8"}
+          <Typography className="text-white">
+            {"\ud83c\uddfa\ud83c\uddf8"}
+          </Typography>
         </SelectItem>
         <SelectItem value="fr" className="text-white">
           <FlagFrSvg />
-          {"\ud83c\uddeb\ud83c\uddf7"}
+          <Typography className="text-white">
+            {"\ud83c\uddeb\ud83c\uddf7"}
+          </Typography>
         </SelectItem>
       </SelectContent>
     </Select>

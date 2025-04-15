@@ -136,35 +136,38 @@
     "Title2": " lot of things",
     "Description": "Come and discover the fruits of my labor, from small experiments to complete web applications, each project illustrates my love for programming and creating solutions.",
     "ViewSource": "View Source",
+    "MapTilesCutter": {
+      "Description": "Golang module that allows users to cut tiles from images for map systems like Mapbox or Google Maps."
+    },
     "EmojiGenerator": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Next.js app that allows users to generate emojis using a generative AI."
     },
     "TechMotion": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Next.js boilerplate for building web apps with Shadcn UI, Prisma ORM, Framer Motion, BetterAuth, Vercel, and other tools."
     },
     "FromA2B": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Next.js app. Final study project. The application allows users to plan a trip based on user-defined stops."
     },
     "Staracter": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Next.js app. Character library for the Star Citizen game."
     },
     "Motdle": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Next.js app. French Wordle clone."
     },
     "SnakeGame": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "WPF C# application. Snake game where I experimented with pathfinding algorithms like A*."
     },
     "StarTrad": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "C# utility that allows Star Citizen players to install and update the community translation of the game autonomously."
     },
     "GameTrip": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "React SPA with .Net backend. The application uses Mapbox to display an interactive map of video game locations and view information about real places."
     },
     "ForzaHorizon5InteractiveLiveMap": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "React SPA with .Net backend. The application allows users to view an interactive map of Forza Horizon 5. The backend implements WebSocket streams based on SignalR for real-time map data updates, as well as a DNS stream to retrieve player data. The map is generated using the Leaflet.js library along with tiles generated using my MapTiles Cutter project"
     },
     "GuanajuatoRP": {
-      "Description": "A web app that allows users to practice for front-end and UI interviews."
+      "Description": "Creation of a Forza Horizon 5 role-playing game server. Development of a Discord bot and a .Net API for user data management. Implementation of a complex economy with periodic events. Addition of advanced features such as permission management, command handling, role management, and salon templates."
     }
   }
 }

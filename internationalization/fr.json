@@ -137,35 +137,38 @@
     "Title2": "beaucoup de choses",
     "Description": "Découvrez les fruits de mon travail, des petites expérimentations aux applications web complètes, chaque projet illustre mon amour pour la programmation et la création de solutions.",
     "ViewSource": "Voir le code source",
+    "MapTilesCutter": {
+      "Description": "Module Golang qui permet de couper des tuiles depuis des images pour des système de map comme Mapbox ou Google Maps."
+    },
     "EmojiGenerator": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application Next.js. Générateur de smileys, par l'intermédiaire d'une IA générative."
     },
     "TechMotion": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Projet de boilerplate pour des projets Next.js avec Shadcn UI, Prisma ORM, Framer Motion, BetterAuth, Vercel, et d'autres outils..."
     },
     "FromA2B": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application Next.Js. Projet de fin d'étude. L'application permet de planifier un voyage en fonction d'étapes définies par l'utilisateur."
     },
     "Staracter": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application Next.Js. Bibliothèque de personnages pour le jeu Star Citizen."
     },
     "Motdle": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application Next.js de formation, c'est un Wordle en français, le Motdle."
     },
     "SnakeGame": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application WPF C#. Jeu de Snake avec le quel j'ai expérimenter des l'agorithme de pathfinding tel que A*."
     },
     "StarTrad": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Application C#, utilitaire qui permet aux joueurs de StarCitizen d'installer et maintenir a jour la traduction communautaire du jeux. Et ce de manière autonome."
     },
     "GameTrip": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "SPA React avec backend .Net. L'application permet de visualiser grâce a Mapbox une carte interactive des lieux de jeux vidéo et de visualisé les informations sur des lieux réel"
     },
     "ForzaHorizon5InteractiveLiveMap": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "SPA React avec backend .Net. L'application permet de visualiser une carte interactive du jeu Forza Horizon 5. Le backend implémente des flux Websocket basé sur SignalR pour la mise à jour en temps réel des données de la map, ainsi qu'un flus DNS pour récupéré les données des joueurs. La map est générée avec la librairie Leaflet.js ainsi que des tiles généré grâce a mon projet MapTiles Cutter"
     },
     "GuanajuatoRP": {
-      "Description": "Une application web qui permet aux utilisateurs de pratiquer pour les entretiens d'embauche en front-end et en UI."
+      "Description": "Création d'un serveur de jeux type Rôle Play avec le jeu Forza Horizon 5. Développement d'un bot Discord ainsi que d'une API .Net pour la gestion des données utilisateurs. Mise en place d'une économie complexe avec des évènements périodiques. Ajout de fonctionnalités avancées comme la gestion permission, gestion des commandes, gestion des rôles, templates de salons, etc..."
     }
   }
 }

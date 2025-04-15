@@ -1,0 +1,174 @@
+{
+  "Navbar": {
+    "DownloadCV": "Télécharger CV"
+  },
+  "Hero": {
+    "Name1": "Je suis",
+    "Name2": "développeur",
+    "Name3": "full stack",
+    "Description": "Découvrez Antoine Capitain, l'auto-proclamé sorcier du code qui peut transformer vos idées en sites web, outils ou autres solutions à grand renfort de caféine. Sa passion pour la programmation web et logicielle n'a d'égale que vos idées.",
+    "Building": "Je développe",
+    "And": "et",
+    "When": "quand je ne travaille pas sur mon emploi principal."
+  },
+  "Experience": {
+    "Title": "Expérience Professionnelle",
+    "Description": "J'explore le monde du travail pour améliorer mes compétences et mes connaissances."
+  },
+  "Tools": {
+    "Title": "Tous mes outils",
+    "Description": "Au fil des années, j'ai exploré de nombreux langages et frameworks, évoluant de mes premiers scripts JavaScript à des projets full stack complexes en Next.js, Nuxt, Golang et .Net. Chaque projet m'a appris des leçons précieuses, de la gestion de l'authentification utilisateur, à l'optimisation des performances, en passant par la création d'interfaces utilisateur fluides et intuitives."
+  },
+  "LatestRepos": {
+    "Title": "Derniers Dépôts",
+    "Description": "Voici quelques-uns des derniers dépôts sur lesquels j'ai travaillé. De mon premier hello world à mes derniers projets, avec {repos} dépôts entre les deux. J'ai beaucoup appris de chacun d'entre eux."
+  },
+  "About": {
+    "Title1": "Salut ! Je suis",
+    "Title2": "Antoine Capitain",
+    "Title3": "et je suis développeur full stack.",
+    "Description": "Depuis mon enfance, je suis passionné par la technologie. Quand je ne démontais pas des manettes ou des consoles de jeux, j'apprenais à coder. Quelques années plus tard, je suis devenu un véritable ninja du code, avec une soif insatiable de créer des applications et des outils fonctionnels.",
+    "WhenNotBusy": "Quand je ne suis pas occupé à chasser les bugs et à écrire du code, je m'adonne généralement à mes passe-temps favoris : les jeux vidéo, les nouvelles technologies et la moto.",
+    "Timeline": "Voici une chronologie de ce que j'ai fait"
+  },
+  "Events": {
+    "Title": "Je partage sur LinkedIn",
+    "Description": "mes connaissances techniques",
+    "Content": "Je ne comprends pas pourquoi les gens s'intéressent encore à PHP alors que les nouvelles technologies comme React et .Net permettent de construire des applications clairement plus puissantes. J'ai construit beaucoup de choses, des petites expérimentations aux applications web complètes, et chaque projet témoigne de mon amour pour le code et la résolution de problèmes."
+  },
+  "Contributions": {
+    "Title": "Commettant du Code et des Crimes Contre le",
+    "Description": "Monde de la Programmation",
+    "Content": "Un endroit où vous pouvez observer mes aventures de codage caféinées et voir combien de café il faut pour alimenter mes commits. De mon premier \"Hello World\" à ma dernière innovation, et tout ce qu'il y a entre les deux.",
+    "ViewAllOnGitHub": "Voir tout sur GitHub"
+  },
+  "Contact": {
+    "Title": "Me Contacter",
+    "Description": "Je suis toujours à la recherche de nouveaux défis et d'opportunités pour grandir. Si vous avez un projet en tête ou si vous voulez simplement dire bonjour, n'hésitez pas à me contacter.",
+    "Button": "Me Contacter",
+    "Success": "Email envoyé avec succès",
+    "Error": "Échec de l'envoi de l'email",
+    "ErrorDescription": "Veuillez réessayer plus tard ou nous contacter directement",
+    "Email": "Email",
+    "Name": "Nom",
+    "Copy": "Envoyer une copie à mon email"
+  },
+  "WorkExperience": {
+    "Elcia": {
+      "Description1": "Création d'un système d'internationalisation interne.",
+      "Description2": "Création d'une API pour calculer l'éco-participation aux factures.",
+      "Description3": "Maintenance et évolution d'un service de commande.",
+      "Role": "Apprentissage développeur full stack"
+    },
+    "TechMotion": {
+      "Role": "Co-Fondateur",
+      "Description1": "Création d'un boilerplate pour des projets Next.js avec Shadcn UI, Prisma ORM, Framer Motion, BetterAuth et Vercel.",
+      "Description2": "Création de formations sur Next.js et le boilerplate."
+    },
+    "FromA2B": {
+      "Role": "Développeur full stack",
+      "Description1": "Création d'une application de planification de voyage."
+    },
+    "Codeline": {
+      "Role": "Développeur full stack",
+      "Description1": "Maintenance d'une plateforme de formation en ligne.",
+      "Description2": "Mise en place d'un système de suivi des progrès avec des webhooks entre la plateforme de formation et Discord."
+    }
+  },
+  "Timeline": {
+    "2025": {
+      "Description1": "Lancement de mon projet de fin d'étude : From-A2B, une application de planification de voyage.",
+      "Description2": "Collaboration avec un autre étudiant Next.js pour créer un boilerplate performant et optimisé pour Next.js."
+    },
+    "2024": {
+      "Description1": "Grâce à mon alternance, je perfectionne ma maîtrise du C# et des concepts avancés de clean code.",
+      "Description2": "Introduction à React grâce à mon apprentissage, une révélation qui m'a poussé à explorer et approfondir mes connaissances avec Next.js."
+    },
+    "2023": {
+      "Description1": "Premiers pas dans le développement front-end sur un projet : une tâche que j'ai initialement redoutée mais qui m'a conduit à Vue.js.",
+      "Description2": "Apprentissage autodidacte de Docker et approfondissement des concepts DevOps.",
+      "Description3": "Début de mon apprentissage à Elcia, travaillant sur ma technologie favorite : C#."
+    },
+    "2022": {
+      "Description1": "Exploration de nouvelles langues : Python, C, C++, et Java.",
+      "Description2": "Projets multiples qui enrichissent ma compréhension des concepts de programmation.",
+      "Description3": "Découverte de C# et de la programmation orientée objet, qui deviendra un pilier de mon stack technologique."
+    },
+    "2021": {
+      "Description1": "Immersion dans le développement avec la découverte de Golang lors d'une piscine intensive.",
+      "Description2": "Enchaînement d'exercices en Golang pour maîtriser l'algorithmie.",
+      "Description3": "Transition vers JavaScript avec pour objectif de le maîtriser en profondeur."
+    },
+    "2020": {
+      "Description1": "Défi posé par mon professeur d'informatique : créer une intranet pour gérer des rendus numériques. Défi accepté !",
+      "Description2": "Année marquée par la pandémie de Covid, mais j'ai obtenu mon Bac Pro Systèmes Numériques avec succès.",
+      "Description3": "Décision de poursuivre une formation privée en programmation pour suivre mon ambition."
+    },
+    "2019": {
+      "Description1": "Premiers pas dans le code avec HTML et CSS : création de ma première page web.",
+      "Description2": "Réalisation de la puissance de la programmation : transformer une idée en projet concret.",
+      "Description3": "Soif d'apprentissage grandissante : les cours de l'école n'étaient plus suffisants, alors j'ai commencé à apprendre indépendamment.",
+      "Description4": "Lancement de mes premiers side projects."
+    },
+    "2018": {
+      "Description1": "Début de mes études en Bac Pro Systèmes Numériques : premier contact avec l'informatique et une fascination immédiate.",
+      "Description2": "Passion grandissante pour l'informatique, qui deviendra une véritable vocation.",
+      "Description3": "Dès mon premier année, même avant de rédiger une ligne de code, je savais que c'était ma future carrière."
+    }
+  },
+  "Hardware": {
+    "Title": "Mes outils",
+    "Description": "Voici quelques-uns des matériels que j'utilise pour construire mes projets.",
+    "16PoucesThinkpadX1Carbon": {
+      "Name": "16 pouces thinkpad x1 carbon sur dualboot fedora et windows",
+      "Description": "Mon ordinateur principal pour le développement que j'utilise depuis plus de 3 ans maintenant. Un ordinateur puissant. J'adore."
+    },
+    "LogitechErgoK860": {
+      "Name": "Logitech Ergo K860",
+      "Description": "Mon clavier principal pour le développement. C'est ergonomique et grand. Je l'utilise avec une souris Logitech MX Master 3."
+    },
+    "LogitechMXMaster3s": {
+      "Name": "Logitech MX Master 3s",
+      "Description": "Mon souris principale pour le développement. J'aime le scroll et les boutons."
+    }
+  },
+  "Projects": {
+    "Title1": "Je construis",
+    "Title2": "beaucoup de choses",
+    "Description": "Découvrez les fruits de mon travail, des petites expérimentations aux applications web complètes, chaque projet illustre mon amour pour la programmation et la création de solutions.",
+    "ViewSource": "Voir le code source",
+    "MapTilesCutter": {
+      "Description": "Module Golang qui permet de couper des tuiles depuis des images pour des système de map comme Mapbox ou Google Maps."
+    },
+    "EmojiGenerator": {
+      "Description": "Application Next.js. Générateur de smileys, par l'intermédiaire d'une IA générative."
+    },
+    "TechMotion": {
+      "Description": "Projet de boilerplate pour des projets Next.js avec Shadcn UI, Prisma ORM, Framer Motion, BetterAuth, Vercel, et d'autres outils..."
+    },
+    "FromA2B": {
+      "Description": "Application Next.Js. Projet de fin d'étude. L'application permet de planifier un voyage en fonction d'étapes définies par l'utilisateur."
+    },
+    "Staracter": {
+      "Description": "Application Next.Js. Bibliothèque de personnages pour le jeu Star Citizen."
+    },
+    "Motdle": {
+      "Description": "Application Next.js de formation, c'est un Wordle en français, le Motdle."
+    },
+    "SnakeGame": {
+      "Description": "Application WPF C#. Jeu de Snake avec le quel j'ai expérimenter des l'agorithme de pathfinding tel que A*."
+    },
+    "StarTrad": {
+      "Description": "Application C#, utilitaire qui permet aux joueurs de StarCitizen d'installer et maintenir a jour la traduction communautaire du jeux. Et ce de manière autonome."
+    },
+    "GameTrip": {
+      "Description": "SPA React avec backend .Net. L'application permet de visualiser grâce a Mapbox une carte interactive des lieux de jeux vidéo et de visualisé les informations sur des lieux réel"
+    },
+    "ForzaHorizon5InteractiveLiveMap": {
+      "Description": "SPA React avec backend .Net. L'application permet de visualiser une carte interactive du jeu Forza Horizon 5. Le backend implémente des flux Websocket basé sur SignalR pour la mise à jour en temps réel des données de la map, ainsi qu'un flus DNS pour récupéré les données des joueurs. La map est générée avec la librairie Leaflet.js ainsi que des tiles généré grâce a mon projet MapTiles Cutter"
+    },
+    "GuanajuatoRP": {
+      "Description": "Création d'un serveur de jeux type Rôle Play avec le jeu Forza Horizon 5. Développement d'un bot Discord ainsi que d'une API .Net pour la gestion des données utilisateurs. Mise en place d'une économie complexe avec des évènements périodiques. Ajout de fonctionnalités avancées comme la gestion permission, gestion des commandes, gestion des rôles, templates de salons, etc..."
+    }
+  }
+}

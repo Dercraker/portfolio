@@ -3,6 +3,7 @@
 import { cn } from "@lib/utils";
 import { LinkPreview } from "@ui/link-preview";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export const Hero = () => {
   return (
@@ -14,15 +15,16 @@ export const Hero = () => {
 };
 
 const Content = () => {
+  const t = useTranslations("Hero");
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden px-8 pb-4 md:px-8">
       <div className="relative mt-20 flex flex-col items-center justify-center">
         <h1 className="relative mx-auto mt-4 max-w-6xl text-center text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-7xl">
-          I'm a{" "}
+          {t("Name1")}{" "}
           <span className="bg-secondary relative bg-clip-text text-transparent">
-            full stack
+            {t("Name2")}
           </span>{" "}
-          developer{" "}
+          {t("Name3")}{" "}
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,12 +63,10 @@ const Content = () => {
           </span>
         </h1>
         <p className="mt-8 max-w-4xl text-sm tracking-wide text-zinc-400 md:text-lg">
-          Meet Antoine Capitain, the self-proclaimed code wizard who can turn
-          idea into websites, tools or other solution with caffeine. His passion
-          for web and software programming has equalled only by your ideas.
+          {t("Description")}
         </p>
         <div className="mt-4 w-full max-w-4xl text-sm tracking-wide text-zinc-400 md:text-lg">
-          Building{" "}
+          {t("Building")}{" "}
           <LinkPreview
             className={
               "font-bold text-zinc-200 outline-hidden transition duration-150 hover:text-cyan-500"
@@ -75,7 +75,7 @@ const Content = () => {
           >
             From A2B
           </LinkPreview>{" "}
-          and{" "}
+          {t("And")}{" "}
           <LinkPreview
             className={
               "font-bold text-zinc-200 transition duration-150 hover:text-cyan-500"
@@ -84,7 +84,7 @@ const Content = () => {
           >
             Techmotion
           </LinkPreview>{" "}
-          when I'm not working on my day job.
+          {t("When")}
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import {
 import { SectionLayout } from "@components/layout/SectionLayout";
 import IconCloud from "@components/logo/cloudIcon";
 import { Typography } from "@ui/typography";
+import { getTranslations } from "next-intl/server";
 
 const slugs = [
   "typescript",
@@ -40,7 +41,8 @@ const slugs = [
   "2fas",
 ];
 
-export const Tools = () => {
+export const Tools = async () => {
+  const t = await getTranslations("Tools");
   return (
     <SectionLayout
       size="lg"
@@ -48,15 +50,10 @@ export const Tools = () => {
       id="Tools"
     >
       <LayoutHeader>
-        <LayoutTitle>All my tools</LayoutTitle>
+        <LayoutTitle>{t("Title")}</LayoutTitle>
         <LayoutDescription>
           <Typography className="max-w-2xl leading-relaxed text-zinc-400">
-            Over the years, I've explored many languages and frameworks,
-            evolving from my first JavaScript scripts to complex full stack
-            projects in Next.js, Nuxt, Golang and .Net. Each project has taught
-            me valuable lessons, from user authentication management user
-            authentication, optimizing performance, and creating fluid,
-            intuitive user interfaces.
+            {t("Description")}
           </Typography>
         </LayoutDescription>
       </LayoutHeader>

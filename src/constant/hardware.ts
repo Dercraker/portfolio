@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { z } from "zod";
 
 export const hardwareSchema = z.object({
@@ -7,19 +8,21 @@ export const hardwareSchema = z.object({
 
 export type HardwareType = z.infer<typeof hardwareSchema>;
 
-export const hardwares: HardwareType[] = [
-  {
-    name: "16 pouces thinkpad x1 carbon on dualboot fedora and windows",
-    description: `My main machine for development that I've been using for over 3 years now. Such a beast of a machine. I love it.`,
-  },
-  {
-    name: "Logitech Ergo K860",
-    description:
-      "My main keyboard for development. It's ergonomic and large. I use it with a Logitech MX Master 3 mouse.",
-  },
-  {
-    name: "Logitech MX Master 3s",
-    description:
-      "My main mouse for development. I love the scroll wheel and the thumb buttons. I use it with a Ergo K860 keyboard.",
-  },
-];
+export const GetHardwares = async (): Promise<HardwareType[]> => {
+  const t = await getTranslations("Hardware");
+
+  return [
+    {
+      name: t("16PoucesThinkpadX1Carbon.Name"),
+      description: t("16PoucesThinkpadX1Carbon.Description"),
+    },
+    {
+      name: t("LogitechErgoK860.Name"),
+      description: t("LogitechErgoK860.Description"),
+    },
+    {
+      name: t("LogitechMXMaster3s.Name"),
+      description: t("LogitechMXMaster3s.Description"),
+    },
+  ];
+};

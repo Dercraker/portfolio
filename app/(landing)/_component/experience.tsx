@@ -6,25 +6,28 @@ import { LinkPreview } from "@ui/link-preview";
 import { InlineTooltip } from "@ui/tooltip";
 import clsx from "clsx";
 import type { workExperienceType } from "constant/workExperience";
-import { workExperience } from "constant/workExperience";
+import { GetWorkExperience } from "constant/workExperience";
 import { format } from "date-fns";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
 export const Experience = () => {
+  const t = useTranslations("Experience");
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredBullet, setHoveredBullet] = useState<number | null>(null);
   const [activeWorkExperience, setActiveWorkExperience] =
-    useState<workExperienceType>(workExperience[0]);
+    useState<workExperienceType>(GetWorkExperience()[0]);
 
   return (
     <div className="mx-auto max-w-5xl px-8">
       <h1 className="mx-auto mt-20 max-w-5xl text-2xl font-bold text-white md:mt-40 md:text-3xl">
-        Work Experience
+        {t("Title")}
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-loose tracking-wide text-zinc-400 md:text-base">
-        I'm exploring the world of work to improve my skills and knowledge.
+        {t("Description")}
       </p>
       <div className="mx-auto mt-20 flex max-w-2xl flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-2">
         <div className="relative flex flex-row overflow-x-auto md:flex-col md:overflow-x-visible">
@@ -32,7 +35,7 @@ export const Experience = () => {
             <Beam showBeam={true} className={`-left-0`} />
           </div>
 
-          {workExperience.map((exp, workIdx) => (
+          {GetWorkExperience().map((exp, workIdx) => (
             <div
               key={`exp-${workIdx}`}
               className="relative my-2"
@@ -143,9 +146,6 @@ export const Experience = () => {
                         width={24}
                         height={24}
                       />
-                      {/* <GroupIcon
-                        iconSlugs={activeWorkExperience.technologies}
-                      /> */}
                     </InlineTooltip>
                   ))}
                 </div>

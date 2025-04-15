@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
-
 import { IconList } from "@components/logo/iconList";
 import { Typography } from "@ui/typography";
-import { projects } from "constant/project";
+import { GetProjects } from "constant/project";
 import { AnimatePresence, motion } from "framer-motion";
 import { SquareTerminal } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -15,7 +14,7 @@ export const Projects = () => {
   return (
     <div className="mx-auto max-w-5xl px-8">
       <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, idx) => (
+        {GetProjects().map((project, idx) => (
           <a
             href={project.link}
             key={project?.link}

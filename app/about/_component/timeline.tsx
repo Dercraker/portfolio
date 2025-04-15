@@ -3,7 +3,7 @@
 import { HoverCheckIcon } from "@components/animatedIcon/hoverCheck.icon";
 import Beam from "@components/Beam/Beam";
 import type { TimelinePointType } from "constant/timeline";
-import { timeline } from "constant/timeline";
+import { GetTimeline } from "constant/timeline";
 import { useState } from "react";
 
 export const Timeline = () => {
@@ -14,7 +14,7 @@ export const Timeline = () => {
       <div className="to:transparent via-secondary absolute -left-4 h-full w-[4px] bg-linear-to-b from-transparent md:-left-10">
         <Beam showBeam={true} className={`left-1`} />
       </div>
-      {timeline.map((item: TimelinePointType, idxYear: number) => (
+      {GetTimeline().map((item: TimelinePointType, idxYear: number) => (
         <div
           key={`timeline-year-${idxYear}`}
           className="border-b border-zinc-800"

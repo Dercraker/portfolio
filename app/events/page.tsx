@@ -4,6 +4,7 @@ import posts from "@constant/linkedin-posts.json";
 import { LinkedinPostTypeSchema } from "@type/linkedinPost.type";
 import { Typography } from "@ui/typography";
 import { combineWithParentMetadata } from "@utils/metadata";
+import { getTranslations } from "next-intl/server";
 import { z } from "zod";
 
 export const generateMetadata = combineWithParentMetadata({
@@ -11,22 +12,20 @@ export const generateMetadata = combineWithParentMetadata({
   description: "All my linkedin posts and more",
 });
 
-const RoutePage = () => {
+const RoutePage = async () => {
+  const t = await getTranslations("Events");
+
   const linkedinPosts = z.array(LinkedinPostTypeSchema).parse(posts);
 
   return (
     <SectionLayout>
       <div className="relative mx-auto mt-10 max-w-5xl px-8 md:mt-20">
         <Typography className="max-w-3xl text-3xl font-bold text-zinc-50 md:text-5xl md:leading-tight">
-          I share on linkedin
-          <span className="text-secondary"> my technical knowledge</span>
+          {t("Title")}
+          <span className="text-secondary"> {t("Description")}</span>
         </Typography>
         <Typography className="text-muted-foreground mt-8 max-w-2xl text-sm tracking-wide md:text-lg">
-          I don't understand why people are still interested in PHP when new
-          technologies such as React and .Net are making it possible to build
-          applications that are clearly more powerful. I've built a lot of
-          things, from small experiments to complete web applications, and every
-          project shows my love for coding and problem solving.
+          {t("Content")}
         </Typography>
         <div className="mx-auto mt-20 max-w-3xl">
           <LatestEvent posts={linkedinPosts} />

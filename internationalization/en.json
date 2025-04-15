@@ -1,0 +1,173 @@
+{
+  "Navbar": {
+    "DownloadCV": "Download CV"
+  },
+  "Hero": {
+    "Name1": "I'm a",
+    "Name2": "full stack",
+    "Name3": "developer",
+    "Description": "Meet Antoine Capitain, the self-proclaimed code wizard who can turn idea into websites, tools or other solution with caffeine. His passion for web and software programming has equalled only by your ideas.",
+    "Building": "Building",
+    "And": "and",
+    "When": "when I'm not working on my day job."
+  },
+  "Experience": {
+    "Title": "Work Experience",
+    "Description": "I'm exploring the world of work to improve my skills and knowledge."
+  },
+  "Tools": {
+    "Title": "All my tools",
+    "Description": "Over the years, I've explored many languages and frameworks, evolving from my first JavaScript scripts to complex full stack projects in Next.js, Nuxt, Golang and .Net. Each project has taught me valuable lessons, from user authentication management user authentication, optimizing performance, and creating fluid, intuitive user interfaces."
+  },
+  "LatestRepos": {
+    "Title": "Latest Repositories",
+    "Description": "Here are some of the latest repositories I've worked on. From my first hello world to my latest projects, with {repos} repositories in between. I've learned a lot from each and every one of them."
+  },
+  "About": {
+    "Title1": "Hey ! I'm",
+    "Title2": "Antoine Capitain",
+    "Title3": "and I'm a full stack software developer.",
+    "Description": "Ever since I was a child, I've been obsessed with technology. When I wasn't disassembling joysticks or game consoles, I was learning to code. A few years later, I became a code ninja in my own right, with an insatiable thirst for creating applications and functional tools.",
+    "WhenNotBusy": "When I'm not busy slaying bugs and writing code. I'm usually busy indulging in my favorite hobbies: gaming, new technologies and motorbike.",
+    "Timeline": "Here's a timeline of what I've been upto"
+  },
+  "Events": {
+    "Title": "I share on linkedin",
+    "Description": "my technical knowledge",
+    "Content": "I don't understand why people are still interested in PHP when new technologies such as React and .Net are making it possible to build applications that are clearly more powerful. I've built a lot of things, from small experiments to complete web applications, and every project shows my love for coding and problem solving."
+  },
+  "Contributions": {
+    "Title": "Committing Code and Crimes Against",
+    "Description": "Programming World",
+    "Content": "A place where you can witness my caffeinated coding adventures and see just how much coffee it takes to fuel my commits. From my first \"Hello World\" to my latest breakthrough, and everything in between.",
+    "ViewAllOnGitHub": "View all on GitHub"
+  },
+  "Contact": {
+    "Title": "Contact Me",
+    "Description": "I'm always looking for new challenges and opportunities to grow. If you have a project in mind or just want to say hi, feel free to reach out.",
+    "Button": "Contact Me",
+    "Success": "Email sent successfully",
+    "Error": "Failed to send email",
+    "ErrorDescription": "Please try again later or contact us directly",
+    "Email": "Email",
+    "Name": "Name",
+    "Copy": "Send a copy to my email"
+  },
+  "WorkExperience": {
+    "Elcia": {
+      "Role": "Apprenticeship Full Stack Developer",
+      "Description1": "Creation of an internal internationalization system.",
+      "Description2": "Creation of an API for calculating eco-participation on invoices.",
+      "Description3": "Maintenance and evolution of an order service."
+    },
+    "TechMotion": {
+      "Role": "Co-Founder",
+      "Description1": "Creation of a boilerplate for Next.js projects with Shadcn UI, Prisma ORM, Framer Motion, BetterAuth and Vercel.",
+      "Description2": "Creation of trainings on Next.js and the boilerplates."
+    },
+    "FromA2B": {
+      "Role": "Full Stack Developer",
+      "Description1": "Creation of a travel planning application."
+    },
+    "Codeline": {
+      "Role": "Full Stack Developer",
+      "Description1": "Maintenance of an online training platform.",
+      "Description2": "Setting up a progress tracking system with webhooks between the training platform and Discord."
+    }
+  },
+  "Timeline": {
+    "2025": {
+      "Description1": "Launch of my final year project: From-A2B, a travel planning application.",
+      "Description2": "Collaboration with another Next.js student to create a high-performance and optimized Next.js Boilerplate."
+    },
+    "2024": {
+      "Description1": "Thanks to my apprenticeship, I perfected my mastery of C# and advanced clean code concepts.",
+      "Description2": "Introduction to React through my apprenticeship, a revelation that pushed me to explore and go further with Next.js."
+    },
+    "2023": {
+      "Description1": "First steps in front-end development on a project: a task I initially dreaded but which led me to Vue.js.",
+      "Description2": "Self-taught learning of Docker and deepening my understanding of DevOps concepts.",
+      "Description3": "Start of my apprenticeship at Elcia, working on my favorite technology: C#."
+    },
+    "2022": {
+      "Description1": "Exploration of new languages: Python, C, C++, and Java.",
+      "Description2": "Multiple projects that enriched my understanding of advanced programming concepts.",
+      "Description3": "Discovery of C# and object-oriented programming, which would become a key pillar of my tech stack."
+    },
+    "2021": {
+      "Description1": "Immersion in development with the discovery of Golang during an intensive bootcamp.",
+      "Description2": "Series of Golang exercises to master algorithms.",
+      "Description3": "Transition to JavaScript with the goal of mastering it in depth."
+    },
+    "2020": {
+      "Description1": "Challenge set by my computer science teacher: create an intranet for managing digital submissions. Challenge accepted!",
+      "Description2": "Year marked by the Covid pandemic, but I successfully obtained my Bac Pro Systèmes Numériques.",
+      "Description3": "Decision to pursue a private training program in programming to follow my ambition."
+    },
+    "2019": {
+      "Description1": "First steps in coding with HTML and CSS: creation of my first web page.",
+      "Description2": "Realization of the power of coding: turning an idea into a concrete project.",
+      "Description3": "Growing thirst for knowledge: school courses were no longer enough, so I started learning independently.",
+      "Description4": "Launch of my first side projects."
+    },
+    "2018": {
+      "Description1": "Start of my studies in Bac Pro Systèmes Numériques: first encounter with IT and immediate fascination.",
+      "Description2": "Growing passion for IT, which quickly became a true vocation.",
+      "Description3": "From my first year, even before writing a single line of code, I knew this was my future career."
+    }
+  },
+  "Hardware": {
+    "Title": "My tools",
+    "16PoucesThinkpadX1Carbon": {
+      "Name": "16 pouces thinkpad x1 carbon on dualboot fedora and windows",
+      "Description": "My main machine for development that I've been using for over 3 years now. Such a beast of a machine. I love it."
+    },
+    "LogitechErgoK860": {
+      "Name": "Logitech Ergo K860",
+      "Description": "My main keyboard for development. It's ergonomic and large. I use it with a Logitech MX Master 3 mouse."
+    },
+    "LogitechMXMaster3s": {
+      "Name": "Logitech MX Master 3s",
+      "Description": "My main mouse for development. I love the scroll wheel and the thumb buttons. I use it with a Ergo K860 keyboard."
+    }
+  },
+  "Projects": {
+    "Title1": "I've been building a",
+    "Title2": " lot of things",
+    "Description": "Come and discover the fruits of my labor, from small experiments to complete web applications, each project illustrates my love for programming and creating solutions.",
+    "ViewSource": "View Source",
+    "MapTilesCutter": {
+      "Description": "Golang module that allows users to cut tiles from images for map systems like Mapbox or Google Maps."
+    },
+    "EmojiGenerator": {
+      "Description": "Next.js app that allows users to generate emojis using a generative AI."
+    },
+    "TechMotion": {
+      "Description": "Next.js boilerplate for building web apps with Shadcn UI, Prisma ORM, Framer Motion, BetterAuth, Vercel, and other tools."
+    },
+    "FromA2B": {
+      "Description": "Next.js app. Final study project. The application allows users to plan a trip based on user-defined stops."
+    },
+    "Staracter": {
+      "Description": "Next.js app. Character library for the Star Citizen game."
+    },
+    "Motdle": {
+      "Description": "Next.js app. French Wordle clone."
+    },
+    "SnakeGame": {
+      "Description": "WPF C# application. Snake game where I experimented with pathfinding algorithms like A*."
+    },
+    "StarTrad": {
+      "Description": "C# utility that allows Star Citizen players to install and update the community translation of the game autonomously."
+    },
+    "GameTrip": {
+      "Description": "React SPA with .Net backend. The application uses Mapbox to display an interactive map of video game locations and view information about real places."
+    },
+    "ForzaHorizon5InteractiveLiveMap": {
+      "Description": "React SPA with .Net backend. The application allows users to view an interactive map of Forza Horizon 5. The backend implements WebSocket streams based on SignalR for real-time map data updates, as well as a DNS stream to retrieve player data. The map is generated using the Leaflet.js library along with tiles generated using my MapTiles Cutter project"
+    },
+    "GuanajuatoRP": {
+      "Description": "Creation of a Forza Horizon 5 role-playing game server. Development of a Discord bot and a .Net API for user data management. Implementation of a complex economy with periodic events. Addition of advanced features such as permission management, command handling, role management, and salon templates."
+    }
+  }
+}

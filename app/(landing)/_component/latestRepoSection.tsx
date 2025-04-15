@@ -6,20 +6,18 @@ import {
 } from "@components/layout/layout";
 import { SectionLayout } from "@components/layout/SectionLayout";
 import { getAllGithubReposCached } from "@feat/api/githubApi";
+import { getTranslations } from "next-intl/server";
 
 export const LatestRepoSection = async () => {
+  const t = await getTranslations("LatestRepos");
+
   const repos = await getAllGithubReposCached();
   return (
     <SectionLayout>
       <LayoutHeader>
-        <LayoutTitle>Latest Repositories</LayoutTitle>
+        <LayoutTitle>{t("Title")}</LayoutTitle>
         <LayoutDescription className="text-zinc-400">
-          Here are some of the latest repositories I've worked on. <br />
-          From my first hello world to my latest projects, with {
-            repos.length
-          }{" "}
-          repositories in between. <br />
-          I've learned a lot from each and every one of them.
+          {t("Description", { repos: repos.length })}
         </LayoutDescription>
       </LayoutHeader>
 

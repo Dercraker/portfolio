@@ -87,7 +87,7 @@ export const useNextTopLoaderStore = create<{
 }));
 
 export const NextTopLoader = ({
-  color = "#29d",
+  color = "#5da078",
   height = 3,
   showSpinner = true,
   crawl = true,

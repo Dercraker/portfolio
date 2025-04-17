@@ -19,6 +19,7 @@ export const Projects = () => {
             href={project.link}
             key={project?.link}
             className="group relative block p-2"
+            data-toploader-disabled
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >

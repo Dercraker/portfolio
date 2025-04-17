@@ -32,14 +32,14 @@ export const LanguageSwitcher = () => {
       <SelectContent>
         <SelectItem value="en" className="text-white">
           <FlagEnSvg />
-          <Typography className="text-white">
-            {"\ud83c\uddfa\ud83c\uddf8"}
+          <Typography variant="small" className="text-white">
+            EN
           </Typography>
         </SelectItem>
         <SelectItem value="fr" className="text-white">
           <FlagFrSvg />
-          <Typography className="text-white">
-            {"\ud83c\uddeb\ud83c\uddf7"}
+          <Typography variant="small" className="text-white">
+            FR
           </Typography>
         </SelectItem>
       </SelectContent>

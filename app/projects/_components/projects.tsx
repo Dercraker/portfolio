@@ -40,7 +40,7 @@ export const Projects = () => {
                 />
               )}
             </AnimatePresence>
-            <div className="relative z-20 overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
+            <div className="relative z-20 h-full overflow-hidden rounded-2xl border border-transparent bg-zinc-800 group-hover:border-zinc-700">
               <div className="relative z-20">
                 <div className="relative h-44 w-full bg-black/10 transition duration-500 group-hover:bg-transparent sm:h-60 md:h-44">
                   <div className="absolute bottom-0 z-10 h-20 w-full bg-zinc-900 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] transition duration-500 group-hover:bg-zinc-800" />
